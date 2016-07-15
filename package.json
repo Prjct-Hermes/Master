@@ -1,0 +1,11 @@
+{
+  "name": "hermes",
+  "version": "1.0.0",
+  "description": "1. Build compiler (Gulp)\r 2. Flow chart\r 3. Trello\r 4. Mentor Approval",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
