@@ -1,5 +1,35 @@
-<!--Header
-Navbar
-body
-main-container
-Footer-->
+<!DOCTYPE html>
+<html ng-app='hermes'>
+  <head>
+    <meta charset='utf-8'>
+    <title></title>
+  </head>
+  <body>
+
+    <ui-view></ui-view>
+
+    <!--Header
+    Navbar
+    body
+    main-container
+    Footer-->
+
+
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <!-- Controllers -->
+  <script src="./app/app.js"></script>
+  <script src="./app/mainCtrl.js"></script>
+  <script src="./app/routes/alerts/alertsCtrl.js"></script>
+  <script src="./app/routes/login/loginCtrl.js"></script>
+  <script src="./app/routes/orders/ordersCtrl.js"></script>
+  <script src="./app/routes/recipes/recipesCtrl.js"></script>
+  <script src="./app/routes/stockItems/stockItemsCtrl.js"></script>
+  <!-- Services -->
+  <script src="./app/services/mainService.js"></script>
+
+
+  </body>
+</html>
