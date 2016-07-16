@@ -1,4 +1,4 @@
-angular.module("hermes").controller("loginCtrl",function($state){
+angular.module("hermes").controller("loginCtrl", function($scope, $state){
   /*
   user object
 
@@ -21,4 +21,4 @@ angular.module("hermes").controller("loginCtrl",function($state){
     password confirmation duplicate from login
     put updated info to server through service
   */
-})
+});
