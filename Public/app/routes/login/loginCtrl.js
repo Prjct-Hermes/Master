@@ -1,4 +1,15 @@
-angular.module("hermes").controller("loginCtrl", function($scope, $state){
+angular.module("hermes").controller("loginCtrl", function($scope, $state, mainService){
+
+  $scope.createNewUser = function(newUser){
+    mainService.createNewUser(newUser).then(function(response){
+      //Call the login function to automatically log in on successfull create.
+      
+    });
+  };
+
+
+
+
   /*
   user object
 
@@ -8,8 +19,11 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state){
     function to check stockItems qty against alert qty and post Alerts
       check date and if equal to alert date post alert
 
+
   Sign Up:
-    create user object information
+    1) Build user object.
+    2)
+
     post to server throuhgh service and return ._id and assign to user. Clear password afterwards
     $state.go('/stockItems')
 
