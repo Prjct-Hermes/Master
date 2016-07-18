@@ -4,9 +4,7 @@ angular.module('hermes').controller('ordersCtrl', function($scope, mainService){
 $scope.user = "578bf14a5b25dcac0b00f9e6";
 $scope.orders = function(){
   mainService.getDataOrders($scope.user).then(function(){
-    console.log("something");
     $scope.allOrders = mainService.retrieveAllOrders();
-    console.log($scope.allOrders)
   });
 }();
 // ////////////////////////////////////////////////////
