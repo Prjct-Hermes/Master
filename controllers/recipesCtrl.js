@@ -17,7 +17,7 @@ var schema = new Schema({
     index: false,
   },
   ingredients: {
-    type: Schema.Types.Mixed,,
+    type: Schema.Types.Mixed,
     required: false,
     index: false,
   },

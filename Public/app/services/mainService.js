@@ -60,6 +60,11 @@ return this.User
 //  }
 // }
 
+
+//This var brings the scope back to the mainService
+//allowing the data to be saved to the service.
+var self = this;
+
 //These are your user requests
 this.findUser = function(id, key){
   var deferred = $q.defer();
@@ -67,11 +72,12 @@ this.findUser = function(id, key){
     method: 'GET',
     url: "/api/users/" + id + "," + key
   }).then(function(response){
+    self.user = response.data._id;
     deferred.resolve(response.data);
   })
+  console.log(deferred.promise, " This.user", this.user)
   return deferred.promise
 }
-
 this.destroyUser = function(id){
   var deferred = $q.defer();
   $http({
@@ -82,7 +88,6 @@ this.destroyUser = function(id){
   })
   return deferred.promise
 }
-
 this.createUser = function(body){
   var deferred = $q.defer();
   $http({
@@ -113,16 +118,7 @@ this.getDataStockItems =  function(id){
     method: 'GET',
     url: "/api/stockItems/" + id
   }).then(function(response){
-    deferred.resolve(response.data);
-  })
-  return deferred.promise
-}
-this.findIndividualStockItems = function(id){
-  var deferred = $q.defer();
-  $http({
-    method: 'GET',
-    url: "/api/stockItems/" + id
-  }).then(function(response){
+    self.allStockItems = response.data;
     deferred.resolve(response.data);
   })
   return deferred.promise
@@ -167,16 +163,7 @@ this.getDataRecipes =  function(id){
     method: 'GET',
     url: "/api/recipes/" + id
   }).then(function(response){
-    deferred.resolve(response.data);
-  })
-  return deferred.promise
-}
-this.findIndividualRecipes = function(id){
-  var deferred = $q.defer();
-  $http({
-    method: 'GET',
-    url: "/api/recipes/" + id
-  }).then(function(response){
+     self.allRecipes = response.data;
     deferred.resolve(response.data);
   })
   return deferred.promise
@@ -221,16 +208,7 @@ this.getDataOrders =  function(id){
     method: 'GET',
     url: "/api/orders/" + id
   }).then(function(response){
-    deferred.resolve(response.data);
-  })
-  return deferred.promise
-}
-this.findIndividualOrders = function(id){
-  var deferred = $q.defer();
-  $http({
-    method: 'GET',
-    url: "/api/orders/" + id
-  }).then(function(response){
+    self.allOrders = response.data;
     deferred.resolve(response.data);
   })
   return deferred.promise
@@ -266,5 +244,25 @@ this.updateOrders = function(id, body){
     deferred.resolve(response.data);
   })
   return deferred.promise
+}
+
+
+
+//This is where all of our data and how to access it is going to live.
+this.user = "";
+this.userId = function(){
+  return this.user;
+}
+this.allStockItems = {};
+this.retrieveStockItems = function(){
+  return this.allStockItems;
+}
+this.allRecipes = {};
+this.retrieveAllRecipes = function(){
+  return this.allRecipes;
+}
+this.allOrders = {};
+this.retrieveAllOrders = function(){
+  return this.allOrders;
 }
 })

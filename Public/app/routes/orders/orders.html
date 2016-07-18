@@ -1,6 +1,12 @@
 <!-- NOTE:
- ategories
+ Categories
 repeat over recipes and display
 add to order (Increment and decriment on each recipe)
 confirm and totals
  -->
+<div style="width: 10em;height:10em;border:5px solid blue;color:red" class="" ng-repeat="order in allOrders">
+  <div class="">
+    {{order._id}} and date {{order.date}}
+  </div>
+
+</div>
