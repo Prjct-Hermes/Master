@@ -1,4 +1,33 @@
-angular.module("hermes").controller("loginCtrl", function($scope, $state){
+angular.module("hermes").controller("loginCtrl", function($scope, $state, mainService){
+  //Create New User
+    $scope.createNewUser = function(newUser){
+      mainService.createNewUser(newUser).then(function(response){
+        //Call the login function to automatically log in on successfull create.
+      });
+    };
+    //Login
+    $scope.login = function(user){
+      mainService.login(user).then(function(response){
+        if(!response.data){
+          alert('User does not exist');
+          $scope.user.password = '';
+        }
+        else{
+          //Get all the info for the user.
+          //state.go to some default page
+        }
+      });
+    };
+    $scope.logout = function(){
+      return $http({
+        method: 'GET',
+        url: '/logout',
+      }).then(function(response){
+        $state.go('home')
+      })
+    };
+
+
   /*
   user object
 

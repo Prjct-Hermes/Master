@@ -1,11 +1,72 @@
 angular.module('hermes').service('mainService', function($http, $q){
 
+  // Login Controller //
+this.login = function(user){
+  return $http({
+    method: 'POST',
+    url: '/login',
+    data: user
+  }).then(function(response){
+    return response;
+  });
+};
+this.logout = function(){
+  return $http({
+    method: 'GET',
+    url: '/logout',
+  }).then(function(response){
+    return response;
+  });
+};
+this.getCurrentUser = function(){
+  return $http({
+    method: 'GET',
+    url: '/me',
+  }).then(function(response){
+    return response;
+  });
+};
+this.destroyUser = function(id){
+  var deferred = $q.defer();
+  $http({
+    method: 'DELETE',
+    url: "/api/users/" + id
+  }).then(function(response){
+    deferred.resolve(response);
+  })
+  return deferred.promise
+}
+
+this.createUser = function(body){
+  var deferred = $q.defer();
+  $http({
+    method: 'POST',
+    url: "/api/users",
+    data: body
+  }).then(function(response){
+    deferred.resolve(response.data);
+  })
+  return deferred.promise
+}
+this.updateUser = function(id, body){
+  var deferred = $q.defer();
+  $http({
+    method: 'PUT',
+    url: "/api/users/" + id,
+    data: body
+  }).then(function(response){
+    deferred.resolve(response.data);
+  })
+  return deferred.promise
+}
+
 /*
 get user data = this.user
 get allStockItems
  this.allStockItems = data.data
 get recipes
 get Orders
+>>>>>>> f72121ea51ebae26222804326f16c68880d62639
 
 this.User = {}
 this.stockItems = {}
@@ -71,41 +132,6 @@ this.findUser = function(id, key){
   })
   return deferred.promise
 }
-
-this.destroyUser = function(id){
-  var deferred = $q.defer();
-  $http({
-    method: 'DELETE',
-    url: "/api/users/" + id
-  }).then(function(response){
-    deferred.resolve(response);
-  })
-  return deferred.promise
-}
-
-this.createUser = function(body){
-  var deferred = $q.defer();
-  $http({
-    method: 'POST',
-    url: "/api/users",
-    data: body
-  }).then(function(response){
-    deferred.resolve(response.data);
-  })
-  return deferred.promise
-}
-this.updateUser = function(id, body){
-  var deferred = $q.defer();
-  $http({
-    method: 'PUT',
-    url: "/api/users/" + id,
-    data: body
-  }).then(function(response){
-    deferred.resolve(response.data);
-  })
-  return deferred.promise
-}
-
 //These are your stockItems requests
 this.getDataStockItems =  function(id){
   var deferred = $q.defer();

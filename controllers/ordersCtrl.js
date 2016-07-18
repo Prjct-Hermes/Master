@@ -11,7 +11,7 @@ var schema = new Schema({
     required: true,
     index: true,
   },
-  order: {
+  recipes: {
     type: Schema.Types.Mixed,
     required: false,
     index: false,
