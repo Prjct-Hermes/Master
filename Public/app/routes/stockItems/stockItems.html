@@ -9,4 +9,8 @@ Create Items
   <button ng-click="createStockItems(newItem)">Submit</button>
 </div>
 
-{{items}}
+<div ng-repeat="item in items">
+  {{item.name}}
+  {{item.description}}
+  
+</div>
