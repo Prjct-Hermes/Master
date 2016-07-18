@@ -1,0 +1,164 @@
+.home-header{
+  width: 100%;
+  height: 90vh;
+  position:relative;
+  overflow:hidden;
+  background-image: url('.././images/businesspeeps.jpg');
+  background-blend-mode: overlay;
+  background-color: #384764;
+  background-position: 50% 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home-header:after{
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  border-left: 50vw solid #fff;
+  border-right: 50vw solid #fff;
+  border-top: 15vh solid transparent;
+}
+.home-header-container{
+  width:60%;
+  height:30%;
+  margin-left: 20%;
+  margin-top: 45vh;
+  /*border: 2px solid white;*/
+}
+.home-learn-more{
+  width: 100%;
+  height:60%;
+  /*border: 2px solid red;*/
+  text-align: center;
+  font-size: 3rem;
+  color:white;
+  font-family: "Ubuntu";
+}
+.home-header-learn-more-cta{
+  width: 12%;
+  height:10%;
+  margin-left: 44%;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsla(360, 100%, 0%, 0.5);
+  font-family: "Ubuntu";
+  cursor: pointer;
+}
+
+
+/*-----------------------ABOUT US-------------------------*/
+.home-about-us{
+  width:100%;
+  height:75vh;
+  background-color: white;
+}
+.home-about-us-text{
+  width: 60%;
+  height:60vh;
+  margin-left: 20%;
+  margin-top: 12vh;
+  font-family: "Ubuntu";
+  /*border: 2px solid black;*/
+}
+.about-us-header{
+  width: 100%;
+  height: 12%;
+  /*border: 2px solid black;*/
+  font-size:4rem;
+  margin-bottom: 2vh;
+  font-weight: bold;
+}
+.about-us-header-subtext{
+  width: 100%;
+  height: 70%;
+  color: #4F5354;
+  font-size: 2rem;
+  /*border: 2px solid black;*/
+  margin-bottom: 2vh;
+
+}
+.about-us-header-subtext p{
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.about-us-learn-more{
+  width:150px;
+  height:35px;
+  border: 2px solid #4F5354;
+  border-radius: 25px;
+  display:flex;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/*----------------------FOUR STEPS-------------------*/
+.home-four-steps{
+  width: 100%;
+  height: 55vh;
+  overflow: hidden;
+  transform: skewY(-8deg);
+  display: flex;
+  flex-wrap: wrap;
+}
+.four-step-image{
+  width: 19.85%;
+  height:120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  /*background-color: #A18D5C;*/
+  transform: skewY(8deg);
+  position: relative;
+  top: -50px;
+}
+#step-one{
+  background-image:url('http://www.softwareassociates.in/wp-content/uploads/2015/07/inventory.jpg');
+  background-position: 75% 25%;
+}
+#step-two{
+  background-image:url('http://blog.directcapital.com/wp-content/uploads/2015/12/CR1067_Restaurant-owner-with-tablet.jpg');
+  background-position: 25% 70%;
+}
+#step-logo{
+  background-image:url('.././images/hermes.png');
+  background-size: contain;
+  background-position: 50% 35%;
+  background-blend-mode: overlay;
+  background-color: #56647D;
+
+}
+#step-three{
+  background-image:url('http://cdnimg3.webstaurantstore.com/uploads/buying_guide/2015/2/experienced-chef.jpg');
+}
+#step-four{
+  background-image: url('https://c.o0bg.com/rf/image_1920w/Boston/2011-2020/2015/01/02/BostonGlobe.com/Magazine/Images/p16_AldenHarlow.jpg');
+}
+
+/*---------------------------TESTIMONIAL----------------------*/
+.home-testimonial{
+  margin-top:16vh;
+  width: 100%;
+  height: 75vh;
+  margin-bottom: 20vh;
+}
+
+.footer-contact{
+  width: 100%;
+  position: absolute;
+  bottom: -260vh;
+  /*left: 0px;*/
+  height: 45vh;
+  display:flex;
+  align-items: center;
+  transform: skewY(-8deg);
+  background-color: #282F35;
+  /*border:3px solid black;*/
+
+}
