@@ -1,12 +1,25 @@
-angular.module('hermes').controller('ordersCtrl', function($scope){
+angular.module('hermes').controller('ordersCtrl', function($scope, mainService){
+
+//This segment should be removed when the project has working login
+$scope.user = "578bf14a5b25dcac0b00f9e6";
+$scope.orders = function(){
+  mainService.getDataOrders($scope.user).then(function(){
+    console.log("something");
+    $scope.allOrders = mainService.retrieveAllOrders();
+    console.log($scope.allOrders)
+  });
+}();
+// ////////////////////////////////////////////////////
 
 
+//This section hosts the iff that grabs our data from the server
+//This segment should be uncommented when the above portion is removed
+// $scope.getData = function(){
+//   $scope.user = mainService.userId();
+//   $scope.allOrders = mainService.retrieveAllOrders();
+// }();
 
-
-
-
-
-
+$scope.allOrders = {};
 });
 
 

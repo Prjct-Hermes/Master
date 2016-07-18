@@ -60,6 +60,11 @@ return this.User
 //  }
 // }
 
+
+//This var brings the scope back to the mainService
+//allowing the data to be saved to the service.
+var self = this;
+
 //These are your user requests
 this.findUser = function(id, key){
   var deferred = $q.defer();
@@ -67,7 +72,7 @@ this.findUser = function(id, key){
     method: 'GET',
     url: "/api/users/" + id + "," + key
   }).then(function(response){
-    this.user = response.data._id;
+    self.user = response.data._id;
     deferred.resolve(response.data);
   })
   console.log(deferred.promise, " This.user", this.user)
@@ -113,7 +118,7 @@ this.getDataStockItems =  function(id){
     method: 'GET',
     url: "/api/stockItems/" + id
   }).then(function(response){
-    this.allStockItems = response.data;
+    self.allStockItems = response.data;
     deferred.resolve(response.data);
   })
   return deferred.promise
@@ -158,7 +163,7 @@ this.getDataRecipes =  function(id){
     method: 'GET',
     url: "/api/recipes/" + id
   }).then(function(response){
-     this.allRecipes = response.data;
+     self.allRecipes = response.data;
     deferred.resolve(response.data);
   })
   return deferred.promise
@@ -203,7 +208,7 @@ this.getDataOrders =  function(id){
     method: 'GET',
     url: "/api/orders/" + id
   }).then(function(response){
-    this.allOrders = response.data;
+    self.allOrders = response.data;
     deferred.resolve(response.data);
   })
   return deferred.promise
