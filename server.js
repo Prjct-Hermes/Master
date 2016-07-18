@@ -5,7 +5,11 @@ var express = require('express'),
     stockItemsCtrl = require('./controllers/stockItemsCtrl'),
     recipesCtrl = require('./controllers/recipesCtrl'),
     ordersCtrl = require('./controllers/ordersCtrl'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    session = require('express-session'),
+    passport = require('./services/passport'),
+    app = express();
+
 
 mongoose.connect("mongodb://localhost/hermes",  function (err, res) {
       if (err) {
@@ -25,9 +29,28 @@ var corsOptions = {
 };
 
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static('Public'));
 app.use(cors(corsOptions));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/Public'));
+app.use(session({
+  secret: "ifklsjfl;sdjiogjsdfsdoaidf",
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//login
+app.post('/login', passport.authenticate('local', {
+   successRedirect: '/me',
+}));
+app.get('/logout', function(req, res, next){
+  req.logout();
+  return res.status(200).send('logged out');
+});
+app.get('/me', function(req, res, next){
+  console.log(req.user);
+});
 
 //User DB
 app.get('/api/users/:id,:password',  usersCtrl.findIndividual)
