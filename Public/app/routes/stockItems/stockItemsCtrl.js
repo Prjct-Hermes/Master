@@ -7,8 +7,8 @@ angular.module('hermes')
 
    var user = "578d45978ad845d80e3f695a";
   // get ingredients
-  mainService.getDataStockItems($scope.user).then(function(response){
-        $scope.items = response.data;
+  mainService.getDataStockItems(user).then(function(response){
+        $scope.items = response;
   });
 
 
@@ -17,12 +17,12 @@ angular.module('hermes')
   //create ingredient
   $scope.createStockItems = function(newItem){
     newItem.userId = user;
-    console.log(newItem);
+
     mainService.createStockItems(newItem).then(function(response){
       $scope.newItem = {};
 
-      mainService.getDataStockItems($scope.user).then(function(response){
-            $scope.items = response.data;
+      mainService.getDataStockItems(user).then(function(response){
+            $scope.items = response;
       });
     })
   }
