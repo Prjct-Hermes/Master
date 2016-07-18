@@ -37,7 +37,7 @@ var schema = new Schema({
     index: false,
   }
   });
-  var StockItem = mongoose.model('stockItem', schema);
+  var StockItem = mongoose.model('stockItems', schema);
   module.exports = {
     getStockItem : function(req, res){
       if(!req.params.id){

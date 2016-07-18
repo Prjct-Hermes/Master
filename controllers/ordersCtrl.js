@@ -12,7 +12,7 @@ var schema = new Schema({
     index: true,
   },
   order: {
-    type: {},
+    type: Schema.Types.Mixed,
     required: false,
     index: false,
   }

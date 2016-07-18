@@ -17,7 +17,7 @@ var schema = new Schema({
     index: false,
   },
   ingredients: {
-    type: {},
+    type: Schema.Types.Mixed,,
     required: false,
     index: false,
   },
@@ -54,6 +54,7 @@ var schema = new Schema({
         return res.status(400).send("id required to search the database")
       }
       Recipes.findById(req.params.id, function(err, response){
+        console.log(req.params.id)
         return err ? res.status(500).json(err) : res.json(response);
       })
     },

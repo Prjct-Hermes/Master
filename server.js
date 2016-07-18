@@ -54,30 +54,3 @@ var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log("Listening on port", port)
 })
-
-
-
-
-// //Product Best DB
-// app.post('/api/products', serverCtrl.createProduct);
-// app.get('/api/products/:id', serverCtrl.getProducts)
-// app.put('/api/products/:id', serverCtrl.updateProduct)
-// app.delete('/api/products/:id', serverCtrl.removeProduct)
-//
-// //Product Most Likely DB
-// app.post('/api/mostLikely', mostLikelyCtrl.createProductMostLikely);
-// app.get('/api/mostLikely/:id', mostLikelyCtrl.getProductsMostLikely)
-// app.put('/api/mostLikely/:id', mostLikelyCtrl.updateProductMostLikely)
-// app.delete('/api/mostLikely/:id', mostLikelyCtrl.removeProductMostLikely)
-//
-// //Product Worst DB
-// app.post('/api/worst', worstCtrl.createProductWorst);
-// app.get('/api/worst/:id', worstCtrl.getProductsWorst)
-// app.put('/api/worst/:id', worstCtrl.updateProductWorst)
-// app.delete('/api/worst/:id', worstCtrl.removeProductWorst)
-//
-// //Product Blended DB
-// app.post('/api/blended', blendedCtrl.createProductBlended);
-// app.get('/api/blended/:id', blendedCtrl.getProductsBlended)
-// app.put('/api/blended/:id', blendedCtrl.updateProductBlended)
-// app.delete('/api/blended/:id', blendedCtrl.removeProductBlended)
