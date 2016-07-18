@@ -16,23 +16,19 @@ Sign up modal:
 
 
       <form ng-model="user" class="form" role="form">
-
-              <legend>LOGIN</legend>
-
-              <div class="form-group">
-                  <input ng-model="user.email" class ="input-box" type="email" name="email" placeholder="Your Email..." />
-              </div>
-
-              <div class="form-group">
-                  <input ng-model="user.password" class ="input-box" type="password" name="password" placeholder="Your Password..." />
-              </div>
-
-              <div class="login-btns">
-                <button ng-click="login(user)" class="login-btn">Login</button>
-                <button class="signup-btn">Sign-Up</button>
-              </div>
-
-
+        <div class="input-wrap">
+          <legend>LOGIN</legend>
+          <div class="form-group">
+            <input ng-model="user.email" class ="input-box" type="email" name="email" placeholder="Your Email..." />
+          </div>
+          <div class="form-group">
+            <input ng-model="user.password" class ="input-box" type="password" name="password" placeholder="Your Password..." />
+          </div>
+          <div class="login-btns">
+            <button ng-click="login(user)" class="login-btn">Login</button>
+            <button class="signup-btn">Sign-Up</button>
+          </div>
+        </div>
       </form>
 
   </div>
