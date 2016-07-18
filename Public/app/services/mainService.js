@@ -117,16 +117,6 @@ this.getDataStockItems =  function(id){
   })
   return deferred.promise
 }
-this.findIndividualStockItems = function(id){
-  var deferred = $q.defer();
-  $http({
-    method: 'GET',
-    url: "/api/stockItems/" + id
-  }).then(function(response){
-    deferred.resolve(response.data);
-  })
-  return deferred.promise
-}
 this.destroyStockItems = function(id){
   var deferred = $q.defer();
   $http({

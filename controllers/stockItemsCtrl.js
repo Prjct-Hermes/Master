@@ -38,6 +38,7 @@ var schema = new Schema({
   }
   });
   var StockItem = mongoose.model('stockItems', schema);
+
   module.exports = {
     getStockItem : function(req, res){
       if(!req.params.id){
@@ -53,15 +54,6 @@ var schema = new Schema({
         return err ? res.status(500).json(err) : res.json(response);
     })
   },
-
-    findIndividualStockItem : function(req, res){
-      if(!req.params.id){
-        return res.status(400).send("id required to search the database")
-      }
-      StockItem.findById(req.params.id, function(err, response){
-        return err ? res.status(500).json(err) : res.json(response);
-      })
-    },
 
     updateStockItem : function(req, res){
       if(!req.params.id){

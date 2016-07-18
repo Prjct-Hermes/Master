@@ -31,21 +31,22 @@ app.use(express.static(__dirname + '/public'));
 
 //User DB
 app.get('/api/users/:id,:password',  usersCtrl.findIndividual)
-app.post('/api/users',  usersCtrl.createUser);
+app.post('/api/users',  usersCtrl.createUser)
 app.put('/api/users/:id',  usersCtrl.updateUser)
 app.delete('/api/users/:id',  usersCtrl.removeUser)
 
-app.post('/api/stockItems', stockItemsCtrl.createStockItem);
+//stockItems
+app.post('/api/stockItems', stockItemsCtrl.createStockItem)
 app.get('/api/stockItems/:id', stockItemsCtrl.getStockItem)
 app.put('/api/stockItems/:id', stockItemsCtrl.updateStockItem)
 app.delete('/api/stockItems/:id', stockItemsCtrl.removeStockItem)
 
-app.post('/api/recipes', recipesCtrl.createRecipes);
+app.post('/api/recipes', recipesCtrl.createRecipes)
 app.get('/api/recipes/:id', recipesCtrl.getRecipes)
 app.put('/api/recipes/:id', recipesCtrl.updateRecipes)
 app.delete('/api/recipes/:id', recipesCtrl.removeRecipes)
 
-app.post('/api/orders', ordersCtrl.createOrders);
+app.post('/api/orders', ordersCtrl.createOrders)
 app.get('/api/orders/:id', ordersCtrl.getOrders)
 app.put('/api/orders/:id', ordersCtrl.updateOrders)
 app.delete('/api/orders/:id', ordersCtrl.removeOrders)
