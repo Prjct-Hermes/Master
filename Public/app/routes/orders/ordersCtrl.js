@@ -2,9 +2,9 @@ angular.module('hermes').controller('ordersCtrl', function($scope, mainService){
 
 //This segment should be removed when the project has working login
 $scope.user = "578bf14a5b25dcac0b00f9e6";
-$scope.orders = function(){
-  mainService.getDataOrders($scope.user).then(function(){
-    $scope.allOrders = mainService.retrieveAllOrders();
+$scope.recipes = function(){
+  mainService.getDataRecipes($scope.user).then(function(){
+    $scope.allRecipes = mainService.retrieveAllRecipes();
   });
 }();
 // ////////////////////////////////////////////////////
@@ -14,16 +14,100 @@ $scope.orders = function(){
 //This segment should be uncommented when the above portion is removed
 // $scope.getData = function(){
 //   $scope.user = mainService.userId();
-//   $scope.allOrders = mainService.retrieveAllOrders();
+//   $scope.allRecipes = mainService.retrieveAllRecipes();
 // }();
 
-$scope.allOrders = {};
-});
+$scope.allRecipes = {};
+$scope.order ={};
 
 
+$scope.incrementOrder = function(name, id){
+  console.log("1");
+  if (!$scope.order.userId){
+    console.log("2");
+    $scope.order.userId = $scope.user;
+    $scope.order.date = new Date();
+    $scope.order.recipes = [];
+    $scope.order.recipes.push({"name": name,"id": id,"quantity": 1});
+  };
+  if($scope.order.recipes.length < 1){
+    console.log("3")
+    $scope.order.recipes.push({"name": name,"id": id,"quantity": 1});
+  }else {
+    console.log("4");
+    var check = true;
+    for (var i = 0; i < $scope.order.recipes.length; i++){
+      if ($scope.order.recipes[i].id === id){
+        console.log("5");
+        check = false;
+        $scope.order.recipes[i].quantity++;
+      }
+    }
+    if(check){
+      console.log("6");
+      $scope.order.recipes.push({"name": name,"id": id,"quantity": 1});
+    }
+  }
+  console.log("7", $scope.order);
+}
 
+$scope.decrementOrder = function(name, id){
+  console.log("1");
+  for (var i = 0; i < $scope.order.recipes.length; i++){
+    if ($scope.order.recipes[i].id === id){
+      console.log("2", $scope.order);
+      $scope.order.recipes[i].quantity--;
+      if ($scope.order.recipes[i].quantity < 1){
+        $scope.order.recipes.splice(i)
+      }
+    }
+  }
+  console.log("3", $scope.order);
+}
+
+$scope.createOrder = function(){
+  console.log("creating order?");
+  mainService.createOrders($scope.order);
+  console.log("Order created");
+}
+
+// this.recipe = {
+//  "userId" : "",
+//  "name" : "",
+//  "description" : "",
+//  "ingredients" :{
+//   "name" : "",
+//   "id" : "",
+//   "quantity" :0,
+//   "unitOfMeasure" : "",
+//  }
+//  "instructions" : "",
+//  "price" :0
+// }
+//
+// this.order = {
+//  "userId" : "",
+//  "date" : "",
+//  "recipes" : [{
+//      "name" :"",
+//      "id" : "",
+//      "quantity" : 0
+//  }
+//  ]
+// }
 
 /*
+Unit options
+ml
+l
+tsp
+tbsp
+fl-oz
+cup
+pnt
+qt
+gal
+
 
 1.Convert all recipes ingredients converted to ingredient unit of measure
 2.multiply by qty of recipe
@@ -35,3 +119,4 @@ $scope.allOrders = {};
 
 convert($scope.recipe.ingredientQty).from($scope.recipe.ingredientUnitOfMeasure).to($scope.stockItems.unitOfMeasure)
 */
+})

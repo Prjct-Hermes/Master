@@ -4,9 +4,17 @@ repeat over recipes and display
 add to order (Increment and decriment on each recipe)
 confirm and totals
  -->
-<div style="width: 10em;height:10em;border:5px solid blue;color:red" class="" ng-repeat="order in allOrders">
+<div style="width: 10em;height:10em;border:5px solid blue;color:red" class="" ng-repeat="recipe in allRecipes">
   <div class="">
-    {{order._id}} and date {{order.date}}
+    {{recipe.name}}
   </div>
-
+  <div class=""style="width:1.5em;height:1.5em;border:1px solid red;color:blue" ng-click="incrementOrder(recipe.name, recipe._id)">
+    +
+  </div>
+  <div class=""style="width:1.5em;height:1.5em;border:1px solid red;color:blue" ng-click="decrementOrder(recipe.name, recipe._id)">
+    -
+  </div>
+</div>
+<div class="" style="width:5em;height5em;border:10px solid green;color:purple" ng-click="createOrder()">
+  Create Order
 </div>

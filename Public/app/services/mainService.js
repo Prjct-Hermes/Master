@@ -53,11 +53,12 @@ return this.User
 // this.order = {
 //  "userId" : "",
 //  "date" : "",
-//  "recipes" : {
+//  "recipes" : [{
 //      "name" :"",
 //      "id" : "",
 //      "quantity" : 0
 //  }
+//  ]
 // }
 
 
