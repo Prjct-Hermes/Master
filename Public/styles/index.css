@@ -11,11 +11,12 @@ body {
 #main-navbar{
   width: 100%;
   height: 0vh;
-  background-color: hsla(360, 0%, 100%, 0.9);
+  background-color: hsla(360, 0%, 100%, 0.8);
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   top: 0px;
   left: 0px;
+  color: #0C0C0C;
   font-family: "Roboto Slab";
   transition: height 0.3s ease 0s;
 }
@@ -27,6 +28,8 @@ body {
 
 #main-navbar-logo-img{
   background-color: hsla(360, 0%, 100%, 0.9);
+  /*border-right: 3px solid black;*/
+
 
   transition: height .3s ease 0s, margin-left .3s ease 0s, margin-top .3s ease 0s;
 }
@@ -55,7 +58,7 @@ body {
 /*---------------------FOOTER------------------------*/
 .bottom-of-footer{
   width: 100%;
-  height:65vh;
+  height:100%;
   /*position: absolute;*/
   /*margin-top: 25vh;*/
   background-color: #282F35;
@@ -63,7 +66,7 @@ body {
 
 .footer-contact-form{
   width: 66%;
-  height: 55vh;
+  height: 45vh;
   z-index: 100;
   position: relative;
   margin-left: 17%;
@@ -151,11 +154,16 @@ body {
   background-color: #101519;
 }
 .footer-socialmedia{
-  width: 85%;
+  width: 25%;
   height: 20%;
-  margin: auto;
-  border: 2px solid lightblue;
-
+  margin-left: 5vw;
+  /*border: 2px solid lightblue;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-socialmedia img{
+  height: 40px;
 }
 /*.footer-contact-us{
   width: 100%;
