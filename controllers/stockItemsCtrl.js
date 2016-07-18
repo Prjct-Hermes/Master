@@ -32,7 +32,7 @@ var schema = new Schema({
     index: false,
   },
   alertDate: {
-    type: String,
+    type: Date,
     required: false,
     index: false,
   }

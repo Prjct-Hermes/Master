@@ -2,11 +2,11 @@ Create Items
 <div ng-model="newItem">
   <input type="text" placeholder="Name" ng-model="newItem.name">
   <textarea placeholder="description" ng-model="newItem.description" cols="30" rows="10"></textarea>
-  <input type="text" placeholder="quantity" ng-model="newItem.quantity">
+  <input type="number" placeholder="quantity" ng-model="newItem.quantity">
   <input type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure">
-  <input type="text" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
-  <input type="text" placeholder="alertDate" ng-model="newItem.alertDate">
-  <button ng-click="createItem(newItem)">Submit</button>
+  <input type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
+  <input type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
+  <button ng-click="createStockItems(newItem)">Submit</button>
 </div>
 
 {{items}}
