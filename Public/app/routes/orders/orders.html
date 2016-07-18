@@ -8,13 +8,26 @@ confirm and totals
   <div class="">
     {{recipe.name}}
   </div>
-  <div class=""style="width:1.5em;height:1.5em;border:1px solid red;color:blue" ng-click="incrementOrder(recipe.name, recipe._id)">
+  <div class=""style="width:1.5em;height:1.5em;border:1px solid red;color:blue" ng-click="incrementOrder(recipe)">
     +
   </div>
-  <div class=""style="width:1.5em;height:1.5em;border:1px solid red;color:blue" ng-click="decrementOrder(recipe.name, recipe._id)">
+  <div class=""style="width:1.5em;height:1.5em;border:1px solid red;color:blue" ng-click="decrementOrder(recipe)">
     -
   </div>
 </div>
 <div class="" style="width:5em;height5em;border:10px solid green;color:purple" ng-click="createOrder()">
   Create Order
+</div>
+
+<div class="" style="width:auto;height:auto;border:10px solid purple;color:red">
+  <div class="" style="border:2px solid black">
+    Order Summary
+  </div>
+  <div class="">
+    {{order.total | currency}}
+  </div>
+  <div class="" ng-repeat="recipe in order.recipes">
+    {{recipe.name}}  qty = {{recipe.quantity}}  sub-price = {{recipe.price | currency}}
+  </div>
+
 </div>
