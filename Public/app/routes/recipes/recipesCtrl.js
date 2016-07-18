@@ -1,3 +1,16 @@
+angular.module('hermes').controller('recipesCtrl', function($scope){
+
+
+
+
+
+
+
+
+});
+
+
+
 /*
 CRUD
 Ingredients will need to pull id from Stock items

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="640px"
+   height="480px"
+   id="svg3149"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="Food Truck.svg">
+  <title
+     id="title3176">food truck</title>
+  <defs
+     id="defs3151">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4562">
+      <stop
+         style="stop-color:#fb8b00;stop-opacity:1;"
+         offset="0"
+         id="stop4564" />
+      <stop
+         style="stop-color:#fd3301;stop-opacity:1"
+         offset="1"
+         id="stop4566" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4554">
+      <stop
+         style="stop-color:#336699;stop-opacity:1;"
+         offset="0"
+         id="stop4556" />
+      <stop
+         style="stop-color:#003366;stop-opacity:1"
+         offset="1"
+         id="stop4558" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4546">
+      <stop
+         style="stop-color:#fb8b00;stop-opacity:1;"
+         offset="0"
+         id="stop4548" />
+      <stop
+         style="stop-color:#fd3301;stop-opacity:1"
+         offset="1"
+         id="stop4550" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4392">
+      <stop
+         style="stop-color:#888888;stop-opacity:1"
+         offset="0"
+         id="stop4394" />
+      <stop
+         style="stop-color:#333333;stop-opacity:1"
+         offset="1"
+         id="stop4396" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4282">
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1"
+         offset="0"
+         id="stop4284" />
+      <stop
+         style="stop-color:#f0a513;stop-opacity:1"
+         offset="1"
+         id="stop4286" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect4147"
+       is_visible="true"
+       pattern="M 0,0 0,10 10,5 z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4282"
+       id="radialGradient4288"
+       cx="-372.71536"
+       cy="-456.00946"
+       fx="-372.71536"
+       fy="-456.00946"
+       r="527.50133"
+       gradientTransform="matrix(1.2027548,-0.27522245,0.04630359,0.19322854,104.17627,-201.81903)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4392"
+       id="radialGradient4398"
+       cx="-455.10947"
+       cy="376.07187"
+       fx="-455.10947"
+       fy="376.07187"
+       r="505.95119"
+       gradientTransform="matrix(2.1237294,0.05776729,-0.01586055,0.55359569,517.38462,44.701901)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4546"
+       id="radialGradient4552"
+       cx="-416.43695"
+       cy="-73.864449"
+       fx="-416.43695"
+       fy="-73.864449"
+       r="117.994"
+       gradientTransform="matrix(0.17017681,0.88182456,-0.80936331,0.1561929,-402.78966,330.09703)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4554"
+       id="radialGradient4560"
+       cx="-275.87814"
+       cy="-75.958778"
+       fx="-275.87814"
+       fy="-75.958778"
+       r="118.10638"
+       gradientTransform="matrix(0.32457353,0.41730898,-0.75053159,0.58374689,-240.7823,99.850092)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4562"
+       id="radialGradient4568"
+       cx="-162.70094"
+       cy="23.485119"
+       fx="-162.70094"
+       fy="23.485119"
+       r="45.66135"
+       gradientTransform="matrix(0.87951072,0.39977768,-0.25632793,0.56392152,-11.02126,90.757104)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4562-7"
+       id="radialGradient4586-1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.5820889,0.26458596,-0.1696462,0.37322171,498.35225,291.59403)"
+       cx="-162.70094"
+       cy="23.485119"
+       fx="-162.70094"
+       fy="23.485119"
+       r="45.66135" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4562-7">
+      <stop
+         style="stop-color:#fb8b00;stop-opacity:1;"
+         offset="0"
+         id="stop4564-4" />
+      <stop
+         style="stop-color:#fd3301;stop-opacity:1"
+         offset="1"
+         id="stop4566-0" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4554-4"
+       id="radialGradient4598-9"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.21481337,0.2761887,-0.49672635,0.38634273,346.28881,297.61213)"
+       cx="-275.87814"
+       cy="-75.958778"
+       fx="-275.87814"
+       fy="-75.958778"
+       r="118.10638" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4554-4">
+      <stop
+         style="stop-color:#336699;stop-opacity:1;"
+         offset="0"
+         id="stop4556-8" />
+      <stop
+         style="stop-color:#003366;stop-opacity:1"
+         offset="1"
+         id="stop4558-8" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4546-4"
+       id="radialGradient4601-2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.11262861,0.5836203,-0.53566312,0.10337351,239.06707,449.99695)"
+       cx="-416.43695"
+       cy="-73.864449"
+       fx="-416.43695"
+       fy="-73.864449"
+       r="117.994" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4546-4">
+      <stop
+         style="stop-color:#fb8b00;stop-opacity:1;"
+         offset="0"
+         id="stop4548-5" />
+      <stop
+         style="stop-color:#fd3301;stop-opacity:1"
+         offset="1"
+         id="stop4550-5" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.54781348"
+     inkscape:cx="11.808189"
+     inkscape:cy="165.99518"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3154">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>food truck</dc:title>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>food truck</rdf:li>
+            <rdf:li>meals on wheels</rdf:li>
+            <rdf:li>restaurant</rdf:li>
+            <rdf:li>mobile food</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:date>2012-05-01</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>netalloy</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       style="fill:#333333;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 194.03692,309.38124 c -1.68295,0.027 -3.37834,0.16784 -5.05989,0.34194 8.72892,1.07591 16.70101,4.97755 21.09004,11.13649 7.39165,10.37433 1.85968,23.10852 -12.38511,28.43192 -14.24479,5.32283 -31.78024,1.22852 -39.17247,-9.14581 -1.59509,-2.23928 -2.5754,-4.60786 -3.00761,-6.96765 -0.85649,5.11436 0.41645,10.44102 4.2111,15.36688 10.18003,13.21466 34.346,18.44541 53.96342,11.6648 19.61688,-6.78063 27.27146,-22.9936 17.09142,-36.20827 -7.31697,-9.49849 -21.8483,-14.87121 -36.7309,-14.6203 z"
+       id="path3172"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:url(#radialGradient4601-2);fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 284.29204,308.07109 -58.27015,-1.25673 c -3.91436,-22.92236 -72.71404,-44.16198 -90.7904,4.16376 l -43.368632,9.04046 c -3.880767,0.36466 -5.676938,-3.00016 -6.271103,-8.51419 L 82.980584,183.73516 c -1.169057,-6.52231 3.101496,-7.20731 7.279098,-7.99216 47.618898,-20.02749 137.563438,-30.54638 205.330908,-22.16483 z"
+       id="path3168"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:url(#radialGradient4598-9);fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 292.95127,316.99916 90.20849,12.36232 c 21.31241,-46.20922 63.11089,-33.97793 96.61074,8.99088 l 26.18983,12.36232 0,-62.9356 -67.5113,-33.15324 -52.37911,1.124 -2.32824,-78.66937 32.59153,-1.124 -4.31495,-20.26889 c -44.2762,2.44765 -74.24293,-0.63166 -108.35036,-2.11139 z"
+       id="path3170"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#333333;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 131.47482,208.26321 86.08226,0 c 6.41499,0 9.47086,5.65248 9.83367,11.18033 l 2.64767,40.30586 c 0.42612,6.48772 -5.4204,11.7342 -12.15272,11.7342 l -84.93569,0 c -6.73287,0 -12.00758,-5.23498 -12.15327,-11.7342 l -0.90191,-40.30586 c -0.13824,-6.19247 5.16445,-11.18033 11.57999,-11.18033 z"
+       id="rect3944"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssssss"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#fb8b00;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 107.29589,202.92911 129.7842,-1.68572 -5.81978,-7.86688 c 0,0 -4.23414,-1.18885 -6.40226,-1.124 -35.29402,1.05975 -71.92514,1.43356 -112.3243,2.24744 -1.3988,0.0269 -2.32769,3.372 -2.32769,3.372 z"
+       id="path3946"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccsscc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#cccccf;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 319.07178,186.07135 38.05349,-2.61228 c 7.26375,-0.49818 13.14449,5.66043 13.14449,12.6912 l 0,43.90121 c 0,7.03078 -5.8849,13.24147 -13.14449,12.6912 l -34.44643,-2.61228 c -6.71166,-0.50883 -12.35019,-5.23595 -12.15272,-11.73364 l 1.33112,-43.76994 c 0.19747,-6.49824 0.49896,-8.09465 7.21454,-8.55547 z"
+       id="rect3949"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssssss"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#666666;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 394.5089,252.3784 c -3.49631,-0.81952 -6.17359,-2.58753 -5.82033,-7.86688 -0.38776,-18.54348 -0.77553,-37.08697 -1.16385,-55.63045 0.31537,-3.65938 -1.19191,-8.82673 6.40171,-6.4623 4.074,0 8.14802,0 12.22204,0 6.19539,4.80477 7.98987,12.65957 10.0927,19.66519 4.45049,13.81056 12.50737,27.92188 17.06137,41.70062 0.38743,4.48178 -2.59816,6.98922 -7.6368,8.47733 -9.69962,-0.0932 -21.45721,0.2102 -31.15684,0.11622 z"
+       id="path3954"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#666666;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 444.2688,249.84981 c -2.60159,1.58501 -4.56855,-0.50726 -6.4017,-3.372 0,0 -18.30052,-56.75155 -19.49661,-58.4396 -3.78305,-5.3383 2.9096,-7.02402 2.9096,-7.02402 l 10.47628,1.12344 c 4.01531,-0.14299 5.82962,2.54741 7.56554,5.3383 l 14.84068,48.32584 c 2.16659,6.59943 0.77033,8.38284 -0.87289,9.83319 z"
+       id="path4017"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccscccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       sodipodi:nodetypes="ccscccccc"
+       inkscape:connector-curvature="0"
+       id="path4019"
+       d="m 461.58139,240.37416 c -2.22369,1.36041 -3.9048,-0.43506 -5.47233,-2.89339 0,0 -15.64198,-48.70863 -16.66421,-50.15712 -3.23349,-4.5819 2.48721,-6.02887 2.48721,-6.02887 l 8.9542,0.96502 c 3.43182,-0.12258 3.33692,-0.19839 4.82073,2.19729 l 14.3307,43.86045 c 1.85209,5.66426 0.65784,7.19457 -0.74628,8.43975 z"
+       style="fill:#aaaaaa;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#fd3301;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 422.14483,175.72407 31.43584,-3.96549 -1.59622,-10.91748 -35.06933,-2.02297 z"
+       id="path4021"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#d40000;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 454.16259,157.13241 0,-5.05716 -41.60372,-13.10883 8.47159,13.51753 z"
+       id="path4023"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#f44800;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 413.65581,152.16312 -5.76159,-13.29305 C 302.94185,141.39654 204.78358,119.74929 88.646556,154.67214 L 78.18774,172.42037 c 128.95754,-41.78935 229.29664,-16.69554 335.46807,-20.25725 z"
+       id="path4025"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:url(#radialGradient4586-1);fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 442.23208,252.65897 33.4644,-16.29548 48.88759,22.75779 c -0.40719,14.75629 -1.27909,28.97482 -16.87797,26.12922 z"
+       id="path4027"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#003366;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 508.28801,339.47636 0.29097,-51.135 c 19.40392,2.51006 15.67176,-24.77344 19.49662,-23.03892 l -3.78306,41.30126 z"
+       id="path4029"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#013397;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 512.07107,339.75695 8.72994,-1.40459 15.42261,-36.80582 -6.69267,-4.2143 0,5.3383 z"
+       id="path4031"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       style="fill:#333333;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 506.54225,344.53352 0.58192,16.85776 11.63955,-5.33829 14.25876,-42.98699 -1.45479,-8.42916 -14.84069,36.52524 z"
+       id="path4033"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4123"
+       d="m 316.5296,283.09542 c -2.63223,2.29684 -4.65908,-3.85545 -8.07829,-3.61732 -3.41919,0.23813 -4.64966,6.61725 -7.54995,4.70612 -2.89974,-1.91169 2.06294,-5.8309 0.78994,-9.16218 -1.27301,-3.33071 -7.4481,-2.58516 -6.60776,-6.06289 0.84033,-3.4783 5.93413,0.25204 8.56692,-2.0448 2.63223,-2.29684 0.0464,-8.21511 3.4656,-8.45324 3.41919,-0.23813 1.60492,5.98669 4.50467,7.89782 2.89974,1.91168 7.47713,-2.49212 8.74957,0.83916 1.273,3.33071 -4.94236,3.44762 -5.7827,6.92592 -0.84033,3.47829 4.57479,6.67457 1.942,8.97141 z"
+       inkscape:transform-center-y="-1.763672"
+       inkscape:transform-center-x="0.45367521"
+       style="fill:#eeeeee;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4125"
+       d="m 351.44937,289.83886 c -2.63279,2.29684 -4.65964,-3.85601 -8.07884,-3.61788 -3.4192,0.23813 -4.64966,6.61781 -7.5494,4.70612 -2.89974,-1.91169 2.06294,-5.8309 0.78994,-9.16218 -1.27301,-3.33071 -7.44866,-2.5846 -6.60832,-6.06289 0.84034,-3.4783 5.93469,0.25204 8.56692,-2.0448 2.63223,-2.29684 0.0463,-8.21511 3.4656,-8.45324 3.41919,-0.23813 1.60493,5.98669 4.50467,7.89838 2.89974,1.91112 7.47713,-2.49212 8.75013,0.8386 1.273,3.33071 -4.94236,3.44818 -5.7827,6.92592 -0.84033,3.47829 4.57423,6.67513 1.942,8.97197 z"
+       inkscape:transform-center-y="-1.763781"
+       inkscape:transform-center-x="0.45366619"
+       style="fill:#eeeeee;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4127"
+       d="m 398.00871,287.59086 c -2.63279,2.29684 -4.65964,-3.85545 -8.07885,-3.61732 -3.41919,0.23813 -4.64966,6.61725 -7.54939,4.70556 -2.89974,-1.91113 2.06294,-5.8309 0.78993,-9.16162 -1.273,-3.33071 -7.44865,-2.58516 -6.60832,-6.06289 0.84034,-3.4783 5.9347,0.25204 8.56693,-2.0448 2.63223,-2.29684 0.0464,-8.21511 3.4656,-8.45324 3.41919,-0.23813 1.60492,5.98669 4.50466,7.89782 2.89975,1.91168 7.47714,-2.49212 8.75013,0.83916 1.27301,3.33071 -4.94235,3.44762 -5.78269,6.92592 -0.84034,3.47829 4.57423,6.67457 1.942,8.97141 z"
+       inkscape:transform-center-y="-1.7637977"
+       inkscape:transform-center-x="0.45366385"
+       style="fill:#eeeeee;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4137"
+       d="m 433.65185,322.48157 c -1.68239,0.027 -3.37834,0.16841 -5.05989,0.34251 8.72948,1.07534 16.70156,4.97698 21.09003,11.13592 7.39222,10.37433 1.85968,23.10909 -12.38511,28.43192 -14.24477,5.32284 -31.78024,1.22852 -39.17189,-9.14581 -1.59566,-2.23872 -2.57597,-4.60786 -3.00818,-6.96764 -0.85649,5.11435 0.41645,10.44101 4.21111,15.36688 10.18002,13.21466 34.34599,18.44541 53.96342,11.6648 19.61743,-6.78008 27.27145,-22.99361 17.09141,-36.20827 -7.31698,-9.49794 -21.8483,-14.87066 -36.7309,-14.62031 z"
+       style="fill:#333333;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\foodtruck\great american.png"
+       inkscape:export-xdpi="39.060242"
+       inkscape:export-ydpi="39.060242" />
+  </g>
+</svg>

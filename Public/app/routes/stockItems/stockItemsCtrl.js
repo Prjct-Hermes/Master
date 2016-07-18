@@ -1,3 +1,15 @@
+angular.module('hermes').controller('stockItemsCtrl', function($scope){
+
+
+
+
+
+
+
+
+});
+
+
 /*
 CRUD
 

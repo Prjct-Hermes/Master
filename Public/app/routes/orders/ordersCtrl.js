@@ -1,3 +1,17 @@
+angular.module('hermes').controller('ordersCtrl', function($scope){
+
+
+
+
+
+
+
+
+});
+
+
+
+
 /*
 
 1.Convert all recipes ingredients converted to ingredient unit of measure

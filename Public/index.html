@@ -1,5 +1,76 @@
-<!--Header
-Navbar
-body
-main-container
-Footer-->
+<!DOCTYPE html>
+<html ng-app='hermes'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <title></title>
+  </head>
+  <body>
+    <nav id="main-navbar">
+      <div id="main-navbar-logo">
+        <!-- ==================PLAYING WITH LOGOS=================== -->
+
+        <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
+        <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
+      </div>
+      <div ui-sref="login" class="main-navbar-menu">SIGN UP</div>
+      <div class="main-navbar-menu">LEARN MORE</div>
+      <div ui-sref="home" class="main-navbar-menu">HOME</div>
+      <!-- ALERTS -->
+      <div class="main-navbar-menu-alert"></div>
+    </nav>
+
+    <!-- Just for practice and responsive testing comment out below when using other views -->
+    <!-- UI_VIEW -->
+    <ui-view></ui-view>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+      <section class="bottom-of-footer">
+
+        <!-- CONTACT US -->
+        <div class="footer-contact-form">
+          <div class="footer-contact-form-head">CONTACT US <br> <span>Learn in minutes how you can save hundreds.</span></div>
+          <div class="footer-contact-image-left"></div>
+          <div class="footer-contact-form-inputs">
+            <div class="contact-input-fields">
+              <form class="contact-form" novalidate>
+                <input class="contact-field" placeholder="Name" type="text" />
+                <input class="contact-field" placeholder="Email" type="email"/>
+                <input class="contact-field" placeholder="Telephone" type="text"/>
+                <input class="contact-field" placeholder="Subject" type="text"/>
+                <textarea class="contact-field-message" placeholder="Message" type="text"></textarea>
+                <br>
+                <input class="contact-field-send-message" type="submit"value="SEND" />
+              </form>
+            </div>
+            <div class="footer-socialmedia"></div>
+          </div>
+        </div>
+      </section>
+
+
+    </footer>
+
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <!-- Controllers -->
+  <script src="./app/app.js"></script>
+  <script src="./app/mainCtrl.js"></script>
+  <script src="./app/routes/alerts/alertsCtrl.js"></script>
+  <script src="./app/routes/login/loginCtrl.js"></script>
+  <script src="./app/routes/orders/ordersCtrl.js"></script>
+  <script src="./app/routes/recipes/recipesCtrl.js"></script>
+  <script src="./app/routes/stockItems/stockItemsCtrl.js"></script>
+  <!-- Services -->
+  <script src="./app/services/mainService.js"></script>
+  <script src="./scripts/script.js"></script>
+
+  </body>
+</html>
