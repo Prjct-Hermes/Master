@@ -21,7 +21,6 @@ this.logout = function(){
     method: 'GET',
     url: '/logout',
   }).then(function(response){
-    alert('You are logged out');
     return response;
   });
 };
