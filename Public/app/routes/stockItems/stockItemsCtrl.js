@@ -3,10 +3,10 @@ angular.module('hermes')
 
   $scope.getUser = function() {
     $scope.user = mainService.userId()
-  }
+  }();
 
 
-  mainService.getDataStockItems(user).then(function(response){
+  mainService.getDataStockItems($scope.user).then(function(response){
         $scope.items = response;
   });
 
