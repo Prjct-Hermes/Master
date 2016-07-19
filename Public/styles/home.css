@@ -130,10 +130,10 @@
   transition: all .6s ease-in-out 0s;
 }
 .four-step-image img{
-  width: 210%;
+  width: 240%;
   height: 105%;
   position:absolute;
-  left:-78%;
+  left:-110%;
   top: -5%;
   background-size: cover;
   background-position:center;
@@ -178,16 +178,17 @@
 }
 .testimonial-container{
   width: 100%;
-  height: 55vh;
+  height: 650px;
   margin-top: 28vh;
   background-color: #EBEEF0;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .tesitmonial-head{
   width: 55%;
   height: 5vh;
   margin-left: 22.5%;
-  padding-top: 5vh;
+  padding-top: 4vh;
+  margin-bottom: 3vh;
   font-family: "Ubuntu";
   font-weight: bold;
   text-align: center;
@@ -200,12 +201,12 @@
   display: flex;
 }
 .testimonial-profile-picture{
-  margin-top: 10vh;
+  margin-top: 9.5vh;
   position: absolute;
-  z-index: 100;
-  width: 25vh;
-  height: 12vw;
-  border: 40px solid #34B3A0;
+  /*z-index: 100;*/
+  width: 320px;
+  height: 320px;
+  border: 40px solid hsla(171, 55%, 45%, 0.8);
   transform:rotate(45deg);
   overflow: hidden;
 }
@@ -213,8 +214,8 @@
   width: 155%;
   height: 155%;
   position: absolute;
-  top:-4vh;
-  left:-75px;
+  top:-55px;
+  left:-55px;
   transform: rotate(-45deg);
   background-image: url('http://2.bp.blogspot.com/-XvEdtFh052g/UAU61kWYTKI/AAAAAAAABzw/hNU-fTh-OKc/s1600/Photography+Portrait+1.jpg');
   background-position: 50% 25%;
@@ -223,16 +224,16 @@
 .testimonial-profile-text{
   margin-top: 7vh;
   padding-top: 3vh;
-  width: 75%;
-  height: 30vh;
-  margin-left: 7vw;
+  width: 950px;
+  height: 380px;
+  margin-left: 160px;
   background-color: white;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .testimonial-profile-name{
-  width: 50%;
+  width: 400px;
   height: 8vh;
-  margin-left: 11vw;
+  margin-left: 270px;
   font-family: "Roboto Slab";
   margin-bottom: 2vh;
 }
@@ -250,7 +251,7 @@
 .testimonial-endorsement{
   width: 65%;
   height: 12vh;
-  margin-left: 11vw;
+  margin-left: 270px;
   line-height: 1.5;
   /*border: 2px solid black;*/
   font-family: "Ubuntu";
@@ -259,9 +260,9 @@
   margin-top: 7vh;
   height: 0;
   width: 0;
-  border-left: 6vw solid white;
-  border-top: 15vh solid transparent;
-  border-bottom: 15vh solid transparent;
+  border-left: 180px solid white;
+  border-top: 190px solid transparent;
+  border-bottom: 190px solid transparent;
 }
 
 /*-------------------FOOTER-----------------------*/
