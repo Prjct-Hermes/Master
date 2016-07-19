@@ -11,6 +11,7 @@ angular.module('hermes')
    });
  }
 
+
  $scope.getitems();
 
  // update ingredient

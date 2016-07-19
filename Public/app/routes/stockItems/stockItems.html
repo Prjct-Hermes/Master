@@ -1,8 +1,12 @@
+
+
+
 <section class="stockitem-main">
-  <h1 class="stockitem-title">Stock Items</h1>
-  <div class="stockitem-display" ng-model="newItem">
+
+  <div class="stockitem-create" ng-model="newItem">
+    <h1 class="stockitem-title">Stock Items</h1>
     <input type="text" placeholder="Name" ng-model="newItem.name">
-    <textarea placeholder="description" ng-model="newItem.description" cols="30" rows="10"></textarea>
+    <textarea placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
     <input type="number" placeholder="quantity" ng-model="newItem.quantity">
     <input type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure">
     <input type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
@@ -10,28 +14,67 @@
     <div class="submit-wrap">
       <button class="stockitem-submit" ng-click="createStockItems(newItem)">Submit</button>
     </div>
-
   </div>
 
-  <button ng-click="destroyStockItems(item._id)">Delete</button>
-  <br>
-  <input type="text" ng-model="item.name">
-  <textarea name="name" rows="10" cols="30" ng-model="item.description"></textarea>
-  <div class="stockitem-box" ng-repeat="item in items">
-    {{item.name}}
-    {{item.description}}
-    {{item.quantity}}
 
-    <input type="button" class="stockitem-delete" ng-click="destroyStockItems(item._id)">Delete</input>
-    <br>
-  <input type="text" ng-model="item.name">
-  <input type="text" name="name" rows="10" cols="30" ng-model="item.description"></input>
-  <input type="number" ng-model="item.quantity">
-  <input type="text" ng-model="item.unitOfMeasure">
-  <input type="number" ng-model="item.alertQuantity">
-  <input type="Date" ng-model="item.alertDate">
-  <button ng-click="updateStockItems(item._id, item)">Update</button>
+  <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
+  <div class="stockitem-wrap">
+    <!-- TO DISPLAY THE ITEM NAME AND QTY INSIDE INDIVIDUAL BOXES -->
+    <div class="stockitem-box" ng-repeat="item in items">
+        <p>Name: {{item.name}}</p><br>
+        <p>Qty: {{item.quantity}}</p><br>
+        <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getItems()">Edit</button>
 
 
+
+
+      <!-- <br>
+    <input type="text" ng-model="item.name">
+    <input type="text" name="name" rows="10" cols="30" ng-model="item.description"></input>
+    <input type="number" ng-model="item.quantity">
+    <input type="text" ng-model="item.unitOfMeasure">
+    <input type="number" ng-model="item.alertQuantity">
+    <input type="Date" ng-model="item.alertDate">
+    <button ng-click="updateStockItems(item._id, item)">Update</button> -->
+
+
+    </div>
   </div>
 </section>
+
+<!-- STOCK ITEM MODAL FORM  ---------------------------------------------->
+
+<div class="modal-container" ng-repeat="item in items">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{item.name}}</h4>
+                </div>
+                <form class="" action="index.html" method="post">
+                  <div class="modal-body">
+                      <input class="modal-input-box" type="text" ng-model="{{item.name}}" required>
+                      <input class="modal-input-box" type="text" ng-model="{{item.quantity}}" required>
+                      <input class="modal-input-box" type="text" ng-model="{{item.unitOfMeasure}}" required>
+                      <input class="modal-input-box" type="text" ng-model="{{item.description}}" required>
+                      <input class="modal-input-box" type="text" ng-model="{{item.alertDate}}" required>
+                      <input class="modal-input-box" type="text" ng-model="{{item.alertQuantity}}">
+
+                  </div>
+                </form>
+
+                <div class="modal-footer">
+                    <button ng-click="updateStockItems(item._id, item)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Update</button>
+                    <button ng-click="destroyStockItems(item._id)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
