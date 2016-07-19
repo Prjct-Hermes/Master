@@ -26,7 +26,7 @@ this.getCurrentUser = function(){
     url: '/me',
   }).then(function(response){
     return response;
-  });
+  })
 };
 this.destroyUser = function(id){
   var deferred = $q.defer();
