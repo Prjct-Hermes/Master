@@ -223,4 +223,11 @@ this.allOrders = {};
 this.retrieveAllOrders = function(){
   return this.allOrders;
 }
+this.alerts = [];
+this.createAlerts = function(data){
+  this.alerts = data;
+}
+this.retrieveAlerts = function(){
+  return this.alerts;
+}
 })
