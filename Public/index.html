@@ -20,7 +20,26 @@
         <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
         <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
       </div>
+      <div ng-controller="mainCtrl" ng-click="logout()" class="main-navbar-menu">Log out</div>
       <div ui-sref="login" class="main-navbar-menu">SIGN UP</div>
+      <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
+      <div class="main-navbar-menu" id="dropdown">
+
+                <div class="hamburger-icon"></div>
+                <div class="dropdown-container">
+                  <div class="dropdown-content">
+                      <a ui-sref="profile">Profile</a>
+                      <a ui-sref="login">Login</a>
+                      <a ui-sref="login">Sign-Up</a>
+                      <a ng-controller="mainCtrl" ng-click="logout()">Logout</a>
+
+                  </div>
+                </div>
+
+
+
+
+            </div>
       <div class="main-navbar-menu">LEARN MORE</div>
       <div ui-sref="home" class="main-navbar-menu">HOME</div>
       <!-- ALERTS -->

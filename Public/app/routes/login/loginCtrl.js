@@ -21,15 +21,6 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
         }
       });
     };
-    $scope.logout = function(){
-      return $http({
-        method: 'GET',
-        url: '/logout',
-      }).then(function(response){
-        $state.go('home')
-      })
-    };
-
 
   /*
   user object

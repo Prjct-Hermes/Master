@@ -21,6 +21,7 @@ this.logout = function(){
     method: 'GET',
     url: '/logout',
   }).then(function(response){
+    alert('You are logged out');
     return response;
   });
 };
@@ -30,7 +31,7 @@ this.getCurrentUser = function(){
     url: '/me',
   }).then(function(response){
     return response;
-  });
+  })
 };
 this.destroyUser = function(id){
   var deferred = $q.defer();
@@ -74,6 +75,7 @@ this.getDataStockItems =  function(id){
     method: 'GET',
     url: "/api/stockItems/" + id
   }).then(function(response){
+
     self.allStockItems = response.data;
     deferred.resolve(response.data);
   })

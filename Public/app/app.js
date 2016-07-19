@@ -35,13 +35,23 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
           if (response.data){
-            return response.data;
+            return response.data._id;
           }
+          $state.go('login');
         }).catch(function(err) {
           $state.go('login');
           alert('You need to login to access this page');
         });
-      }
+      },
+      // stockItemsData:['mainService', '$stateParams', function(mainService, $stateParams){
+      //   return mainService.getCurrentUser().then(function(response){
+      //     var userId = response.data._id;
+      //     mainService.getDataStockItems(userId).then(function(response){
+      //       console.log(response);
+      //       return response;
+      //     })
+      //   })
+      // }]
     }
   })
   .state('recipes', {
