@@ -12,7 +12,16 @@ Create Items
 <div ng-repeat="item in items">
   {{item.name}}
   {{item.description}}
+  {{item.quantity}}
 
   <button ng-click="destroyStockItems(item._id)">Delete</button>
+  <br>
+  <input type="text" ng-model="item.name">
+  <textarea name="name" rows="10" cols="30" ng-model="item.description"></textarea>
+  <input type="number" ng-model="item.quantity">
+  <input type="text" ng-model="item.unitOfMeasure">
+  <input type="number" ng-model="item.alertQuantity">
+  <input type="Date" ng-model="item.alertDate">
+  <button ng-click="updateStockItems(item._id, item)">Update</button>
 
 </div>
