@@ -27,7 +27,18 @@ angular.module('hermes')
     })
   }
   //Delete ingredient
+  $scope.destroyStockItems = function(oldItem){
+     mainService.destroyStockItems(oldItem).then(function(response){
 
+
+      mainService.getDataStockItems(user).then(function(response){
+            $scope.items = response;
+      });
+    })
+
+
+
+  }
 
 
 
