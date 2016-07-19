@@ -15,7 +15,13 @@ var schema = new Schema({
     type: Schema.Types.Mixed,
     required: false,
     index: false,
+  },
+  total: {
+    type: Number,
+    required: false,
+    index: false
   }
+
   });
   var Orders = mongoose.model('orders', schema);
   module.exports = {
