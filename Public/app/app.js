@@ -97,7 +97,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
   })
 
   $urlRouterProvider.otherwise('/home');
-//
+
 
 
 });
