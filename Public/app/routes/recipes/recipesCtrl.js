@@ -1,9 +1,13 @@
-angular.module('hermes').controller('recipesCtrl', function($scope){
+angular.module('hermes').controller('recipesCtrl', function($scope, mainService, user){
+  mainService.getDataRecipes(user).then(function(response){
+        $scope.recipes = response;
+  });
+  mainService.getDataStockItems(user).then(function(response){
+    $scope.stockItems = response;
+    console.log($scope.stockItems);
+  });
 
-
-
-
-
+  $scope.ingredients = [];
 
 
 
@@ -27,3 +31,4 @@ qt
 gal
 
 */
+// <input type="text" placeholder="Ingredients" ng-model="newRecipe.ingredients">

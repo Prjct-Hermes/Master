@@ -95,7 +95,7 @@ body {
   background-color: lightblue;
   -webkit-transition: all .40s;
   color: white;
-  font-size: 17px;
+  font-size: 18px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -103,12 +103,13 @@ body {
 #dropdown:hover .dropdown-content {
     display: block;
     -webkit-transition: all .40s;
+    font-size: 18px;
+
 }
 
 #dropdown:hover .dropbtn {
     color: lightblue;
-    font-size: 19px;
-    font-weight: bold;
+    font-size: 18px;
     -webkit-transition: all .40s;
 }
 

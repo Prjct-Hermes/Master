@@ -1,5 +1,10 @@
 angular.module('hermes').service('mainService', function($http, $q){
 
+//This var brings the scope back to the mainService
+//allowing the data to be saved to the service.
+var self = this;
+
+
   // Login Controller //
 this.login = function(user){
   return $http({
@@ -7,7 +12,7 @@ this.login = function(user){
     url: '/login',
     data: user
   }).then(function(response){
-    self.user = response.data._id
+    self.user = response.data._id;
     return response;
   });
 };
@@ -25,7 +30,7 @@ this.getCurrentUser = function(){
     url: '/me',
   }).then(function(response){
     return response;
-  });
+  })
 };
 this.destroyUser = function(id){
   var deferred = $q.defer();
@@ -61,74 +66,6 @@ this.updateUser = function(id, body){
   })
   return deferred.promise
 }
-
-/*
-get user data = this.user
-get allStockItems
- this.allStockItems = data.data
-get recipes
-get Orders
->>>>>>> f72121ea51ebae26222804326f16c68880d62639
-
-this.User = {}
-this.stockItems = {}
-
-function getUser (){
-return this.User
-}
-
-
-*/
-//Schema objects
-//
-// this.user = {
-//  "name" : "",
-//  "e-mail" : "",
-//  "phone" : "",
-//  "password" : "",
-//  "createDate": ""
-// }
-//
-// this.stockItem = {
-//  "userId" : "",
-//  "name" : "",
-//  "description" : "",
-//  "quantity" : 0,
-//  "unitOfMeasure" : "",
-//  "alertQuantity" : 0,
-//  "alertDate" : ""
-// }
-//
-// this.recipe = {
-//  "userId" : "",
-//  "name" : "",
-//  "description" : "",
-//  "ingredients" :{
-//   "name" : "",
-//   "id" : "",
-//   "quantity" :0,
-//   "unitOfMeasure" : "",
-//  }
-//  "instructions" : "",
-//  "price" :0
-// }
-//
-// this.order = {
-//  "userId" : "",
-//  "date" : "",
-//  "recipes" : [{
-//      "name" :"",
-//      "id" : "",
-//      "quantity" : 0
-//  }
-//  ]
-// }
-
-
-//This var brings the scope back to the mainService
-//allowing the data to be saved to the service.
-var self = this;
-
 
 //These are your stockItems requests
 this.getDataStockItems =  function(id){

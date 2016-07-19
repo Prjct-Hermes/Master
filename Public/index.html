@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/stockItems.css">
+    <link rel="stylesheet" href="./styles/recipes.css">
     <title></title>
   </head>
   <body>
@@ -26,10 +28,10 @@
                 <div class="hamburger-icon"></div>
                 <div class="dropdown-container">
                   <div class="dropdown-content">
-                      <a href="#">Profile</a>
-                      <a href="#">Login</a>
-                      <a href="#">Sign-Up</a>
-                      <a href="#">Logout</a>
+                      <a ui-sref="profile">Profile</a>
+                      <a ui-sref="login">Login</a>
+                      <a ui-sref="login">Sign-Up</a>
+                      <a ng-controller="mainCtrl" ng-click="logout()">Logout</a>
 
                   </div>
                 </div>
@@ -97,6 +99,8 @@
   <!-- Services -->
   <script src="./app/services/mainService.js"></script>
   <script src="./scripts/script.js"></script>
+  <!-- Gulp -->
+  <script src="./bundle.js"></script>
 
   </body>
 </html>
