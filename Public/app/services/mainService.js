@@ -7,6 +7,7 @@ this.login = function(user){
     url: '/login',
     data: user
   }).then(function(response){
+    self.user = response.data._id
     return response;
   });
 };
@@ -136,6 +137,7 @@ this.getDataStockItems =  function(id){
     method: 'GET',
     url: "/api/stockItems/" + id
   }).then(function(response){
+
     self.allStockItems = response.data;
     deferred.resolve(response.data);
   })
