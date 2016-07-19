@@ -20,7 +20,7 @@ angular.module('hermes')
     mainService.createStockItems(newItem).then(function(response){
       $scope.newItem = {};
 
-      mainService.getDataStockItems(user).then(function(response){
+      mainService.getDataStockItems($scope.user).then(function(response){
             $scope.items = response;
       });
     })
@@ -30,7 +30,7 @@ angular.module('hermes')
      mainService.destroyStockItems(oldItem).then(function(response){
 
 
-      mainService.getDataStockItems(user).then(function(response){
+      mainService.getDataStockItems($scope.user).then(function(response){
             $scope.items = response;
       });
     })
