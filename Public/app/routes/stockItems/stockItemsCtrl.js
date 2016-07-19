@@ -5,13 +5,26 @@ angular.module('hermes')
     $scope.user = mainService.userId()
   }();
 
+  $scope.getitems = function(){
+    mainService.getDataStockItems($scope.user).then(function(response){
+          $scope.items = response.map(function(item){
+            item.alertDate = new Date(item.alertDate);
+            return item;
+          });
+    });
+  }
 
-  mainService.getDataStockItems($scope.user).then(function(response){
-        $scope.items = response;
-  });
-
+  $scope.getitems();
 
   // update ingredient
+  $scope.updateStockItems = function(itemId, body){
+    mainService.updateStockItems(itemId, body).then(function(response){
+
+
+      $scope.getitems();
+    })
+
+  }
 
   //create ingredient
   $scope.createStockItems = function(newItem){
@@ -20,26 +33,18 @@ angular.module('hermes')
     mainService.createStockItems(newItem).then(function(response){
       $scope.newItem = {};
 
-      mainService.getDataStockItems($scope.user).then(function(response){
-            $scope.items = response;
-      });
+      $scope.getitems();
     })
   }
+
   //Delete ingredient
   $scope.destroyStockItems = function(oldItem){
      mainService.destroyStockItems(oldItem).then(function(response){
 
 
-      mainService.getDataStockItems($scope.user).then(function(response){
-            $scope.items = response;
-      });
+      $scope.getitems();
     })
-
-
-
   }
-
-
 
 });
 
