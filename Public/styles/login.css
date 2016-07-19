@@ -2,7 +2,6 @@
  margin-top: 100px;
  width: 100%;
  height: auto;
- 
 }
 .login-wrapper{
  height: auto;
@@ -101,6 +100,7 @@ legend{
  -webkit-transition: all .40s;
  border: none;
  padding-left: 40px;
+ color: black;
 
 }
 #email-box{

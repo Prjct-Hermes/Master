@@ -1,23 +1,25 @@
 angular.module('hermes').controller('ordersCtrl', function($scope, mainService){
 
 //This segment should be removed when the project has working login
-$scope.user = "578bf14a5b25dcac0b00f9e6";
-$scope.recipes = function(){
-  mainService.getDataRecipes($scope.user).then(function(){
-    $scope.allRecipes = mainService.retrieveAllRecipes();
-  });
-}();
-// ////////////////////////////////////////////////////
-
-
-//This section hosts the iff that grabs our data from the server
-//This segment should be uncommented when the above portion is removed
-// $scope.getData = function(){
-//   $scope.user = mainService.userId();
-//   $scope.allRecipes = mainService.retrieveAllRecipes();
+// $scope.user = "578bf14a5b25dcac0b00f9e6";
+// $scope.recipes = function(){
+//   mainService.getDataRecipes($scope.user).then(function(){
+//     $scope.allRecipes = mainService.retrieveAllRecipes();
+//   });
 // }();
+//////////////////////////////////////////////////////
 
-$scope.allRecipes = {};
+
+
+
+//This section hosts the iif that grabs our data from the server
+//This segment should be uncommented when the above portion is removed
+$scope.getData = function(){
+  $scope.user = mainService.userId();
+  $scope.allRecipes = mainService.retrieveAllRecipes();
+  $scope.stockItems = mainService.retrieveStockItems();
+}();
+
 $scope.order ={
   userId: "",
   date: "",
@@ -86,31 +88,6 @@ $scope.createOrder = function(){
   mainService.createOrders($scope.order);
   console.log("Order created");
 }
-
-// this.recipe = {
-//  "userId" : "",
-//  "name" : "",
-//  "description" : "",
-//  "ingredients" :{
-//   "name" : "",
-//   "id" : "",
-//   "quantity" :0,
-//   "unitOfMeasure" : "",
-//  }
-//  "instructions" : "",
-//  "price" :0
-// }
-//
-// this.order = {
-//  "userId" : "",
-//  "date" : "",
-//  "recipes" : [{
-//      "name" :"",
-//      "id" : "",
-//      "quantity" : 0
-//  }
-//  ]
-// }
 
 /*
 Unit options

@@ -1,5 +1,6 @@
 angular.module('hermes')
-.controller('stockItemsCtrl', function($scope, mainService){
+.controller('stockItemsCtrl', function($scope, mainService, user){
+
 
   $scope.getUser = function() {
     $scope.user = mainService.userId()
@@ -28,7 +29,7 @@ angular.module('hermes')
 
   //create ingredient
   $scope.createStockItems = function(newItem){
-    newItem.userId =$scope.user;
+    newItem.userId = user;
 
     mainService.createStockItems(newItem).then(function(response){
       $scope.newItem = {};
@@ -43,6 +44,7 @@ angular.module('hermes')
 
 
       $scope.getitems();
+
     })
   }
 

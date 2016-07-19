@@ -1,8 +1,12 @@
 angular.module('hermes').controller('recipesCtrl', function($scope){
 
+  $scope.getUser = function() {
+    $scope.user = mainService.userId()
+  }();
 
-
-
+  mainService.getDataRecipes($scope.user).then(function(response){
+        $scope.items = response;
+  });
 
 
 

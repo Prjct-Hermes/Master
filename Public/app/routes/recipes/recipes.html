@@ -1,0 +1,17 @@
+<div ng-model="newItem">
+  <input type="text" placeholder="Name" ng-model="newItem.name">
+  <textarea placeholder="description" ng-model="newItem.description"></textarea>
+  <input type="number" placeholder="quantity" ng-model="newItem.quantity">
+  <input type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure">
+  <input type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
+  <input type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
+  <button ng-click="createStockItems(newItem)">Submit</button>
+</div>
+
+<div ng-repeat="item in items">
+  {{item.name}}
+  {{item.description}}
+
+  <button ng-click="destroyStockItems(item._id)">Delete</button>
+
+</div>
