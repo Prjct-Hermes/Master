@@ -62,7 +62,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
           if (response.data){
-            return response.data;
+            return response.data._id;
           }
         }).catch(function(err) {
           $state.go('login');

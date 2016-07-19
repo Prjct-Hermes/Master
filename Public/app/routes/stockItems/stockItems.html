@@ -13,10 +13,7 @@
 
   </div>
 
-  <button ng-click="destroyStockItems(item._id)">Delete</button>
   <br>
-  <input type="text" ng-model="item.name">
-  <textarea name="name" rows="10" cols="30" ng-model="item.description"></textarea>
   <div class="stockitem-box" ng-repeat="item in items">
     {{item.name}}
     {{item.description}}
