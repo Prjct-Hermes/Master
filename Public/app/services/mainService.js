@@ -182,7 +182,7 @@ this.getDataRecipes =  function(id){
     url: "/api/recipes/" + id
   }).then(function(response){
      self.allRecipes = response.data;
-    deferred.resolve(response.data);
+     deferred.resolve(response.data);
   })
   return deferred.promise
 }

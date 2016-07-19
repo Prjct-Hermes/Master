@@ -13,8 +13,10 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
           $scope.user.password = '';
         }
         else{
-          //Get all the info for the user.
-          //state.go to some default page
+          var userId = response.data._id
+          mainService.getDataStockItems(userId);
+          mainService.getDataRecipes(userId);
+          mainService.getDataOrders(userId);
           $state.go('orders');
         }
       });
