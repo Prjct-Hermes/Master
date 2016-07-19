@@ -41,6 +41,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //login
+var isAuthed = function(req, res, next){
+  if(!req.isAuthenticated()) return res.status(401).send();
+  return next();
+};
 app.post('/login', passport.authenticate('local', {
    successRedirect: '/me',
 }));
@@ -48,8 +52,14 @@ app.get('/logout', function(req, res, next){
   req.logout();
   return res.status(200).send('logged out');
 });
-app.get('/me', function(req, res, next){
-  console.log(req.user);
+app.get('/me', isAuthed, function(req, res, next){
+  if(!req.user) {
+      return res.status(401).send("Current user not defined");
+    }
+    else{
+      req.user.password = null;
+      return res.status(200).json(req.user);
+    }
 });
 
 //User DB
