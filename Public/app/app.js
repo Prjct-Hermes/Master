@@ -17,10 +17,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
     resolve: {
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
-          if (!response.data){
-            $state.go('login');
-          }
-          else {
+          if (response.data){
             return response.data;
           }
         }).catch(function(err) {
@@ -37,10 +34,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
     resolve: {
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
-          if (!response.data){
-            $state.go('login');
-          }
-          else {
+          if (response.data){
             return response.data;
           }
         }).catch(function(err) {
@@ -57,10 +51,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
     resolve: {
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
-          if (!response.data){
-            $state.go('login');
-          }
-          else {
+          if (response.data){
             return response.data;
           }
         }).catch(function(err) {
@@ -77,10 +68,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
     resolve: {
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
-          if (!response.data){
-            $state.go('login');
-          }
-          else {
+          if (response.data){
             return response.data;
           }
         }).catch(function(err) {
@@ -97,10 +85,7 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
     resolve: {
       user: function(mainService, $state) {
         return mainService.getCurrentUser().then(function(response) {
-          if (!response.data){
-            $state.go('login');
-          }
-          else {
+          if (response.data){
             return response.data;
           }
         }).catch(function(err) {
