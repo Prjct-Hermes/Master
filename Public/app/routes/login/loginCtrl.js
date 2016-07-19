@@ -15,6 +15,7 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
         else{
           //Get all the info for the user.
           //state.go to some default page
+          $state.go('orders');
         }
       });
     };
