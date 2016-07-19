@@ -1,7 +1,7 @@
 angular.module("hermes").controller("loginCtrl", function($scope, $state, mainService){
   //Create New User
     $scope.createNewUser = function(newUser){
-      mainService.createNewUser(newUser).then(function(response){
+      mainService.createUser(newUser).then(function(response){
         //Call the login function to automatically log in on successfull create.
       });
     };
