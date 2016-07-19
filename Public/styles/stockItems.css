@@ -1,0 +1,42 @@
+.stockitem-title{
+  font-size: 50px;
+  font-weight: bold;
+  color: orange;
+}
+.stockitem-main{
+  margin-top: 150px;
+
+}
+.stockitem-display{
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: auto;
+}
+.submit-wrap{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.stockitem-submit{
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  width: 100px;
+  background: gray;
+  border-radius: 10px;
+  -webkit-transition: all .40s;
+}
+.stockitem-submit:hover{
+  border: none;
+  outline: none;
+  font-size: 25px;
+  font-weight: bold;
+  height: 60px;
+  width: 120px;
+  background: orange;
+  color: white;
+  -webkit-transition: all .40s;
+  border-radius: 20px;
+}

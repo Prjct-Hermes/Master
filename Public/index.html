@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/stockItems.css">
+    <link rel="stylesheet" href="./styles/recipes.css">
     <title></title>
   </head>
   <body>
@@ -20,8 +22,6 @@
         <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
         <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
       </div>
-      <div ng-controller="mainCtrl" ng-click="logout()" class="main-navbar-menu">Log out</div>
-      <div ui-sref="login" class="main-navbar-menu">SIGN UP</div>
       <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
       <div class="main-navbar-menu" id="dropdown">
 
@@ -99,6 +99,8 @@
   <!-- Services -->
   <script src="./app/services/mainService.js"></script>
   <script src="./scripts/script.js"></script>
+  <!-- Gulp -->
+  <script src="./bundle.js"></script>
 
   </body>
 </html>
