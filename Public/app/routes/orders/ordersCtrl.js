@@ -144,7 +144,7 @@ $scope.createOrder = function(){
   //and update stock quantities
   $scope.order.recipes.forEach($scope.stockUpdate)
   $scope.alertCheck();
-  console.log($scope.alerts);
+  console.log("Alerts ", $scope.alerts);
   $scope.order ={userId: "",date: "",recipes: [],total: 0};
 }
 
