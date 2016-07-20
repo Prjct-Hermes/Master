@@ -1,34 +1,74 @@
+<h1 class="stockitem-title">Stock Items</h1>
 <section class="stockitem-main">
-  <h1 class="stockitem-title">Stock Items</h1>
-  <div class="stockitem-display" ng-model="newItem">
-    <input type="text" placeholder="Name" ng-model="newItem.name">
-    <textarea placeholder="description" ng-model="newItem.description" cols="30" rows="10"></textarea>
-    <input type="number" placeholder="quantity" ng-model="newItem.quantity">
-    <input type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure">
-    <input type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
-    <input type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
-    <div class="submit-wrap">
-      <button class="stockitem-submit" ng-click="createStockItems(newItem)">Submit</button>
+
+    <div class="stockitem-create" ng-model="newItem">
+        <h1 class="create-title">Creat a Stock Item:</h1>
+        <input class="stockitem-input" type="text" placeholder="Name" ng-model="newItem.name">
+        <textarea  class="stockitem-input" placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
+        <input  class="stockitem-input" type="number" placeholder="quantity" ng-model="newItem.quantity">
+        <input  class="stockitem-input" type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure">
+        <input  class="stockitem-input" type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
+        <input  class="stockitem-input" type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
+        <div class="submit-wrap">
+            <button class="stockitem-submit" ng-click="createStockItems(newItem)">Submit</button>
+        </div>
     </div>
 
-  </div>
-
-  <br>
-  <div class="stockitem-box" ng-repeat="item in items">
-    {{item.name}}
-    {{item.description}}
-    {{item.quantity}}
-
-    <input type="button" class="stockitem-delete" ng-click="destroyStockItems(item._id)">Delete</input>
-    <br>
-  <input type="text" ng-model="item.name">
-  <input type="text" name="name" rows="10" cols="30" ng-model="item.description"></input>
-  <input type="number" ng-model="item.quantity">
-  <input type="text" ng-model="item.unitOfMeasure">
-  <input type="number" ng-model="item.alertQuantity">
-  <input type="Date" ng-model="item.alertDate">
-  <button ng-click="updateStockItems(item._id, item)">Update</button>
 
 
-  </div>
+    <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
+    <div class="stockitem-wrap">
+        <!-- TO DISPLAY THE ITEM NAME AND QTY INSIDE INDIVIDUAL BOXES -->
+        <div class="stockitem-box" ng-repeat="item in items">
+            <p>{{item.name}}</p>
+            <br>
+            <p>Qty: {{item.quantity}} {{item.unitOfMeasure}}</p>
+            <br>
+            <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleItem(item)">Edit</button>
+        </div>
+
+
+<!-- MODAL FORM -->
+        <div class="modal-container">
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">{{stockItem.name}}</h4>
+                        </div>
+                        <form class="" action="index.html" method="post">
+                            <div class="modal-body">
+                              <div class="modal-box1">
+                                Name <input class="modal-input-box" type="text" ng-model="stockItem.name" required>
+                                Qty <input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.quantity" required>
+                                Unit of Measurement <input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.unitOfMeasure" required>
+                              </div>
+                                Description <textarea class="modal-input-box" id="modal-description" type="text" ng-model="stockItem.description" cols="10" rows="6" required></textarea>
+                              <div class="modal-box2">
+                                Alert at Qty <input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.alertQuantity">
+                                Alert Date <input class="modal-input-box" type="text" ng-model="stockItem.alertDate" required>
+                              </div>
+
+
+                            </div>
+                        </form>
+<!-- delete and update buttons -->
+                        <div class="modal-footer">
+                          <button ng-click="updateStockItems(stockItem._id, stockItem)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Update</button>
+                          <button ng-click="destroyStockItems(stockItem._id)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Delete</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
 </section>
+
+<!-- STOCK ITEM MODAL FORM  ---------------------------------------------->
