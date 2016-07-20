@@ -1,19 +1,72 @@
-angular.module('hermes').controller('recipesCtrl', function($scope, mainService, user){
-  mainService.getDataRecipes(user).then(function(response){
-        $scope.recipes = response;
-  });
+angular.module('hermes').controller('recipesCtrl', function($scope, $window, mainService, user){
+  $scope.user = user;
+  $scope.ingredients = [];
+  $scope.recipes = [];
+
+  $scope.getRecipes = function(){
+    mainService.getDataRecipes(user).then(function(response){
+          $scope.recipes = response;
+    });
+  };
+  $scope.getRecipes();
   mainService.getDataStockItems(user).then(function(response){
     $scope.stockItems = response;
-    console.log($scope.stockItems);
   });
 
-  $scope.ingredients = [];
+  $scope.addToIngredients = function(newIngredient){
+    var tempIngredient = {};
+    tempIngredient.quantity = newIngredient.quantity;
+    tempIngredient.unitOfMeasure = newIngredient.unitOfMeasure;
+    tempIngredient.name = newIngredient.item.name;
+    tempIngredient.id = newIngredient.item._id;
+    $scope.ingredients.push(angular.copy(tempIngredient));
+    $scope.newIngredient = {};
+    $window.document.getElementById('recipe-quantity-input').focus();
+  };
+
+  $scope.saveRecipe = function(newRecipe){
+    newRecipe.ingredients = $scope.ingredients;
+    newRecipe.userId = user;
+    console.log(newRecipe);
+    mainService.createRecipes(newRecipe).then(function(response){
+      $scope.ingredients = [];
+      $scope.newRecipe = {};
+      mainService.getDataRecipes(user).then(function(response){
+            $scope.recipes = response;
+      });
+    })
+  };
+
+  $scope.destroyRecipes = function(recipeToDelete){
+    mainService.destroyRecipes(recipeToDelete).then(function(response){
+      mainService.getDataRecipes(user).then(function(response){
+        $scope.recipes = response;
+      })
+    })
+  };
+
+  $scope.updateRecipe = function(itemId, body){
+
+    mainService.updateRecipes(itemId, body).then(function(response){
+      // $scope.getRecipes();
+    })
+  }
+
+  $scope.removeIngredient = function(ingredientId, recipe){
+    for(let i = 0; i < recipe.ingredients.length; i++){
+      if(ingredientId === recipe.ingredients[i].id){
+        recipe.ingredients.splice(i, 1);
+      }
+    }
+    var recipeId = recipe._id;
+    $scope.updateRecipe(recipeId, recipe);
+  };
+
+
 
 
 
 });
-
-
 
 /*
 CRUD
