@@ -1,19 +1,22 @@
 angular.module('hermes').controller('recipesCtrl', function($scope, mainService, user){
+
+  $scope.ingredients = [];
+
   mainService.getDataRecipes(user).then(function(response){
         $scope.recipes = response;
   });
   mainService.getDataStockItems(user).then(function(response){
     $scope.stockItems = response;
-    console.log($scope.stockItems);
   });
 
-  $scope.ingredients = [];
+  $scope.addToIngredients = function(newIngredient){
+    $scope.ingredients.push(angular.copy(newIngredient));
+    console.log($scope.ingredients);
+  }
 
 
 
 });
-
-
 
 /*
 CRUD
