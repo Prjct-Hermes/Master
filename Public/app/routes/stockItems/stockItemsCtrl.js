@@ -11,10 +11,17 @@ angular.module('hermes')
    });
  }
 
+
  $scope.getitems();
+
+ //get individual item for modal form
+ $scope.getSingleItem = function(item){
+   $scope.stockItem = item;
+ }
 
  // update ingredient
  $scope.updateStockItems = function(itemId, body){
+   console.log(itemId, body);
    mainService.updateStockItems(itemId, body).then(function(response){
 
 
@@ -36,9 +43,12 @@ angular.module('hermes')
 
  //Delete ingredient
  $scope.destroyStockItems = function(oldItem){
-    mainService.destroyStockItems(oldItem).then(function(response){
-      $scope.getitems();
-   })
+    var check = confirm("Are you sure you want to delete this stock item?");
+    if (check) {
+      mainService.destroyStockItems(oldItem).then(function(response){
+        $scope.getitems();
+     })
+    }
 
 
 
