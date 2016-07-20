@@ -13,10 +13,10 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
   .state('profile', {
     url: '/profile',
     templateUrl: './app/routes/login/profile.html',
-    controller: 'loginCtrl',
+    controller: 'profileCtrl',
     resolve: {
       user: function(mainService, $state) {
-        return mainService.getCurrentUser().then(function(response) {
+        return mainService.getCurrentUserProfile().then(function(response) {
           if (response.data){
             return response.data;
           }

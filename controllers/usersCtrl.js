@@ -38,4 +38,19 @@ var User = require('./../models/User');
         return err ? res.status(500).json(err) : res.json(response);
     })
   },
+
+    logout : function(req, res, next){
+      req.logout();
+      return res.status(200).send('logged out');
+    },
+
+    isAuthed : function(req, res, next){
+      if(!req.user) {
+          return res.status(401).send("Current user not defined");
+        }
+        else{
+          req.user.password = null;
+          return res.status(200).json(req.user);
+        }
+    }
 }

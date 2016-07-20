@@ -107,6 +107,15 @@
   4. No way to really test this but look at Square Payments API and see if it could be incorporated.
   5. When an order has a recipe added have it calculate how much it would subtract from stock levels and alert if any will drop below 0
 
+  * D3 visualizations
+  * Alerts page
+  * Food related loading icon
+  * Calorie counter
+  * Custom Order screens
+  * Categories for recipes
+  * Tutorial
+  * About Page: 4 step
+
 ###
 * Group Assignments
 
@@ -133,3 +142,38 @@ public
   |     |_routeCtrl
   |     |_routeTmpl
   |     |_routeSass?
+
+  Creating a branch
+```git checkout -b <branchName>
+```
+
+Deleting a branch
+```git checkout -d <branchName>
+```
+
+Checking out a branch
+```git checkout <branchName>
+```
+
+Merging Master into your branch
+```git add -A
+git commit -m ""
+git checkout master
+git pull origin master
+git checkout <branchName>
+git merge master
+<Go fix merge conflicts if any>
+git add -A
+git commit -m ""
+```
+
+Creating a pull request
+```git add -A
+git commit -m ""
+git push origin <branchName>
+<On Github Repository>
+Click create pull request
+Base -> Master         compare -> <branchName>
+Make sure request is able to merge.
+Submit pull request
+STOP HERE

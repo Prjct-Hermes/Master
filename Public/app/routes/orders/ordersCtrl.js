@@ -17,7 +17,6 @@ angular.module('hermes').controller('ordersCtrl', function($scope, mainService, 
 $scope.getData = function(){
   $scope.allRecipes = mainService.retrieveAllRecipes();
   $scope.stockItems = mainService.retrieveStockItems();
-  $scope.alertsCheck();
 }();
 
 $scope.order ={
@@ -108,19 +107,12 @@ $scope.decrementOrder = function(recipe){
 }
 $scope.stockUpdate = function(recipe){
   for (var i = 0; i < $scope.allRecipes.length; i++){
-    console.log('1');
     if(recipe.id === $scope.allRecipes[i]._id){
-      console.log('2');
       var currentRecipe = $scope.allRecipes[i];
-      console.log("Current Recipe", currentRecipe)
       for (var prop in currentRecipe.ingredients){
-        console.log('3', prop);
         for (var item in $scope.stockItems){
-          console.log('4');
           if(currentRecipe.ingredients[prop].id === $scope.stockItems[item]._id){
-            console.log('5');
             var amount = $scope.converter((recipe.quantity * currentRecipe.ingredients[prop].quantity),currentRecipe.ingredients[prop].unitOfMeasure,$scope.stockItems[item].unitOfMeasure)
-            console.log("Amount ", amount, " Ing qty ", currentRecipe.ingredients[prop].quantity, " Ing uOm ", currentRecipe.ingredients[prop].unitOfMeasure, "stock uOm ", $scope.stockItems[item].unitOfMeasure);
             $scope.stockItems[item].quantity = $scope.stockItems[item].quantity - amount;
             if($scope.stockItems[item].quantity < 0){
               $scope.stockItems[item].quantity = 0;
@@ -131,7 +123,6 @@ $scope.stockUpdate = function(recipe){
       }
     }
   }
-  console.log('6');
 }
 $scope.alertCheck = function(){
   for (var i = 0; i < $scope.stockItems.length; i++){

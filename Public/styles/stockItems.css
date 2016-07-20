@@ -1,19 +1,29 @@
 .stockitem-title{
-  text-align: center;
-  font-size: 70px;
-  font-weight: bold;
-  color: #A94C24;
+  background: #EBEEF0;
+  width: 75%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 80px;
+  color: #34B3A0;
   margin-top:150px;
-  text-shadow: 5px 5px 6px rgba(32, 30, 28, 0.5);
+  margin-left: 25%;
+  padding-left: 1%;
 }
 .create-title{
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 10px;
   text-align: center;
   font-size: 25px;
   font-weight: bold;
-  color: #A94C24;
+  color: white;
+  background: #525157;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .stockitem-main{
+  font-family: 'Raleway', sans-serif;
   margin-top: 70px;
   display: flex;
   justify-content: flex-start;
@@ -22,26 +32,27 @@
 
 }
 .stockitem-create{
-  margin: 0 10px 10px 10px;
+  font-family: "Ubuntu";
+  padding: 1%;
+  background: #EBEEF0;
   display: flex;
   flex-direction: column;
   width: 25vw;
   height: auto;
 }
+.stockitem-create textarea{
+  resize: none;
+}
 .stockitem-input{
   margin: 5px 0 5px 0;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 5px;
   border: 1px solid gray;
-  box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.3);
-  -webkit-transition: all .40s;
 }
 .stockitem-input:focus{
   padding-left: 5px;
-  background: #525157;
-  color: white;
-  -webkit-transition: all .40s;
-  outline: white;
+  border: 2px solid #34B3A0;
+  outline: none;
 }
 .submit-wrap{
   display: flex;
@@ -52,21 +63,18 @@
   color: white;
   border: none;
   font-size: 20px;
-  font-weight: bold;
   height: 50px;
-  width: 100px;
-  background: #A94C24;
-  border-radius: 10px;
+  width: 150px;
+  background: #34B3A0;
+  border-radius: 5px;
   -webkit-transition: all .40s;
-  box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
 }
 .stockitem-submit:hover{
-  border: 1px solid #A94C24;
   outline: none;
-  background: white;
-  color: #A94C24;
+  background: #46C9B6;
+  color: white;
   -webkit-transition: all .40s;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .stockitem-submit:focus{
   outline: none;
@@ -79,24 +87,20 @@
   margin-left: 5%;
 }
 .stockitem-box{
+  font-family: "Ubuntu";
   border-radius: 10px;
   text-align: center;
-  color: black;
-  background-image: url("http://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg");
-  background-size: cover;
+  color: white;
+  background: #525157;
   font-size: 20px;
   margin: 25px 15px 25px 15px;
   padding: 10px;
   height: 100px;
   width: 200px;
-  box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
   -webkit-transition: all .40s;
 }
 .stockitem-box:hover{
-  font-size: 20px;
-  border-radius: 20px;
-  color: black;
-  -webkit-transition: all .40s;
+  background: gray;
 }
 .stockitem-edit{
   width: 100px;
@@ -105,7 +109,7 @@
   -webkit-transition: all .40s;
 }
 .stockitem-edit:hover{
-  background: #525157;
+  background: #34B3A0;
   color: white;
   -webkit-transition: all .40s;
 }
@@ -118,20 +122,18 @@
   font-weight: bold;
 }
 .modal-body{
-  display: flex;
   flex-direction: column;
-  height: 300px;
-  justify-content: space-around;
+  height: 400px;
 }
 .modal-input-box{
-  font-size: 22px;
-  height: 50px;
-  width: 200px;
+  font-size: 20px;
+  height: 30px;
+  width: 300px;
   -webkit-transition: all .40s;
 }
 .modal-input-box:focus{
   outline: orange;
-  border: 2px solid orange;
+  border: 2px solid #34B3A0;
   -webkit-transition: all .40s;
 }
 #modal-description:focus{
@@ -140,7 +142,9 @@
   -webkit-transition: all .40s;
 }
 #modal-submit{
-  margin-right: 35%;
+  margin: 0;
+  color: white;
+  background: #34B3A0;
   height: 50px;
   width: 200px;
   font-size: 25px;
@@ -148,17 +152,14 @@
   -webkit-transition: all .40s;
 }
 #modal-submit:hover{
-  color: white;
-  background: orange;
+  background: #46C9B6;
   -webkit-transition: all .40s;
 }
 .modal-footer{
-  display: block;
-
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-#modal-small{
-  width: 80px;
-}
-#modal-small:focus{
-  width: 100px;
+.modal-label{
+  margin: 5px;
 }
