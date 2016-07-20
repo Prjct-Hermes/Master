@@ -44,19 +44,48 @@
 
   <!-- List Recipes -->
   <div class="stockitem-box" ng-repeat="recipe in recipes">
-    {{recipe.name}}
-    {{recipe.description}}
-  <!-- Delete Recipe -->
-    <button type="button" class="stockitem-delete" ng-click="destroyRecipes(recipe._id)">Delete</button>
-    <br>
+
+
 
   <!-- Edit Recipe -->
-  <input type="text" ng-model="recipe.name">
-  <input type="text" ng-model="recipe.description">
-  <input type="text" ng-model="recipe.ingredients">
+  NAME:<input type="text" ng-model="recipe.name">
+  <br>
+  DESCRIPTION:<input type="text" ng-model="recipe.description">
+  <br>
+  <br>
+  LIST OF INGREDIENTS:
+  <ul ng-repeat="ingredient in recipe.ingredients">
+    Name: <input disabled="true" type="text" value="{{ingredient.name}}">
+    Quantity: <input ng-model="ingredient.quantity"></input>
+    Unit Of Measure:
+    <select ng-model="ingredient.unitOfMeasure">
+      <option value="ml">ml</option>
+      <option value="l">l</option>
+      <option value="tsp">tsp</option>
+      <option value="tbsp">tbsp</option>
+      <option value="floz">floz</option>
+      <option value="cup">cup</option>
+      <option value="pnt">pnt</option>
+      <option value="qt">qt</option>
+      <option value="gal">gal</option>
+      <option value="qty">qty</option>
+    </select>
+    <button ng-click="removeIngredient(ingredient.id, recipe)" type="button">Remove ingredient</button>
+  </ul>
+  <br>
+  INSTRUCTIONS:
   <input type="text" ng-model="recipe.instructions">
+  <br>
+  PRICE:
   <input type="number" ng-model="recipe.price">
-  <button ng-click="updateRecipe(oi)">Update</button>
+  <br>
+  <button ng-click="updateRecipe(updateRecipe(recipe._id, recipe))">Update Recipe</button>
+  <!-- Delete Recipe -->
+    <button type="button" class="stockitem-delete" ng-click="destroyRecipes(recipe._id)">Delete Recipe</button>
+    <br>
+  <br></br>
+  <br></br>
+  <br></br>
 
 
   </div>

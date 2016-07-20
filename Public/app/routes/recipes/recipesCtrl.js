@@ -1,11 +1,14 @@
 angular.module('hermes').controller('recipesCtrl', function($scope, $window, mainService, user){
-
+  $scope.user = user;
   $scope.ingredients = [];
   $scope.recipes = [];
 
-  mainService.getDataRecipes(user).then(function(response){
-        $scope.recipes = response;
-  });
+  $scope.getRecipes = function(){
+    mainService.getDataRecipes(user).then(function(response){
+          $scope.recipes = response;
+    });
+  };
+  $scope.getRecipes();
   mainService.getDataStockItems(user).then(function(response){
     $scope.stockItems = response;
   });
@@ -43,13 +46,21 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
   };
 
   $scope.updateRecipe = function(itemId, body){
-    mainService.updateRecipes(itemId, body).then(function(response){
-      mainService.getDataRecipes(user).then(function(response){
-        $scope.recipes = response;
-      })
-    })
 
+    mainService.updateRecipes(itemId, body).then(function(response){
+      // $scope.getRecipes();
+    })
   }
+
+  $scope.removeIngredient = function(ingredientId, recipe){
+    for(let i = 0; i < recipe.ingredients.length; i++){
+      if(ingredientId === recipe.ingredients[i].id){
+        recipe.ingredients.splice(i, 1);
+      }
+    }
+    var recipeId = recipe._id;
+    $scope.updateRecipe(recipeId, recipe);
+  };
 
 
 
