@@ -32,6 +32,15 @@ this.getCurrentUser = function(){
     return response;
   })
 };
+this.getCurrentUserProfile = function(){
+  return $http({
+    method: 'GET',
+    url: '/me',
+  }).then(function(response){
+    self.profile = response.data;
+    return response;
+  })
+};
 this.destroyUser = function(id){
   var deferred = $q.defer();
   $http({
@@ -42,7 +51,6 @@ this.destroyUser = function(id){
   })
   return deferred.promise
 }
-
 
 this.createUser = function(body){
   var deferred = $q.defer();
@@ -209,6 +217,10 @@ this.updateOrders = function(id, body){
 this.user = "";
 this.userId = function(){
   return this.user;
+}
+this.profile = {};
+this.retrieveProfile = function(){
+  return this.profile;
 }
 this.allStockItems = {};
 this.retrieveStockItems = function(){

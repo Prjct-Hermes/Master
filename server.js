@@ -48,19 +48,8 @@ var isAuthed = function(req, res, next){
 app.post('/login', passport.authenticate('local', {
    successRedirect: '/me',
 }));
-app.get('/logout', function(req, res, next){
-  req.logout();
-  return res.status(200).send('logged out');
-});
-app.get('/me', isAuthed, function(req, res, next){
-  if(!req.user) {
-      return res.status(401).send("Current user not defined");
-    }
-    else{
-      req.user.password = null;
-      return res.status(200).json(req.user);
-    }
-});
+app.get('/logout', usersCtrl.logout);
+app.get('/me', isAuthed, usersCtrl.isAuthed);
 
 //User DB
 app.get('/api/users/:id,:password',  usersCtrl.findIndividual)
