@@ -18,10 +18,24 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
           mainService.getDataRecipes(userId);
           mainService.getDataOrders(userId);
           $state.go('orders');
+          $scope.alertCheck();
         }
       });
     };
-
+    $scope.alertCheck = function(){
+      for (var i = 0; i < $scope.stockItems.length; i++){
+        if($scope.stockItems[i].quantity <= $scope.stockItems[i].alertQuantity){
+          var alert = {
+            name: $scope.stockItems[i].name,
+            id: $scope.stockItems[i]._id,
+            quantity: $scope.stockItems[i].quantity,
+            alertQuantity: $scope.stockItems[i].alertQuantity
+          }
+          $scope.alerts.push(alert);
+        }
+      }
+      mainService.createAlerts($scope.alerts);
+    };
   /*
   user object
 
