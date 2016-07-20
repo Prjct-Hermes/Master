@@ -1,6 +1,7 @@
-angular.module('hermes').controller('recipesCtrl', function($scope, mainService, user){
+angular.module('hermes').controller('recipesCtrl', function($scope, $window, mainService, user){
 
   $scope.ingredients = [];
+  $scope.recipes = [];
 
   mainService.getDataRecipes(user).then(function(response){
         $scope.recipes = response;
@@ -10,9 +11,47 @@ angular.module('hermes').controller('recipesCtrl', function($scope, mainService,
   });
 
   $scope.addToIngredients = function(newIngredient){
-    $scope.ingredients.push(angular.copy(newIngredient));
-    console.log($scope.ingredients);
+    var tempIngredient = {};
+    tempIngredient.quantity = newIngredient.quantity;
+    tempIngredient.unitOfMeasure = newIngredient.unitOfMeasure;
+    tempIngredient.name = newIngredient.item.name;
+    tempIngredient.id = newIngredient.item._id;
+    $scope.ingredients.push(angular.copy(tempIngredient));
+    $scope.newIngredient = {};
+    $window.document.getElementById('recipe-quantity-input').focus();
+  };
+
+  $scope.saveRecipe = function(newRecipe){
+    newRecipe.ingredients = $scope.ingredients;
+    newRecipe.userId = user;
+    console.log(newRecipe);
+    mainService.createRecipes(newRecipe).then(function(response){
+      $scope.ingredients = [];
+      $scope.newRecipe = {};
+      mainService.getDataRecipes(user).then(function(response){
+            $scope.recipes = response;
+      });
+    })
+  };
+
+  $scope.destroyRecipes = function(recipeToDelete){
+    mainService.destroyRecipes(recipeToDelete).then(function(response){
+      mainService.getDataRecipes(user).then(function(response){
+        $scope.recipes = response;
+      })
+    })
+  };
+
+  $scope.updateRecipe = function(itemId, body){
+    mainService.updateRecipes(itemId, body).then(function(response){
+      mainService.getDataRecipes(user).then(function(response){
+        $scope.recipes = response;
+      })
+    })
+
   }
+
+
 
 
 

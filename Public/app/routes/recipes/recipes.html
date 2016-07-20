@@ -3,14 +3,17 @@
 
   <!-- Create New Recipe -->
   <div class="stockitem-display" ng-model="newRecipe">
-    <input type="text" placeholder="Name" ng-model="newItem.name">
-    <textarea placeholder="Description" ng-model="newRecipe.description" cols="30" rows="5"></textarea>
+    <input type="text" placeholder="Name" ng-model="newRecipe.name">
+    <textarea placeholder="Description" ng-model="newRecipe.description" cols="30" rows="2"></textarea>
     <!-- Add Ingredients -->
     <div class="">
       <p>Ingredients</p>
+      <ul ng-repeat="ingredient in ingredients">
+        <li>{{ingredient.quantity}} {{ingredient.unitOfMeasure}} {{ingredient.name}}</li>
+      </ul>
       <form ng-submit="addToIngredients(newIngredient)">
         <input ng-model="newIngredient.quantity" id="recipe-quantity-input" placeholder="e.g. 1/3" type="text">
-        <select ng-model="newIngredient.unit">
+        <select ng-model="newIngredient.unitOfMeasure">
           <option value="ml">ml</option>
           <option value="l">l</option>
           <option value="tsp">tsp</option>
@@ -30,10 +33,10 @@
     </div>
 
 
-    <input placeholder="Instructions" ng-model="newRecipe.instructions"></input>
-    <input type="number" placeholder="Price" ng-model="newItem.price">
+    <textarea placeholder="Instructions" ng-model="newRecipe.instructions" cols="30" rows="5"></textarea>
+    <input type="number" placeholder="Price" ng-model="newRecipe.price">
     <div class="submit-wrap">
-      <button class="stockitem-submit" ng-click="">Save Recipe</button>
+      <button class="stockitem-submit" ng-click="saveRecipe(newRecipe)">Save Recipe</button>
     </div>
   </div>
 
@@ -44,16 +47,16 @@
     {{recipe.name}}
     {{recipe.description}}
   <!-- Delete Recipe -->
-    <button type="button" class="stockitem-delete" ng-click="">Delete</button>
+    <button type="button" class="stockitem-delete" ng-click="destroyRecipes(recipe._id)">Delete</button>
     <br>
 
   <!-- Edit Recipe -->
   <input type="text" ng-model="recipe.name">
-  <input type="text" rows="10" cols="30" ng-model="recipe.description">
+  <input type="text" ng-model="recipe.description">
   <input type="text" ng-model="recipe.ingredients">
   <input type="text" ng-model="recipe.instructions">
   <input type="number" ng-model="recipe.price">
-  <button ng-click="">Update</button>
+  <button ng-click="updateRecipe(oi)">Update</button>
 
 
   </div>
