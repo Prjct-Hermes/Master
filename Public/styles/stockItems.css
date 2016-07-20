@@ -1,12 +1,20 @@
 .stockitem-title{
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+  color: #A94C24;
+  margin-top:150px;
+  text-shadow: 5px 5px 6px rgba(32, 30, 28, 0.5);
+}
+.create-title{
   margin-bottom: 10px;
   text-align: center;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: bold;
-  color: orange;
+  color: #A94C24;
 }
 .stockitem-main{
-  margin-top: 200px;
+  margin-top: 70px;
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -14,11 +22,26 @@
 
 }
 .stockitem-create{
-  margin: 15px;
+  margin: 0 10px 10px 10px;
   display: flex;
   flex-direction: column;
   width: 25vw;
   height: auto;
+}
+.stockitem-input{
+  margin: 5px 0 5px 0;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.3);
+  -webkit-transition: all .40s;
+}
+.stockitem-input:focus{
+  padding-left: 5px;
+  background: #525157;
+  color: white;
+  -webkit-transition: all .40s;
+  outline: white;
 }
 .submit-wrap{
   display: flex;
@@ -26,24 +49,22 @@
   margin: 10px;
 }
 .stockitem-submit{
+  color: white;
   border: none;
   font-size: 20px;
   font-weight: bold;
   height: 50px;
   width: 100px;
-  background: gray;
+  background: #A94C24;
   border-radius: 10px;
   -webkit-transition: all .40s;
+  box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
 }
 .stockitem-submit:hover{
-  border: none;
+  border: 1px solid #A94C24;
   outline: none;
-  font-size: 25px;
-  font-weight: bold;
-  height: 60px;
-  width: 120px;
-  background: orange;
-  color: white;
+  background: white;
+  color: #A94C24;
   -webkit-transition: all .40s;
   border-radius: 20px;
 }
@@ -55,30 +76,40 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  margin-left: 5%;
 }
 .stockitem-box{
+  border-radius: 10px;
   text-align: center;
-  color: lightgray;
-  background: gray;
-  font-size: 18px;
-  margin: 10px;
+  color: black;
+  background-image: url("http://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg");
+  background-size: cover;
+  font-size: 20px;
+  margin: 25px 15px 25px 15px;
   padding: 10px;
   height: 100px;
-  width: 200px;;
-  border: 2px solid black;
+  width: 200px;
+  box-shadow: 4px 4px 15px 0px rgba(0,0,0,0.5);
   -webkit-transition: all .40s;
 }
 .stockitem-box:hover{
-  background: lightgray;
+  font-size: 20px;
+  border-radius: 20px;
   color: black;
   -webkit-transition: all .40s;
 }
 .stockitem-edit{
   width: 100px;
   color: black;
-  background: lightgray;
+  background: white;
+  -webkit-transition: all .40s;
 }
+.stockitem-edit:hover{
+  background: #525157;
+  color: white;
+  -webkit-transition: all .40s;
+}
+
 
 /*------------------STOCK ITEM MODAL FORM CSS--------------------------*/
 
@@ -89,20 +120,23 @@
 .modal-body{
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 300px;
   justify-content: space-around;
 }
 .modal-input-box{
   font-size: 22px;
   height: 50px;
-  width: auto;
-  padding-left: 5px;
+  width: 200px;
   -webkit-transition: all .40s;
 }
 .modal-input-box:focus{
   outline: orange;
   border: 2px solid orange;
-  padding-left: 20px;
+  -webkit-transition: all .40s;
+}
+#modal-description:focus{
+  width: 300px;
+  height: 200px;
   -webkit-transition: all .40s;
 }
 #modal-submit{
@@ -117,4 +151,14 @@
   color: white;
   background: orange;
   -webkit-transition: all .40s;
+}
+.modal-footer{
+  display: block;
+
+}
+#modal-small{
+  width: 80px;
+}
+#modal-small:focus{
+  width: 100px;
 }
