@@ -36,19 +36,23 @@
   font-family: "Ubuntu";
 }
 .home-header-learn-more-cta{
-  width: 150px;
-  height:35px;
-  margin-left: 44%;
+  width: 300px;
+  height:65px;
+  margin: auto;
   border: 2px solid white;
   color: white;
-  font-size: 1.2rem;
+  font-size: 2rem;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: hsla(360, 100%, 0%, 0.5);
+  background: #34B3A0;
   font-family: "Ubuntu";
   cursor: pointer;
+  transition: all .3s ease 0s;
+}
+.home-header-learn-more-cta:hover{
+  background-color: #46C9B6;
 }
 
 
@@ -97,6 +101,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all .3s ease 0s;
+}
+.about-us-learn-more:hover{
+  background-color: #34B3A0;
+  color: white;
+  border: none;
 }
 /*----------------------FOUR STEPS-------------------*/
 .home-four-steps{
@@ -114,23 +124,31 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode: hard-light;
-  /*background-color: #A18D5C;*/
   transform: skewY(8deg);
   position: relative;
   top: -50px;
-  transition: all .3s ease-in-out 0s;
+  transition: all .6s ease-in-out 0s;
+}
+.four-step-image img{
+  width: 240%;
+  height: 105%;
+  position:absolute;
+  left:-110%;
+  top: -5%;
+  background-size: cover;
+  background-position:center;
 }
 .four-step-image:hover{
-  /*transform: skewY(8deg) scale(1.25);*/
+  transform: skewY(8deg) scale(.9);
   position: relative;
+
   /*top: -100px;*/
 
 
 }
 #step-one{
-  background-image:url('http://www.softwareassociates.in/wp-content/uploads/2015/07/inventory.jpg');
-  background-position: 75% 25%;
+  /*background-image:url('http://www.softwareassociates.in/wp-content/uploads/2015/07/inventory.jpg');*/
+
 }
 #step-two{
   background-image:url('http://blog.directcapital.com/wp-content/uploads/2015/12/CR1067_Restaurant-owner-with-tablet.jpg');
@@ -140,8 +158,8 @@
   background-image:url('.././images/hermes.png');
   background-size: contain;
   background-position: 50% 35%;
-  background-blend-mode: overlay;
-  background-color: #56647D;
+  /*background-blend-mode: overlay;*/
+  background-color: #34B3A0;
 
 }
 #step-three{
@@ -155,71 +173,69 @@
 .home-testimonial{
   margin-top:5vh;
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   margin-bottom: 25vh;
 }
 .testimonial-container{
   width: 100%;
-  height: 55vh;
+  height: 650px;
   margin-top: 28vh;
   background-color: #EBEEF0;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .tesitmonial-head{
   width: 55%;
   height: 5vh;
   margin-left: 22.5%;
-  padding-top: 2vh;
-  /*border: 2px solid black;*/
+  padding-top: 4vh;
+  margin-bottom: 3vh;
   font-family: "Ubuntu";
   font-weight: bold;
+  text-align: center;
   font-size: 4rem;
 }
 .testimonial-profile{
   width: 60%;
   height: 35vh;
-  margin-left: 20%;
-  /*border: 2px solid black;*/
+  margin: auto;
   display: flex;
-  /*flex-wrap: wrap;*/
+  margin-top: 9.5vh;
+  /*border: 2px solid black;*/
 }
 .testimonial-profile-picture{
-  margin-top: 9.5vh;
   position: absolute;
-  z-index: 100;
-  width: 25vh;
-  height: 12vw;
-  border: 40px solid #EBEEF0;
-  /*background-color: lightblue;*/
+  margin-top: 2.5vh;
+  /*z-index: 100;*/
+  margin-left: 2.5vw;
+  width: 320px;
+  height: 320px;
+  border: 40px solid hsla(171, 55%, 45%, 0.8);
   transform:rotate(45deg);
   overflow: hidden;
 }
 .testimonial-profile-image{
-  width: 150%;
-  height: 150%;
+  width: 155%;
+  height: 155%;
   position: absolute;
-  top:-4vh;
-  left:-85px;
+  top:-55px;
+  left:-55px;
   transform: rotate(-45deg);
   background-image: url('http://2.bp.blogspot.com/-XvEdtFh052g/UAU61kWYTKI/AAAAAAAABzw/hNU-fTh-OKc/s1600/Photography+Portrait+1.jpg');
   background-position: 50% 25%;
   background-size: cover;
 }
 .testimonial-profile-text{
-  margin-top: 7vh;
   padding-top: 3vh;
-  /*position: relative;*/
-  width: 75%;
-  height: 30vh;
+  width: 35vw;
+  height: 380px;
   margin-left: 10vw;
   background-color: white;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .testimonial-profile-name{
-  width: 50%;
+  width: 400px;
   height: 8vh;
-  margin-left: 11vw;
-  /*border: 2px solid black;*/
+  margin-left: 270px;
   font-family: "Roboto Slab";
   margin-bottom: 2vh;
 }
@@ -237,49 +253,25 @@
 .testimonial-endorsement{
   width: 65%;
   height: 12vh;
-  margin-left: 11vw;
+  margin-left: 270px;
   line-height: 1.5;
   /*border: 2px solid black;*/
   font-family: "Ubuntu";
 }
 .testimonial-click-stuff{
-  margin-top: 7vh;
+  /*margin-top: 7vh;*/
   height: 0;
   width: 0;
-  border-left: 6vw solid white;
-  border-top: 16.75vh solid transparent;
-  border-bottom: 16.5vh solid transparent;
+  border-left: 180px solid white;
+  border-top: 190px solid transparent;
+  border-bottom: 190px solid transparent;
 }
 
-/*.testimonial-profile-prev{
-  position: relative;
-  z-index: 100;
-  top: -5vh;
-  right: -43vw;
-  background-color: black;
-  border: 85px solid #EBEEF0;
-  border-left: 85px solid #EBEEF0;
-  height: 50px;
-  width: 50px;
-  transform: rotate(45deg);
-}
-.testimonial-profile-next{
-  position: relative;
-  top: -5vh;
-  left: 44vw;
-  background-color: blue;
-  height: 50px;
-  width: 50px;
-  border: 85px solid #EBEEF0;
-  border-bottom: 90px solid #EBEEF0;
-  transform: rotate(45deg);
-
-}*/
 /*-------------------FOOTER-----------------------*/
 .footer-contact{
   width: 100%;
   position: absolute;
-  bottom: -290vh;
+  bottom: -285vh;
   /*left: 0px;*/
   height: 45vh;
   display:flex;
