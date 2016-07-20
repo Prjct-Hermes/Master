@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/login.css">
+<!-- <<<<<<< HEAD -->
+<!-- ======= -->
+    <link rel="stylesheet" href="./styles/stockItems.css">
+    <link rel="stylesheet" href="./styles/recipes.css">
+<!-- >>>>>>> fbb04866adfbbe90d3786145543f163a0e57e900 -->
     <title></title>
   </head>
   <body>
@@ -20,7 +25,24 @@
         <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
         <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
       </div>
-      <div ui-sref="login" class="main-navbar-menu">SIGN UP</div>
+      <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
+      <div class="main-navbar-menu" id="dropdown">
+
+                <div class="hamburger-icon"></div>
+                <div class="dropdown-container">
+                  <div class="dropdown-content">
+                      <a ui-sref="profile">Profile</a>
+                      <a ui-sref="login">Login</a>
+                      <a ui-sref="login">Sign-Up</a>
+                      <a ng-controller="mainCtrl" ng-click="logout()">Logout</a>
+
+                  </div>
+                </div>
+
+
+
+
+            </div>
       <div class="main-navbar-menu">LEARN MORE</div>
       <div ui-sref="home" class="main-navbar-menu">HOME</div>
       <!-- ALERTS -->
@@ -81,6 +103,8 @@
   <!-- Services -->
   <script src="./app/services/mainService.js"></script>
   <script src="./scripts/script.js"></script>
+  <!-- Gulp -->
+  <script src="./bundle.js"></script>
 
   </body>
 </html>

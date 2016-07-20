@@ -1,0 +1,39 @@
+<section class="stockitem-main">
+  <h1 class="stockitem-title">Recipes</h1>
+
+  <!-- Create New Recipe -->
+  <div class="stockitem-display" ng-model="newRecipe">
+    <input type="text" placeholder="Name" ng-model="newItem.name">
+    <textarea placeholder="Description" ng-model="newRecipe.description" cols="30" rows="5"></textarea>
+    <div class="">
+      <p>Ingredients</p>
+      <select ng-options="stockItem as stockItem.name for stockItem in stockItems track by item._id" ng-model="selected"></select>
+    </div>
+    <input placeholder="Instructions" ng-model="newRecipe.instructions"></input>
+    <input type="number" placeholder="Price" ng-model="newItem.price">
+    <div class="submit-wrap">
+      <button class="stockitem-submit" ng-click="">Submit</button>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- List Recipes -->
+  <div class="stockitem-box" ng-repeat="recipe in recipes">
+    {{recipe.name}}
+    {{recipe.description}}
+  <!-- Delete Recipe -->
+    <input type="button" class="stockitem-delete" ng-click="">Delete</input>
+    <br>
+
+  <!-- Edit Recipe -->
+  <input type="text" ng-model="recipe.name">
+  <input type="text" rows="10" cols="30" ng-model="recipe.description">
+  <input type="text" ng-model="recipe.ingredients">
+  <input type="text" ng-model="recipe.instructions">
+  <input type="number" ng-model="recipe.price">
+  <button ng-click="">Update</button>
+
+
+  </div>
+</section>
