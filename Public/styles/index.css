@@ -40,7 +40,6 @@ body {
   height: 100%;
   float: right;
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
   align-items:center;
   font-size: .85vw;
@@ -48,37 +47,49 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all .3s ease 0s;
-=======
-  justify-content: space-around;
+
+  /*justify-content: space-around;
   align-items:flex-end;
   font-size: 15px;
   /*color: white;*/
-  font-weight: 500;
+  /*font-weight: 500;
   cursor: pointer;
-  margin-right: 100px;
->>>>>>> fbb04866adfbbe90d3786145543f163a0e57e900
+  margin-right: 100px;*/
 }
 .main-navbar-menu:hover{
   background-color: #34B3A0;
   color: white;
   font-weight: bold;
 }
-.fake-content{
-  width: 100%;
-  height: 100vh;
-  background-color: lightblue;
+.main-navbar-menu-icon{
+  width: 5vw;
+  height: 100%;
+
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  /*margin-right: 100px;*/
+  float: right;
+}
+.main-navbar-menu-icon:hover{
+  background-color: #34B3A0;
+  color: white;
+  font-weight: bold;
 }
 /*---------------------HAMBURGER------------------------*/
-#dropdown{
-  width: 40px;
-  height: 40px;
+.main-navbar-menu-icon img{
+  height: 80%;
+  width: auto;
+  margin-top: 5%;
+  margin-left: 22.5%;
 }
 
 .hamburger-icon{
   background-image: url("../images/hamburger.png");
   background-size: contain;
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: auto;
 }
 #dropdown {
     position: relative;
@@ -105,10 +116,11 @@ body {
 }
 
 .dropdown-content a:hover  {
-  background-color: lightblue;
+  background-color: #34B3A0;
   -webkit-transition: all .40s;
   color: white;
   font-size: 18px;
+  font-family: "Roboto Slab";
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -144,12 +156,14 @@ body {
 .footer-contact-info{
   width: 100%;
   height: 55%;
+  background-color: #4F5354;
   border-top:1px solid white;
   border-bottom:1px solid white;
 }
 .footer-contact-form-head{
+  padding-top: 2vh;
   width: 100%;
-  height:25%;
+  height:35%;
   font-size: 4.5vh;
   color: white;
   text-align: left
@@ -225,6 +239,7 @@ body {
   height: 30px;
   background-color: #101519;
 }
+
 .footer-socialmedia{
   width: 30%;
   height: 20%;
