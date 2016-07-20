@@ -17,7 +17,6 @@ angular.module('hermes').controller('ordersCtrl', function($scope, mainService, 
 $scope.getData = function(){
   $scope.allRecipes = mainService.retrieveAllRecipes();
   $scope.stockItems = mainService.retrieveStockItems();
-  $scope.alertsCheck();
 }();
 
 $scope.order ={

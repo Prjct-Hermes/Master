@@ -13,14 +13,29 @@ angular.module('hermes')
 
  $scope.getitems();
 
- // update ingredient
+//Alert checker
+$scope.alertCheck = function(){
+  for (var i = 0; i < $scope.stockItems.length; i++){
+    if($scope.stockItems[i].quantity <= $scope.stockItems[i].alertQuantity){
+      var alert = {
+        name: $scope.stockItems[i].name,
+        id: $scope.stockItems[i]._id,
+        quantity: $scope.stockItems[i].quantity,
+        alertQuantity: $scope.stockItems[i].alertQuantity
+      }
+      $scope.alerts.push(alert);
+    }
+  }
+  mainService.createAlerts($scope.alerts);
+};
+
+ // update ingredient and check alerts
+ $scope.alerts = [];
  $scope.updateStockItems = function(itemId, body){
    mainService.updateStockItems(itemId, body).then(function(response){
-
-
      $scope.getitems();
    })
-
+   $scope.alertCheck();
  }
 
  //create ingredient

@@ -1,6 +1,7 @@
 angular.module("hermes").controller("loginCtrl", function($scope, $state, mainService){
   //Create New User
     $scope.createNewUser = function(newUser){
+      $scope.newUser.createDate = new Date();
       mainService.createUser(newUser).then(function(response){
         //Call the login function to automatically log in on successfull create.
       });
@@ -14,14 +15,18 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
         }
         else{
           var userId = response.data._id
-          mainService.getDataStockItems(userId);
+          mainService.getDataStockItems(userId).then(function(response){
+            $scope.stockItems = mainService.retrieveStockItems();
+            console.log($scope.stockItems)
+            $scope.alertCheck();
+          });
           mainService.getDataRecipes(userId);
           mainService.getDataOrders(userId);
           $state.go('orders');
-          $scope.alertCheck();
         }
       });
     };
+    $scope.alerts = [];
     $scope.alertCheck = function(){
       for (var i = 0; i < $scope.stockItems.length; i++){
         if($scope.stockItems[i].quantity <= $scope.stockItems[i].alertQuantity){
