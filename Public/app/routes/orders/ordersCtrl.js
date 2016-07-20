@@ -1,9 +1,9 @@
-angular.module('hermes').controller('ordersCtrl', function($scope, mainService){
+angular.module('hermes').controller('ordersCtrl', function($scope, mainService, user){
 
 //This segment should be removed when the project has working login
-// $scope.user = "578bf14a5b25dcac0b00f9e6";
+// user = "578bf14a5b25dcac0b00f9e6";
 // $scope.recipes = function(){
-//   mainService.getDataRecipes($scope.user).then(function(){
+//   mainService.getDataRecipes(user).then(function(){
 //     $scope.allRecipes = mainService.retrieveAllRecipes();
 //   });
 // }();
@@ -15,9 +15,9 @@ angular.module('hermes').controller('ordersCtrl', function($scope, mainService){
 //This section hosts the iif that grabs our data from the server
 //This segment should be uncommented when the above portion is removed
 $scope.getData = function(){
-  $scope.user = mainService.userId();
   $scope.allRecipes = mainService.retrieveAllRecipes();
   $scope.stockItems = mainService.retrieveStockItems();
+  $scope.alertsCheck();
 }();
 
 $scope.order ={
@@ -26,34 +26,63 @@ $scope.order ={
   recipes: [],
   total: 0,
 };
-
-
+$scope.alerts = [];
+$scope.units = {
+	"ml" : 3785.41,
+	"l":3.78541,
+	"tsp":768,
+	"tbsp":256,
+	"floz":133.228,
+	"cup":15.7725,
+	"pnt":8,
+	"qt":4,
+	"gal":1,
+	};
+$scope.converter = function(unit, from, to){
+  units = {
+  	"ml" : 3785.41,
+  	"l":3.78541,
+  	"tsp":768,
+  	"tbsp":256,
+  	"floz":133.228,
+  	"cup":15.7725,
+  	"pnt":8,
+  	"qt":4,
+  	"gal":1,
+  	};
+	var result = unit;
+	for (var x in units){
+		if(x === from){
+			result = parseFloat(result / units[x]);
+		}
+	}
+	for (var y in units){
+		if(y === to){
+			result = parseFloat(result * units[y]);
+		}
+	}
+	return result;
+};
 $scope.incrementOrder = function(recipe){
-  console.log("1");
   if (!$scope.order.userId){
-    console.log("2");
-    $scope.order.userId = $scope.user;
+    $scope.order.userId = user;
     $scope.order.date = new Date();
     $scope.order.recipes = [];
     $scope.order.total = recipe.price;
     return $scope.order.recipes.push({"name": recipe.name,"id": recipe._id,"quantity": 1, "price": recipe.price});
   };
   if($scope.order.recipes.length < 1){
-    console.log("3")
     $scope.order.recipes.push({"name": recipe.name,"id": recipe._id,"quantity": 1, "price": recipe.price});
   }else {
-    console.log("4");
     var check = true;
     for (var i = 0; i < $scope.order.recipes.length; i++){
       if ($scope.order.recipes[i].id === recipe._id){
-        console.log("5");
         check = false;
         $scope.order.recipes[i].quantity++;
         $scope.order.recipes[i].price = parseFloat(recipe.price) * parseFloat($scope.order.recipes[i].quantity);
       }
     }
     if(check){
-      console.log("6");
       $scope.order.recipes.push({"name": recipe.name,"id": recipe._id,"quantity": 1, "price": recipe.price});
     }
   }
@@ -61,14 +90,10 @@ $scope.incrementOrder = function(recipe){
   for (var i = 0; i < $scope.order.recipes.length; i++){
     $scope.order.total = parseFloat($scope.order.total) + parseFloat($scope.order.recipes[i].price);
   }
-  console.log("7", $scope.order);
 }
-
 $scope.decrementOrder = function(recipe){
-  console.log("1");
   for (var i = 0; i < $scope.order.recipes.length; i++){
     if ($scope.order.recipes[i].id === recipe._id){
-      console.log("2");
       $scope.order.recipes[i].quantity--;
       $scope.order.recipes[i].price = parseFloat(recipe.price) * parseFloat($scope.order.recipes[i].quantity);
       if ($scope.order.recipes[i].quantity < 1){
@@ -80,13 +105,56 @@ $scope.decrementOrder = function(recipe){
   for (var i = 0; i < $scope.order.recipes.length; i++){
     $scope.order.total = parseFloat($scope.order.total) + parseFloat($scope.order.recipes[i].price);
   }
-  console.log("3", $scope.order);
 }
-
+$scope.stockUpdate = function(recipe){
+  for (var i = 0; i < $scope.allRecipes.length; i++){
+    console.log('1');
+    if(recipe.id === $scope.allRecipes[i]._id){
+      console.log('2');
+      var currentRecipe = $scope.allRecipes[i];
+      console.log("Current Recipe", currentRecipe)
+      for (var prop in currentRecipe.ingredients){
+        console.log('3', prop);
+        for (var item in $scope.stockItems){
+          console.log('4');
+          if(currentRecipe.ingredients[prop].id === $scope.stockItems[item]._id){
+            console.log('5');
+            var amount = $scope.converter((recipe.quantity * currentRecipe.ingredients[prop].quantity),currentRecipe.ingredients[prop].unitOfMeasure,$scope.stockItems[item].unitOfMeasure)
+            console.log("Amount ", amount, " Ing qty ", currentRecipe.ingredients[prop].quantity, " Ing uOm ", currentRecipe.ingredients[prop].unitOfMeasure, "stock uOm ", $scope.stockItems[item].unitOfMeasure);
+            $scope.stockItems[item].quantity = $scope.stockItems[item].quantity - amount;
+            if($scope.stockItems[item].quantity < 0){
+              $scope.stockItems[item].quantity = 0;
+            }
+            mainService.updateStockItems($scope.stockItems[item]._id, $scope.stockItems[item])
+          }
+        }
+      }
+    }
+  }
+  console.log('6');
+}
+$scope.alertCheck = function(){
+  for (var i = 0; i < $scope.stockItems.length; i++){
+    if($scope.stockItems[i].quantity <= $scope.stockItems[i].alertQuantity){
+      var alert = {
+        name: $scope.stockItems[i].name,
+        id: $scope.stockItems[i]._id,
+        quantity: $scope.stockItems[i].quantity,
+        alertQuantity: $scope.stockItems[i].alertQuantity
+      }
+      $scope.alerts.push(alert);
+    }
+  }
+  mainService.createAlerts($scope.alerts);
+};
 $scope.createOrder = function(){
-  console.log("creating order");
   mainService.createOrders($scope.order);
-  console.log("Order created");
+  //Here is where it will loop through all the recipes
+  //and update stock quantities
+  $scope.order.recipes.forEach($scope.stockUpdate)
+  $scope.alertCheck();
+  console.log($scope.alerts);
+  $scope.order ={userId: "",date: "",recipes: [],total: 0};
 }
 
 /*
@@ -100,16 +168,5 @@ cup
 pnt
 qt
 gal
-
-
-1.Convert all recipes ingredients converted to ingredient unit of measure
-2.multiply by qty of recipe
-3.Total all recipes
-4.subtract from stock qty
-5.upadte stock qty on server
-6.post order to server
-7.run through alerts and check if alert qty is below stock qty and if an alert already exists don't post
-
-convert($scope.recipe.ingredientQty).from($scope.recipe.ingredientUnitOfMeasure).to($scope.stockItems.unitOfMeasure)
 */
 })
