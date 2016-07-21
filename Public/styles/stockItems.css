@@ -22,6 +22,18 @@
   justify-content: center;
   align-items: center;
 }
+.searchbar-wrap{
+  width:100%;
+  height: auto;
+  display:flex;
+
+  margin-top: 20px;
+}
+.searchbar{
+  width:25%;
+  height: 30px;
+  margin-left: 25%;
+}
 .stockitem-main{
   font-family: 'Raleway', sans-serif;
   margin-top: 70px;

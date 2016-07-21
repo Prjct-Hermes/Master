@@ -1,37 +1,42 @@
 angular.module('hermes')
 .controller('stockItemsCtrl', function($scope, mainService, user){
 
+ 
 
- $scope.getitems = function(){
-   mainService.getDataStockItems(user).then(function(response){
-         $scope.items = response.map(function(item){
-           item.alertDate = new Date(item.alertDate);
-           return item;
-         });
-   });
- }
+$scope.getItems = function(){
+  $scope.alertItems = mainService.retrieveStockItems();
+  mainService.getDataStockItems(user).then(function(response){
+    $scope.items = response.map(function(item){
+      item.alertDate = new Date(item.alertDate);
+      console.log("items", $scope.stockItems )
+      return item;
+  });
+});
+}
+ $scope.getItems();
 
 
- $scope.getitems();
 
 //Alert checker
+$scope.alerts = [];
 $scope.alertCheck = function(){
-  for (var i = 0; i < $scope.stockItems.length; i++){
-    if($scope.stockItems[i].quantity <= $scope.stockItems[i].alertQuantity){
+  for (var i = 0; i < $scope.alertItems.length; i++){
+    if($scope.alertItems[i].quantity <= $scope.alertItems[i].alertQuantity){
       var alert = {
-        name: $scope.stockItems[i].name,
-        id: $scope.stockItems[i]._id,
-        quantity: $scope.stockItems[i].quantity,
-        alertQuantity: $scope.stockItems[i].alertQuantity
+        name: $scope.alertItems[i].name,
+        id: $scope.alertItems[i]._id,
+        quantity: $scope.alertItems[i].quantity,
+        alertQuantity: $scope.alertItems[i].alertQuantity
       }
       $scope.alerts.push(alert);
     }
   }
   mainService.createAlerts($scope.alerts);
-};
+}();
+
+
 
  // update ingredient and check alerts
- $scope.alerts = [];
  //get individual item for modal form
  $scope.getSingleItem = function(item){
    $scope.stockItem = item;
@@ -41,9 +46,9 @@ $scope.alertCheck = function(){
  $scope.updateStockItems = function(itemId, body){
    console.log(itemId, body);
    mainService.updateStockItems(itemId, body).then(function(response){
-     $scope.getitems();
+     $scope.getItems();
    })
-   $scope.alertCheck();
+
  }
 
  //create ingredient
@@ -53,7 +58,8 @@ $scope.alertCheck = function(){
    mainService.createStockItems(newItem).then(function(response){
      $scope.newItem = {};
 
-     $scope.getitems();
+     $scope.getItems();
+
    })
  }
 
@@ -62,7 +68,8 @@ $scope.alertCheck = function(){
     var check = confirm("Are you sure you want to delete this stock item?");
     if (check) {
       mainService.destroyStockItems(oldItem).then(function(response){
-        $scope.getitems();
+        $scope.getItems();
+
      })
     }
 
