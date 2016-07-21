@@ -1,5 +1,4 @@
 <section class="recipe-main">
-
   <!-- Create New Recipe -->
   <div class="recipe-create" ng-model="newRecipe">
     <h1 class="recipes-title">Recipes</h1>
@@ -31,33 +30,24 @@
         <button type='submit'>Add to ingredients</button>
       </form>
     </div>
-
-
     <textarea placeholder="Instructions" ng-model="newRecipe.instructions" cols="30" rows="5"></textarea>
     <input type="number" placeholder="Price" ng-model="newRecipe.price">
     <div class="submit-wrap">
       <button class="stockitem-submit" ng-click="saveRecipe(newRecipe)">Save Recipe</button>
     </div>
   </div>
-
   <br>
-
   <!-- List Recipes -->
-  <div class="recipe-box" ng-repeat="recipe in recipes">
+  <!-- Seach Box -->
+  <div class="recipe-box" ng-repeat="recipe in recipes | filter: {name:searchFilter}">
     {{recipe.name}}
     <button class="recipe-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleRecipe(recipe)">Edit</button>
   </div>
-
-
-
-
   <!-- MODAL FORM -->
           <div class="modal-container">
-
               <!-- Modal -->
               <div class="modal fade" id="myModal" role="dialog">
                   <div class="modal-dialog">
-
                       <!-- Modal content-->
                       <div class="modal-content">
                           <div class="modal-header">
@@ -72,7 +62,12 @@
                                   <div class="modal-label">Instructions</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.instructions">
                                   <div class="modal-label">Ingredients</div>
                                     <span ng-repeat="ingredient in singleRecipe.ingredients">
-                                      Name: <input ng-value="ingredient.name">
+                                      {{ingredient.name}}:
+                                      <select
+                                              ng-options="stockItem.name for stockItem in stockItems"
+                                              ng-model="ingredient"
+                                                    >
+                                            </select>
                                       Unit Of Measure: <select ng-model="ingredient.unitOfMeasure">
                                         <option value="ml">ml</option>
                                         <option value="l">l</option>
@@ -87,6 +82,7 @@
                                       </select>
                                       Quantity: <input ng-value="ingredient.quantity">
                                       <button ng-click="removeIngredient(ingredient.id, singleRecipe)" type="button">Remove ingredient</button>
+                                      <br>
                                     </span>
                               </div>
                           </form>
@@ -94,15 +90,12 @@
                           <div class="modal-footer">
                             <button ng-click="updateRecipe(singleRecipe._id, singleRecipe)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Update</button>
                             <button ng-click="destroyRecipes(singleRecipe._id)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Delete</button>
-
                           </div>
                       </div>
-
                   </div>
               </div>
-
           </div>
-
+          <input type="text" ng-model="searchFilter" placeholder="Search Items...">
   <!-- Edit Recipe -->
   <!-- NAME:<input type="text" ng-model="recipe.name">
   <br>

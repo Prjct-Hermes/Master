@@ -136,6 +136,9 @@
   border: 2px solid #34B3A0;
   -webkit-transition: all .40s;
 }
+#modal-description{
+  resize: none;
+}
 #modal-description:focus{
   width: 300px;
   height: 200px;
@@ -162,4 +165,7 @@
 }
 .modal-label{
   margin: 5px;
+}
+#unit-dropdown{
+  width: 50%;
 }
