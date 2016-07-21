@@ -3,7 +3,7 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
     $scope.createNewUser = function(newUser){
       $scope.newUser.createDate = new Date();
       mainService.createUser(newUser).then(function(response){
-        //Call the login function to automatically log in on successfull create.
+        $scope.login(newUser);
       });
     };
     //Login
@@ -17,7 +17,6 @@ angular.module("hermes").controller("loginCtrl", function($scope, $state, mainSe
           var userId = response.data._id
           mainService.getDataStockItems(userId).then(function(response){
             $scope.stockItems = mainService.retrieveStockItems();
-            console.log($scope.stockItems)
             $scope.alertCheck();
           });
           mainService.getDataRecipes(userId);
