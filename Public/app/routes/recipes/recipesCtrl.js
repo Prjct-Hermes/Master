@@ -45,9 +45,9 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
   };
 
   $scope.updateRecipe = function(itemId, body){
-    console.log("Recipe: ",body)
+    console.log("Recipe: ",body.ingredients[0])
     mainService.updateRecipes(itemId, body).then(function(response){
-      console.log("response: ", response);
+      console.log("response: ", response.ingredients[0]);
       $scope.getRecipes();
 
     })
@@ -67,8 +67,20 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
     $scope.singleRecipe = recipe;
   }
 
+  $scope.addToExisting = function(singleRecipe, ingredientToAdd){
+    var tempIngredient = {};
+    tempIngredient.quantity = ingredientToAdd.quantity;
+    tempIngredient.unitOfMeasure = ingredientToAdd.unitOfMeasure;
+    tempIngredient.id = ingredientToAdd.item._id;
+    tempIngredient.name = ingredientToAdd.item.name;
+    singleRecipe.ingredients.push(angular.copy(tempIngredient));
 
+    $scope.updateRecipe(singleRecipe._id, singleRecipe);
 
+    $scope.addIngredient = {};
+    console.log("Recipe: ", singleRecipe);
+    console.log("tempIngredient: ", tempIngredient);
+  }
 
 
 });
