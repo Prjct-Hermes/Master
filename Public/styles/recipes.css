@@ -169,3 +169,103 @@
 #unit-dropdown{
   width: 50%;
 }
+.recipes-title{
+  background: #EBEEF0;
+  width: 75%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 80px;
+  color: #34B3A0;
+  margin-top:150px;
+  margin-left: 25%;
+  padding-left: 1%;
+}
+.recipe-create{
+  font-family: "Ubuntu";
+  padding: 1%;
+  background: #EBEEF0;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: auto;
+}
+.recipe-main{
+  font-family: 'Raleway', sans-serif;
+  margin-top: 70px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+.recipe-input{
+  margin: 5px 0 5px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.recipe-box{
+  font-family: "Ubuntu";
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background: #525157;
+  font-size: 20px;
+  margin: 25px 15px 25px 15px;
+  padding: 10px;
+  height: 100px;
+  width: 200px;
+  -webkit-transition: all .40s;
+}
+.recipe-box:hover{
+  background: gray;
+}
+
+/*********  MODAL  ************/
+.modal-content{
+  width: 800px;
+}
+.modal-title{
+  font-size: 40px;
+  font-weight: bold;
+}
+.recipe-modal-body{
+  flex-direction: column;
+  height: 400px;
+}
+.modal-input-box{
+  font-size: 20px;
+  height: 30px;
+  width: 300px;
+  -webkit-transition: all .40s;
+}
+.modal-input-box:focus{
+  outline: orange;
+  border: 2px solid #34B3A0;
+  -webkit-transition: all .40s;
+}
+#modal-description:focus{
+  width: 300px;
+  height: 200px;
+  -webkit-transition: all .40s;
+}
+#modal-submit{
+  margin: 0;
+  color: white;
+  background: #34B3A0;
+  height: 50px;
+  width: 200px;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-transition: all .40s;
+}
+#modal-submit:hover{
+  background: #46C9B6;
+  -webkit-transition: all .40s;
+}
+.modal-footer{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.modal-label{
+  margin: 5px;
+}
