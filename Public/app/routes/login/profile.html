@@ -11,21 +11,25 @@ Delete profile: Needs confirmation
 </div>
 
 <div class="">
-  Name : <input type="text" ng-model="temp.name" placeholder="{{profile.name}}">
+  Name : <input type="text" ng-model="profile.name" placeholder="{{profile.name}}">
 </div>
 <div class="">
-  Email : <input type="email" ng-model="temp.email" placeholder="{{profile.email}}">
+  Email : <input type="email" ng-model="profile.email" placeholder="{{profile.email}}">
 </div>
 <div class="">
-  Phone : <input type="phone" ng-model="temp.phone" placeholder="{{profile.phone}}">
+  Phone : <input type="phone" ng-model="profile.phone" placeholder="{{profile.phone}}">
 </div>
-<!-- <div class="">
-  Password : <input type="test" ng-model="temp.name" value="Test" ng-blur="passwordCheck(temp.password)"placeholder="{{temp.password}}">
+<!-- <div class="" ng-hide="newPassword" >
+  New Password : <input type="password" ng-model="temp.newPassword">
 </div>
-<div class="">
+<div class="" ng-hide="newPassword" >
+  Confirm Password : <input type="password" ng-model="temp.confirmPassword" ng-change="passwordCheck()">
+</div>
+<div class="" ng-hide="newPassword" >
   {{passwordConfirmation}}
-</div> -->
-<button type="button" ng-click="updateProfile(profile._id, temp)">Update</button>
+</div>
+<button type="button" ng-click="changePassword()">Change Password</button> -->
+<button type="button" ng-click="updateProfile()">Update</button>
 <button type="button" ng-click="deleteProfile(profile._id)">Delete</button>
-<button type="button" ng-click="test(profile._id)">Test</button>
+<button type="button" ng-click="test()">test</button>
 <!-- NOTE this page uses the login controller. Can switch to mainCtrl if group insists -->
