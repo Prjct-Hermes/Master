@@ -45,9 +45,11 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
   };
 
   $scope.updateRecipe = function(itemId, body){
-
+    console.log("Recipe: ",body)
     mainService.updateRecipes(itemId, body).then(function(response){
-      // $scope.getRecipes();
+      console.log("response: ", response);
+      $scope.getRecipes();
+
     })
   }
 

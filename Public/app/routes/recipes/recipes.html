@@ -63,12 +63,12 @@
                                   <div class="modal-label">Price</div><textarea class="modal-input-box" id="modal-description" type="text" ng-model="singleRecipe.price" cols="10" rows="6" required></textarea>
                                   <div class="modal-label">Instructions</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.instructions">
                                   <div class="modal-label">Ingredients</div>
-                                    <span ng-repeat="ingredient in singleRecipe.ingredients">
+                                    <div ng-repeat="ingredient in singleRecipe.ingredients">
                                       {{ingredient.name}}:
 
                                       <select
                                               ng-options="stockItem.name for stockItem in stockItems"
-                                              ng-model="ingredient"
+                                              ng-model="ingredient.name"
                                                     >
                                             </select>
                                       Unit Of Measure: <select ng-model="ingredient.unitOfMeasure">
@@ -83,10 +83,11 @@
                                         <option value="gal">gal</option>
                                         <option value="qty">qty</option>
                                       </select>
-                                      Quantity: <input ng-value="ingredient.quantity">
+                                      Quantity: <input ng-model="ingredient.quantity">
                                       <button ng-click="removeIngredient(ingredient.id, singleRecipe)" type="button">Remove ingredient</button>
+
                                       <br>
-                                    </span>
+                                    </div>
                               </div>
                           </form>
   <!-- delete and update buttons -->
