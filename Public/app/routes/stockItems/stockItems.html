@@ -11,7 +11,21 @@
         <input class="stockitem-input" type="text" placeholder="Name" ng-model="newItem.name">
         <textarea  class="stockitem-input" placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
         <input  class="stockitem-input" type="number" placeholder="quantity" ng-model="newItem.quantity">
-        <input  class="stockitem-input" type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure">
+        <!-- <input  class="stockitem-input" type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure"> -->
+
+        <select class="stockitem-input" ng-model="newItem.unitOfMeasure">
+          <option value="ml">ml</option>
+          <option value="l">l</option>
+          <option value="tsp">tsp</option>
+          <option value="tbsp">tbsp</option>
+          <option value="floz">floz</option>
+          <option value="cup">cup</option>
+          <option value="pnt">pnt</option>
+          <option value="qt">qt</option>
+          <option value="gal">gal</option>
+          <option value="qty">qty</option>
+        </select>
+
         <input  class="stockitem-input" type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
         <input  class="stockitem-input" type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
         <div class="submit-wrap">
@@ -53,7 +67,18 @@
 
 
                                 <div class="modal-label">Qty</div><input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.quantity" required>
-                                <div class="modal-label">Unit of Measurement</div><input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.unitOfMeasure" required>
+                                <div class="modal-label">Unit of Measurement</div><select class="stockitem-input" id="unit-dropdown" ng-model="stockItem.unitOfMeasure" required>
+                                  <option value="ml">ml</option>
+                                  <option value="l">l</option>
+                                  <option value="tsp">tsp</option>
+                                  <option value="tbsp">tbsp</option>
+                                  <option value="floz">floz</option>
+                                  <option value="cup">cup</option>
+                                  <option value="pnt">pnt</option>
+                                  <option value="qt">qt</option>
+                                  <option value="gal">gal</option>
+                                  <option value="qty">qty</option>
+                                </select>
                                 <div class="modal-label">Description</div><textarea class="modal-input-box" id="modal-description" type="text" ng-model="stockItem.description" cols="10" rows="6" required></textarea>
                                 <div class="modal-label">Alert at Qty </div><input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.alertQuantity">
                                 <div class="modal-label">Alert Date</div><input class="modal-input-box" type="text" ng-model="stockItem.alertDate" required>
