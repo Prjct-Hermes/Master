@@ -27,7 +27,6 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
   $scope.saveRecipe = function(newRecipe){
     newRecipe.ingredients = $scope.ingredients;
     newRecipe.userId = user;
-    console.log(newRecipe);
     mainService.createRecipes(newRecipe).then(function(response){
       $scope.ingredients = [];
       $scope.newRecipe = {};
