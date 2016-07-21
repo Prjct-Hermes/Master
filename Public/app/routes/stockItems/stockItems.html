@@ -40,7 +40,7 @@
 
 
         <!-- TO DISPLAY THE ITEM NAME AND QTY INSIDE INDIVIDUAL BOXES -->
-        <div class="stockitem-box" ng-repeat="item in items | filter: {name:searchFilter}">
+        <div class="stockitem-box" ng-repeat="item in items | filter: {name:searchFilter}" ng-class="{alert: item.quantity <= item.alertQuantity}">
             <p>{{item.name}}</p>
             <br>
             <p>Qty: {{item.quantity}} {{item.unitOfMeasure}}</p>

@@ -1,14 +1,13 @@
 angular.module('hermes')
 .controller('stockItemsCtrl', function($scope, mainService, user){
 
- 
+
 
 $scope.getItems = function(){
   $scope.alertItems = mainService.retrieveStockItems();
   mainService.getDataStockItems(user).then(function(response){
     $scope.items = response.map(function(item){
       item.alertDate = new Date(item.alertDate);
-      console.log("items", $scope.stockItems )
       return item;
   });
 });
@@ -44,11 +43,9 @@ $scope.alertCheck = function(){
 
  // update ingredient
  $scope.updateStockItems = function(itemId, body){
-   console.log(itemId, body);
    mainService.updateStockItems(itemId, body).then(function(response){
      $scope.getItems();
    })
-
  }
 
  //create ingredient
@@ -59,7 +56,6 @@ $scope.alertCheck = function(){
      $scope.newItem = {};
 
      $scope.getItems();
-
    })
  }
 
@@ -69,7 +65,6 @@ $scope.alertCheck = function(){
     if (check) {
       mainService.destroyStockItems(oldItem).then(function(response){
         $scope.getItems();
-
      })
     }
 

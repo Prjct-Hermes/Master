@@ -111,6 +111,7 @@
   width: 200px;
   -webkit-transition: all .40s;
 }
+.alert{background-color: red;}
 .stockitem-box:hover{
   background: gray;
 }
