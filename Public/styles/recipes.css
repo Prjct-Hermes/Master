@@ -1,5 +1,173 @@
-#recipe-quantity-input{
-  width: 50px;
+.recipeitem-title{
+  background: #EBEEF0;
+  width: 75%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 80px;
+  color: #34B3A0;
+  margin-top:150px;
+  margin-left: 25%;
+  padding-left: 1%;
+}
+.create-title{
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background: #525157;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recipeitem-main{
+  font-family: 'Raleway', sans-serif;
+  margin-top: 70px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+
+}
+.recipeitem-create{
+  font-family: "Ubuntu";
+  padding: 1%;
+  background: #EBEEF0;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  height: auto;
+}
+.recipeitem-create textarea{
+  resize: none;
+}
+.recipeitem-input{
+  margin: 5px 0 5px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.recipeitem-input:focus{
+  padding-left: 5px;
+  border: 2px solid #34B3A0;
+  outline: none;
+}
+.submit-wrap{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.recipeitem-submit{
+  color: white;
+  border: none;
+  font-size: 20px;
+  height: 50px;
+  width: 150px;
+  background: #34B3A0;
+  border-radius: 5px;
+  -webkit-transition: all .40s;
+}
+.recipeitem-submit:hover{
+  outline: none;
+  background: #46C9B6;
+  color: white;
+  -webkit-transition: all .40s;
+  border-radius: 10px;
+}
+.recipeitem-submit:focus{
+  outline: none;
+}
+.recipeitem-wrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5%;
+}
+.recipeitem-box{
+  font-family: "Ubuntu";
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background: #525157;
+  font-size: 20px;
+  margin: 25px 15px 25px 15px;
+  padding: 10px;
+  height: 100px;
+  width: 200px;
+  -webkit-transition: all .40s;
+}
+.recipeitem-box:hover{
+  background: gray;
+}
+.recipeitem-edit{
+  width: 100px;
+  color: black;
+  background: white;
+  -webkit-transition: all .40s;
+}
+.recipeitem-edit:hover{
+  background: #34B3A0;
+  color: white;
+  -webkit-transition: all .40s;
+}
+
+
+/*------------------recipe ITEM MODAL FORM CSS--------------------------*/
+
+.modal-title{
+  font-size: 40px;
+  font-weight: bold;
+}
+.modal-body{
+  flex-direction: column;
+  height: 400px;
+}
+.modal-input-box{
+  font-size: 20px;
+  height: 30px;
+  width: 300px;
+  -webkit-transition: all .40s;
+}
+.modal-input-box:focus{
+  outline: orange;
+  border: 2px solid #34B3A0;
+  -webkit-transition: all .40s;
+}
+#modal-description{
+  resize: none;
+}
+#modal-description:focus{
+  width: 300px;
+  height: 200px;
+  -webkit-transition: all .40s;
+}
+#modal-submit{
+  margin: 0;
+  color: white;
+  background: #34B3A0;
+  height: 50px;
+  width: 200px;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-transition: all .40s;
+}
+#modal-submit:hover{
+  background: #46C9B6;
+  -webkit-transition: all .40s;
+}
+.modal-footer{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.modal-label{
+  margin: 5px;
+}
+#unit-dropdown{
+  width: 50%;
 }
 .recipes-title{
   background: #EBEEF0;
@@ -53,7 +221,7 @@
 
 /*********  MODAL  ************/
 .modal-content{
-  width: 800px;
+  width: 1000px;
 }
 .modal-title{
   font-size: 40px;

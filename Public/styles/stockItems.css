@@ -22,6 +22,18 @@
   justify-content: center;
   align-items: center;
 }
+.searchbar-wrap{
+  width:100%;
+  height: auto;
+  display:flex;
+
+  margin-top: 20px;
+}
+.searchbar{
+  width:25%;
+  height: 30px;
+  margin-left: 25%;
+}
 .stockitem-main{
   font-family: 'Raleway', sans-serif;
   margin-top: 70px;
@@ -99,6 +111,7 @@
   width: 200px;
   -webkit-transition: all .40s;
 }
+.alert{background-color: red;}
 .stockitem-box:hover{
   background: gray;
 }
@@ -136,6 +149,9 @@
   border: 2px solid #34B3A0;
   -webkit-transition: all .40s;
 }
+#modal-description{
+  resize: none;
+}
 #modal-description:focus{
   width: 300px;
   height: 200px;
@@ -162,4 +178,7 @@
 }
 .modal-label{
   margin: 5px;
+}
+#unit-dropdown{
+  width: 50%;
 }
