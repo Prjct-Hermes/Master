@@ -52,15 +52,19 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
     })
   }
 
-  $scope.removeIngredient = function(ingredientId, recipe){
-    for(let i = 0; i < recipe.ingredients.length; i++){
-      if(ingredientId === recipe.ingredients[i].id){
-        recipe.ingredients.splice(i, 1);
+  $scope.removeIngredient = function(ingredientId, singleRecipe){
+    for(let i = 0; i < singleRecipe.ingredients.length; i++){
+      if(ingredientId === singleRecipe.ingredients[i].id){
+        singleRecipe.ingredients.splice(i, 1);
       }
     }
-    var recipeId = recipe._id;
-    $scope.updateRecipe(recipeId, recipe);
+    var recipeId = singleRecipe._id;
+    $scope.updateRecipe(recipeId, singleRecipe);
   };
+
+  $scope.getSingleRecipe = function(recipe){
+    $scope.singleRecipe = recipe;
+  }
 
 
 
