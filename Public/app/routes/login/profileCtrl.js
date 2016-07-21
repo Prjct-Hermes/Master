@@ -1,53 +1,81 @@
 angular.module('hermes').controller('profileCtrl', function($scope, $state, mainService, user){
   $scope.profile = user;
-  $scope.getData = function(){
-    mainService.getDataStockItems($scope.profile._id).then(function(response){
-      $scope.stockItems = response;
-    })
-    mainService.getDataRecipes($scope.profile._id).then(function(response){
-      $scope.recipes = response;
-    })
-    mainService.getDataOrders($scope.profile._id).then(function(response){
-      $scope.orders = response;
-    })
+  $scope.remPassword = function(){
+    delete $scope.profile.password;
   }();
-  $scope.passwordConfirmation = "Passwords is incorrect";
-  $scope.passwordCheck = function(){
-    if(temp.password === $scope.password){
-      $scope.passwordConfirmation = "Passwords is correct";
-    }else {
-      $scope.passwordConfirmation = "Passwords is incorrect";
-    }
-  }
-  $scope.updateProfile = function(id, body){
-    mainService.updateUser(id, body);
-    alert("Profile updated");
-    // var check = prompt("Please confirm your password");
-    // if(check === $scope.password){
-    //   mainservice.updateUser(id, body);
-    //   check = "";
-    //   return alert("Profile updated");
-    // }else {
-    //   alert("Incorrect password")
-    // }
-  }
+
+  $scope.updateProfile = function(){
+    var userLogin = {};
+    userLogin.email = $scope.profile.email;
+    userLogin.password = prompt("Please confirm your current password");
+    mainService.login(userLogin).then(function(response){
+      // delete $scope.profile.password;
+      if(!response.data){
+        // delete $scope.temp.oldPassword;
+        // delete $scope.temp.newPassword;
+        // delete $scope.temp.confirmPassword;
+        // $scope.newPassword = true;
+        alert('Incorrect Password');
+      }else{
+        // if(!$scope.newPassword && $scope.temp.newPassword.length > 1 && $scope.temp.newPassword === $scope.temp.confirmPassword){
+        //   $scope.profile.password = $scope.temp.newPassword;
+        //   $scope.temp.newPassword = '';
+        //   delete $scope.temp.confirmPassword = '';
+        //   $scope.newPassword = true;
+        // }
+        mainService.updateUser($scope.profile._id, $scope.profile).then(function(response){
+          alert("Profile updated");
+        });
+
+      }
+    })
+  };
+
   $scope.deleteProfile = function(id){
-    var check = confirm("Deleting your profile will remove all of your data. Do you want to proceed?")
-    if(check){
-      for (var i = 0; i < $scope.stockItems.length; i++){
-        mainService.destroyStockItems($scope.stockItems[i]._id)
-      };
-      for (var i = 0; i < $scope.recipes.length; i++){
-        mainService.destroyRecipes($scope.recipes[i]._id)
+    $scope.profile.password = prompt("To delete your profile and all your data please enter your password");
+    mainService.login($scope.profile).then(function(response){
+      if(!response.data){
+        $scope.profile.password = '';
+        alert('Incorrect Password');
       }
-      for (var i = 0; i < $scope.orders.length; i++){
-        mainService.destroyOrders($scope.orders[i]._id)
+      else{
+        var stockItems = mainService.retrieveStockItems();
+        for (var i = 0; i < stockItems.length; i++){
+          mainService.destroyStockItems(stockItems[i]._id)
+        };
+        var recipes = mainService.retrieveAllRecipes();
+        for (var i = 0; i < recipes.length; i++){
+          mainService.destroyRecipes(recipes[i]._id)
+        };
+        var orders = mainService.retrieveAllOrders();
+        for (var i = 0; i < orders.length; i++){
+          mainService.destroyOrders(orders[i]._id)
+        };
+        mainService.destroyUser(id);
+        alert("Your Profile and data have been deleted")
+        $state.go('login')
+        $scope.temp.oldPassword = '';
+        $scope.temp.newPassword = '';
+        $scope.temp.confirmPassword = '';
+        $scope.profile.password = '';
+        $scope.newPassword = true;
       }
-      mainService.destroyUser(id);
-      alert("Your Profile and data has been deleted")
-      $state.go('login')
-    }else{
-      alert("Your Profile and data has been preserved")
+    })
+  };
+
+  $scope.newPassword = true;
+  $scope.changePassword = function(){
+    $scope.newPassword = !$scope.newPassword;
+  }
+  $scope.passwordConfirmation = "Passwords don't match";
+  $scope.passwordCheck = function(){
+    if($scope.temp.newPassword === $scope.temp.confirmPassword){
+      $scope.passwordConfirmation = "Passwords match";
+    }else {
+      $scope.passwordConfirmation = "Passwords don't match";
     }
+  }
+  $scope.test = function(){
+    console.log("Profile: ", $scope.profile, "User: ", user)
   }
 })
