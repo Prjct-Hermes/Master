@@ -35,6 +35,11 @@ var schema = new Schema({
     type: Date,
     required: false,
     index: false,
+  },
+  image: {
+    type: String,
+    required: false,
+    index: false,
   }
   });
   var StockItem = mongoose.model('stockItems', schema);
