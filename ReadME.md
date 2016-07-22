@@ -105,16 +105,15 @@
   2. See if there is an API out there for calorie counting so that recipes can have an estimated calorie count.
   3. Allow Recipes to have a serving size and tie it in with calorie count.
   4. No way to really test this but look at Square Payments API and see if it could be incorporated.
-  5. When an order has a recipe added have it calculate how much it would subtract from stock levels and alert if any will drop below 0
 
-  * D3 visualizations
+  `* D3 visualizations
   * Alerts page
   * Food related loading icon
   * Calorie counter
   * Custom Order screens
   * Categories for recipes
   * Tutorial
-  * About Page: 4 step
+  * About Page: 4 step`
 
 ###
 * Group Assignments
