@@ -103,11 +103,11 @@
   border-radius: 10px;
   text-align: center;
   color: white;
-  background: #525157;
+  background-color: #525157;
   font-size: 20px;
   margin: 25px 15px 25px 15px;
   padding: 10px;
-  height: 100px;
+  height: 300px;
   width: 200px;
   -webkit-transition: all .40s;
 }
@@ -183,4 +183,50 @@
 }
 #unit-dropdown{
   width: 50%;
+}
+
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 225px;
+	height: 350px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
