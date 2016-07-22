@@ -71,6 +71,7 @@
   border: none;
 }
 .add-ingedients-btn:hover{
+  border-radius: 10px;
   background: #525157;
   color: white;
   -webkit-transition: all .40s;
@@ -109,7 +110,7 @@
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 5%;
+  margin-left: 4%;
 }
 .recipeitem-box{
   font-family: "Ubuntu";
@@ -293,4 +294,8 @@
 }
 .modal-label{
   margin: 5px;
+}
+#flip-container-size{
+  height: 325px;
+  width: 325px;
 }

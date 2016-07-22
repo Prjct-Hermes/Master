@@ -60,13 +60,13 @@
   <!-- ******************************************************************** -->
   <!-- List Recipes -->
   <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
-<div class="stockitem-wrap">
-<div ng-repeat="recipe in recipes | filter: {name:searchFilter}" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+<div class="recipeitem-wrap">
+<div ng-repeat="recipe in recipes | filter: {name:searchFilter}" class="flip-container"  id="flip-container-size" ontouchstart="this.classList.toggle('hover');">
   <div class="flipper">
-    <div class="front"  ng-style="{'background-image':'url({{recipe.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
+    <div class="front"  id="flip-container-size"  ng-style="{'background-image':'url({{recipe.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
          <!-- front content -->
     </div>
-    <div class="back" ng-style="{'background-color': '#525157'}">
+    <div class="back"  id="flip-container-size" ng-style="{'background-color': '#525157'}">
          <!-- back content -->
          <p>{{recipe.name}}</p>
          <br>
