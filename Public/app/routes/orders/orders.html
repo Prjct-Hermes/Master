@@ -4,7 +4,7 @@ repeat over recipes and display
 add to order (Increment and decriment on each recipe)
 confirm and totals
  -->
-<div class="space"></div>
+<h1 class="order-title">Orders</h1>
 
 <section class="main-wrap">
 
@@ -13,14 +13,18 @@ confirm and totals
 
         <div class="order-summary-wrap">
             <div class="order-summary">
-                Order Summary
+                Summary
             </div>
-            <div class="order-subtotal">
-                Total = {{order.total | currency}}
+            <div class="order-items" ng-repeat="recipe in order.recipes">
+                {{recipe.name}}<br> qty = {{recipe.quantity}}<br> subtotal = {{recipe.price | currency}}
             </div>
-            <div class="order-total" ng-repeat="recipe in order.recipes">
-                {{recipe.name}} qty = {{recipe.quantity}} sub-price = {{recipe.price | currency}}
+            <div class="total-wrap">
+              <div class="total">TOTAL</div>
+              <div class="order-total">
+                  {{order.total | currency}}
+              </div>
             </div>
+
             <div class="button-wrap">
               <button class="order-create" ng-click="createOrder()">
                   Create Order
