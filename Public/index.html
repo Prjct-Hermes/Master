@@ -16,13 +16,15 @@
     <link rel="stylesheet" href="./styles/orders.css">
     <title></title>
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
     <nav id="main-navbar">
       <div ui-sref="home" id="main-navbar-logo">
         <!-- ==================PLAYING WITH LOGOS=================== -->
 
         <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
         <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
+
+        <div>Alerts: {{alertLength}}</div>
       </div>
       <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
       <div class="main-navbar-menu-icon" id="dropdown">
