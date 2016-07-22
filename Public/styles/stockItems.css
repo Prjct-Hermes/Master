@@ -15,9 +15,9 @@
   font-size: 25px;
   font-weight: bold;
   color: white;
-  background: #525157;
+  background: #34B3A0;
   width: 100%;
-  height: 5vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +33,10 @@
   width:25%;
   height: 30px;
   margin-left: 25%;
+}
+.searchbar:focus{
+  outline: none;
+  border: 2px solid #34B3A0;
 }
 .stockitem-main{
   font-family: 'Raleway', sans-serif;
@@ -115,18 +119,32 @@
   background-color: red;
 }
 .stockitem-box:hover{
-  background: gray;
+  background: #34B3A0;
 }
 .stockitem-edit{
-  width: 100px;
-  color: black;
-  background: white;
+  color: white;
+  border: 1px solid white;
+  font-size: 26px;
+  height: 50px;
+  width: 150px;
+  background: #34B3A0;
+  border-radius: 5px;
   -webkit-transition: all .40s;
 }
 .stockitem-edit:hover{
-  background: #34B3A0;
+  outline: none;
+  background: #46C9B6;
   color: white;
   -webkit-transition: all .40s;
+  border-radius: 10px;
+}
+.back{
+  font-size: 26px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -190,7 +208,8 @@
 
 /* entire container, keeps perspective */
 .flip-container {
-	perspective: 1000px;
+  margin: 10px;
+  width: 100%;
 }
 	/* flip the pane when hovered */
 	.flip-container:hover .flipper, .flip-container.hover .flipper {
@@ -198,6 +217,7 @@
 	}
 
 .flip-container, .front, .back {
+  border-radius: 10px;
 	width: 225px;
 	height: 350px;
 }
@@ -206,7 +226,6 @@
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
