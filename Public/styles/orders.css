@@ -1,4 +1,5 @@
 .order-title{
+<<<<<<< HEAD
   background: #EBEEF0;
   width: 75%;
   font-family: 'Raleway', sans-serif;
@@ -8,77 +9,118 @@
   margin-left: 25%;
   padding-left: 1%;
 }
-.main-wrap{
+.orders-main-wrap{
   height: 100%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   font-family: "Ubuntu";
   flex-direction: row;
+=======
+ background: #EBEEF0 ;
+ width: 75%;
+ font-family: 'Raleway', sans-serif;
+ font-size: 100px;
+ color: #34B3A0 ;
+ margin-top:150px;
+ margin-left: 25%;
+ padding-left: 1%;
+}
+.main-wrap{
+ height: 100%;
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ font-family: "Ubuntu";
+ flex-direction: row;
+>>>>>>> 029fc06b13409ecf488c7f42251d6837e75a3dba
 }
 
 /************************   RECIPE STYLING     ****************************************************************/
 
 .recipe-wrap{
+<<<<<<< HEAD
   width: 75%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
+=======
+ width: 75%;
+ height: auto;
+ display: flex;
+ flex-wrap: wrap;
+>>>>>>> 029fc06b13409ecf488c7f42251d6837e75a3dba
 }
 .recipe-box{
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-  background: #525157;
-  font-size: 20px;
-  margin: 25px 15px 25px 15px;
-  padding: 10px;
-  height: 100px;
-  width: 200px;
-  -webkit-transition: all .40s;
+ border-radius: 10px;
+ text-align: center;
+ color: white;
+ background: #525157 ;
+ font-size: 20px;
+ margin: 25px 15px 25px 15px;
+ padding: 10px;
+ height: 100px;
+ width: 200px;
+ -webkit-transition: all .40s;
 }
 .recipe-box:hover{
-  background: gray;
+ background: gray;
 }
 .recipe-plus{
-  margin-top: 5px;
-  color: green;
-  height: 50px;
-  width: 50px;
+ margin-top: 5px;
+ color: green;
+ height: 50px;
+ width: 50px;
 }
 .recipe-minus{
-  margin-top: 5px;
-  color: red;
-  height: 50px;
-  width: 50px;
+ margin-top: 5px;
+ color: red;
+ height: 50px;
+ width: 50px;
 }
 
 /************************   ORDER STYLING     ****************************************************************/
 
 .order-wrap{
+<<<<<<< HEAD
   padding: 10px;
   font-size: 18px;
   height: auto;
   width: 25%;
   background: #EBEEF0;
+=======
+ padding: 10px;
+ font-size: 18px;
+ height: auto;
+ width: 25%;
+ background: #EBEEF0 ;
+>>>>>>> 029fc06b13409ecf488c7f42251d6837e75a3dba
 }
 .button-wrap{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+ width: 100%;
+ display: flex;
+ justify-content: center;
 }
 .order-create{
+<<<<<<< HEAD
   margin-top: 20px;
   width: 150px;
   height: 50px;
   background: lightgray;
+=======
+ margin-top: 20px;
+ width: 150px;
+ height: 50px;
+ background: lightgray;
+>>>>>>> 029fc06b13409ecf488c7f42251d6837e75a3dba
 
 }
 .order-summary-wrap{
-  height: auto;
-  width: auto;
+ height: auto;
+ width: auto;
 }
 .order-summary{
+<<<<<<< HEAD
   font-size: 40px;
   height: auto;
   width: auto;
@@ -103,4 +145,30 @@
   height: auto;
   width: auto;
   margin-bottom: 10px;
+=======
+ font-size: 40px;
+ height: auto;
+ width: auto;
+ text-align: center;
+ margin-bottom: 10px;
+}
+.total-wrap{
+ padding-top: 20px;
+ display: flex;
+ justify-content: space-between;
+
+}
+.order-total{
+ float: right;
+ font-size: 20px;
+ border: 1px solid black;
+ height: auto;
+ width: 100px;
+}
+.order-items{
+ font-size: 20px;
+ height: auto;
+ width: auto;
+ margin-bottom: 10px;
+>>>>>>> 029fc06b13409ecf488c7f42251d6837e75a3dba
 }

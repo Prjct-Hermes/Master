@@ -1,4 +1,9 @@
 <h1 class="stockitem-title">Stock Items</h1>
+<!--NOTE: search function -->
+
+<div class="searchbar-wrap">
+  <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items...">
+</div>
 <section class="stockitem-main">
 
     <div class="stockitem-create" ng-model="newItem">
@@ -32,8 +37,10 @@
 
     <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
     <div class="stockitem-wrap">
+
+
         <!-- TO DISPLAY THE ITEM NAME AND QTY INSIDE INDIVIDUAL BOXES -->
-        <div class="stockitem-box" ng-repeat="item in items">
+        <div class="stockitem-box" ng-repeat="item in items | filter: {name:searchFilter}" ng-class="{alert: item.quantity <= item.alertQuantity}">
             <p>{{item.name}}</p>
             <br>
             <p>Qty: {{item.quantity}} {{item.unitOfMeasure}}</p>
@@ -57,8 +64,6 @@
                         </div>
                         <form class="" action="index.html" method="post">
                             <div class="modal-body">
-
-
                                 <div class="modal-label">Qty</div><input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.quantity" required>
                                 <div class="modal-label">Unit of Measurement</div><select class="stockitem-input" id="unit-dropdown" ng-model="stockItem.unitOfMeasure" required>
                                   <option value="ml">ml</option>
