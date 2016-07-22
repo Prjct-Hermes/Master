@@ -1,0 +1,32 @@
+<nav id="main-navbar">
+  <div ui-sref="home" id="main-navbar-logo">
+    <!-- ==================PLAYING WITH LOGOS=================== -->
+
+    <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
+    <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
+
+    <div>Alerts: {{alertLength}}</div>
+  </div>
+  <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
+  <div class="main-navbar-menu-icon" id="dropdown">
+              <img src="./images/hamburger.png" alt="" />
+            <div class="hamburger-icon"></div>
+            <div class="dropdown-container">
+              <div class="dropdown-content">
+                  <a ui-sref="profile">Profile</a>
+                  <a ui-sref="login">Login</a>
+                  <a ui-sref="login">Sign-Up</a>
+                  <a ng-controller="mainCtrl" ng-click="logout()">Logout</a>
+
+              </div>
+            </div>
+
+
+
+
+        </div>
+  <div class="main-navbar-menu">LEARN MORE</div>
+  <div ui-sref="home" class="main-navbar-menu">HOME</div>
+  <!-- ALERTS -->
+  <div class="main-navbar-menu-alert"></div>
+</nav>
