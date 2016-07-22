@@ -20,6 +20,11 @@ var schema = new Schema({
     type: Number,
     required: false,
     index: false
+  },
+  quantityTotal: {
+    type: Number,
+    required: false,
+    index: false
   }
 
   });
