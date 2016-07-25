@@ -30,7 +30,7 @@
   margin-top: 20px;
 }
 .searchbar{
-  width:25%;
+  width:15%;
   height: 30px;
   margin-left: 25%;
 }
@@ -146,6 +146,18 @@
   flex-direction: column;
   align-items: center;
 }
+#back{
+  font-size: 26px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#front-background{
+  border: 1px solid black;
+  color: white;
+}
 
 
 /*------------------STOCK ITEM MODAL FORM CSS--------------------------*/
@@ -218,8 +230,8 @@
 
 .flip-container, .front, .back {
   border-radius: 10px;
-	width: 225px;
-	height: 350px;
+	width: 115px;
+	height: 200px;
 }
 
 /* flip speed goes here */

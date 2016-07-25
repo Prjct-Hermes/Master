@@ -3,7 +3,11 @@
 <!--NOTE: search function -->
 
 <div class="searchbar-wrap">
-  <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items...">
+  <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items By...">
+  <select ng-model="selectedSearchTerm">
+    <option value="name">Name</option>
+    <option value="category">Category</option>
+  </select>
 </div>
 <section class="stockitem-main">
 
@@ -39,10 +43,20 @@
 
     <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
 <div class="stockitem-wrap">
-  <div ng-repeat="item in items | filter: {name:searchFilter}" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div ng-repeat="item in items | filter: search" class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
       <div class="front"  ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
            <!-- front content -->
+           <div ng-show="!item.image" id="front-background">
+             <p ng-show='!item.image' id="back">{{item.name}}</p>
+             <br>
+             <p ng-show='!item.image' id="back">Qty: {{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+           </div>
       </div>
       <div class="back" ng-style="{'background-color': '#525157'}">
            <!-- back content -->
