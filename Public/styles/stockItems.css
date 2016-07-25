@@ -150,34 +150,45 @@
 
 /*------------------STOCK ITEM MODAL FORM CSS--------------------------*/
 
-.modal-title{
-  font-size: 40px;
+.stock-modal-title{
+  font-size: 50px;
   font-weight: bold;
+  color: #34B3A0;
 }
-.modal-body{
+.stock-modal-body{
   flex-direction: column;
-  height: 400px;
+  height: auto;
+  padding: 50px;
 }
-.modal-input-box{
+.stock-input-wrap{
+  display: flex;
+}
+#stock-input-label{
+  font-size: 20px;
+  width: 150px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.stock-modal-input-box{
   font-size: 20px;
   height: 30px;
-  width: 300px;
+  width: 400px;
   -webkit-transition: all .40s;
 }
-.modal-input-box:focus{
+#stock-small{
+  width: 60px;
+}
+.stock-modal-input-box:focus{
   outline: orange;
   border: 2px solid #34B3A0;
   -webkit-transition: all .40s;
 }
-#modal-description{
+#stock-modal-description{
   resize: none;
+  height: auto;
 }
-#modal-description:focus{
-  width: 300px;
-  height: 200px;
-  -webkit-transition: all .40s;
-}
-#modal-submit{
+#stock-modal-submit{
   margin: 0;
   color: white;
   background: #34B3A0;
@@ -187,23 +198,21 @@
   font-weight: bold;
   -webkit-transition: all .40s;
 }
-#modal-submit:hover{
+#stock-modal-submit:hover{
   background: #46C9B6;
   -webkit-transition: all .40s;
 }
-.modal-footer{
+.stock-modal-footer{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.modal-label{
+.stock-modal-label{
   margin: 5px;
 }
-#unit-dropdown{
-  width: 50%;
+#stock-unit-dropdown{
+  width: auto;
 }
-
-
 
 
 /* entire container, keeps perspective */

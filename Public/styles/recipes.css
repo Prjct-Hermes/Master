@@ -149,7 +149,7 @@
 }
 .modal-body{
   flex-direction: column;
-  height: 400px;
+  height: auto;
 }
 .modal-input-box{
   font-size: 20px;
@@ -163,13 +163,10 @@
   -webkit-transition: all .40s;
 }
 #modal-description{
+  height: auto;
   resize: none;
 }
-#modal-description:focus{
-  width: 300px;
-  height: 200px;
-  -webkit-transition: all .40s;
-}
+
 #modal-submit{
   margin: 0;
   color: white;

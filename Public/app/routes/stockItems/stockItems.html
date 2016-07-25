@@ -3,7 +3,7 @@
 <!--NOTE: search function -->
 
 <div class="searchbar-wrap">
-  <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items...">
+    <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items...">
 </div>
 <section class="stockitem-main">
 
@@ -11,25 +11,25 @@
         <h1 class="create-title">Create a Stock Item:</h1>
         <input class="stockitem-input" type="text" placeholder="Name" ng-model="newItem.name">
         <input class="stockitem-input" type="text" placeholder="Paste image url" ng-model="newItem.image">
-        <textarea  class="stockitem-input" placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
-        <input  class="stockitem-input" type="number" placeholder="quantity" ng-model="newItem.quantity">
+        <textarea class="stockitem-input" placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
+        <input class="stockitem-input" type="number" placeholder="quantity" ng-model="newItem.quantity">
         <!-- <input  class="stockitem-input" type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure"> -->
 
         <select class="stockitem-input" ng-model="newItem.unitOfMeasure">
-          <option value="ml">ml</option>
-          <option value="l">l</option>
-          <option value="tsp">tsp</option>
-          <option value="tbsp">tbsp</option>
-          <option value="floz">floz</option>
-          <option value="cup">cup</option>
-          <option value="pnt">pnt</option>
-          <option value="qt">qt</option>
-          <option value="gal">gal</option>
-          <option value="qty">qty</option>
+            <option value="ml">ml</option>
+            <option value="l">l</option>
+            <option value="tsp">tsp</option>
+            <option value="tbsp">tbsp</option>
+            <option value="floz">floz</option>
+            <option value="cup">cup</option>
+            <option value="pnt">pnt</option>
+            <option value="qt">qt</option>
+            <option value="gal">gal</option>
+            <option value="qty">qty</option>
         </select>
 
-        <input  class="stockitem-input" type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
-        <input  class="stockitem-input" type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
+        <input class="stockitem-input" type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
+        <input class="stockitem-input" type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
         <div class="submit-wrap">
             <button class="stockitem-submit" ng-click="createStockItems(newItem)">Submit</button>
         </div>
@@ -38,77 +38,100 @@
 
 
     <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
-<div class="stockitem-wrap">
-  <div ng-repeat="item in items | filter: {name:searchFilter}" class="flip-container" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper">
-      <div class="front"  ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
-           <!-- front content -->
-      </div>
-      <div class="back" ng-style="{'background-color': '#525157'}">
-           <!-- back content -->
-           <p>{{item.name}}</p>
-           <br>
-           <p>Qty: {{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
-           <br>
-           <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleItem(item)">Edit</button>
-      </div>
-      </div>
-  </div>
-</div>
-
-
-
-<!-- MODAL FORM -->
-        <div class="modal-container">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">{{stockItem.name}}</h4>
-                        </div>
-                        <form class="" action="index.html" method="post">
-                            <div class="modal-body">
-                                <div class="modal-label">Image url</div>
-                                <input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.image" required>
-                                Qty
-                                <input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.quantity" required>
-                                <div class="modal-label">Unit of Measurement</div><select class="stockitem-input" id="unit-dropdown" ng-model="stockItem.unitOfMeasure" required>
-                                  <option value="ml">ml</option>
-                                  <option value="l">l</option>
-                                  <option value="tsp">tsp</option>
-                                  <option value="tbsp">tbsp</option>
-                                  <option value="floz">floz</option>
-                                  <option value="cup">cup</option>
-                                  <option value="pnt">pnt</option>
-                                  <option value="qt">qt</option>
-                                  <option value="gal">gal</option>
-                                  <option value="qty">qty</option>
-                                </select>
-                                <div class="modal-label">Description</div><textarea class="modal-input-box" id="modal-description" type="text" ng-model="stockItem.description" cols="10" rows="6" required></textarea>
-                                <div class="modal-label">Alert at Qty </div><input class="modal-input-box" id="modal-small" type="text" ng-model="stockItem.alertQuantity">
-                                <div class="modal-label">Alert Date</div><input class="modal-input-box" type="text" ng-model="stockItem.alertDate" required>
-
-
-
-                            </div>
-                        </form>
-<!-- delete and update buttons -->
-                        <div class="modal-footer">
-                          <button ng-click="updateStockItems(stockItem._id, stockItem)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Update</button>
-                          <button ng-click="destroyStockItems(stockItem._id)" type="button" class="btn btn-default" id="modal-submit" data-dismiss="modal">Delete</button>
-
-                        </div>
-                    </div>
-
+    <div class="stockitem-wrap">
+        <div ng-repeat="item in items | filter: {name:searchFilter}" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front" ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
+                    <!-- front content -->
+                </div>
+                <div class="back" ng-style="{'background-color': '#525157'}">
+                    <!-- back content -->
+                    <p>{{item.name}}</p>
+                    <br>
+                    <p>Qty: {{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
+                    <br>
+                    <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleItem(item)">Edit</button>
                 </div>
             </div>
-
         </div>
+    </div>
+
+
+
+    <!-- MODAL FORM -->
+    <div class="modal-container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="stock-modal-title">{{stockItem.name}}</h4>
+                    </div>
+                    <form class="" action="index.html" method="post">
+                        <div class="stock-modal-body">
+                            <div class="stock-input-wrap">
+                                <div id="stock-input-label">Image url</div>
+
+                                <input class="stock-modal-input-box" type="text" ng-model="stockItem.image" required>
+
+                            </div>
+
+                            <div class="stock-input-wrap">
+                                <div id="stock-input-label">Qty</div>
+                                <input class="stock-modal-input-box" id="stock-small" type="text" ng-model="stockItem.quantity" required>
+                            </div>
+                            <div class="stock-input-wrap">
+                                <div id="stock-input-label">Measurement</div>
+                                <select class="stockitem-input" id="stock-unit-dropdown" ng-model="stockItem.unitOfMeasure" required>
+                                    <option value="ml">ml</option>
+                                    <option value="l">l</option>
+                                    <option value="tsp">tsp</option>
+                                    <option value="tbsp">tbsp</option>
+                                    <option value="floz">floz</option>
+                                    <option value="cup">cup</option>
+                                    <option value="pnt">pnt</option>
+                                    <option value="qt">qt</option>
+                                    <option value="gal">gal</option>
+                                    <option value="qty">qty</option>
+                                </select>
+                            </div>
+
+                            <div class="stock-input-wrap">
+                                <div id="stock-input-label">Description</div>
+                                <textarea class="stock-modal-input-box" id="stock-modal-description" type="text" ng-model="stockItem.description" cols="10" rows="6" required></textarea>
+                            </div>
+
+                            <div class="stock-input-wrap">
+                                <div id="stock-input-label">Alert at Qty</div>
+                                <input class="stock-modal-input-box" id="stock-small" type="text" ng-model="stockItem.alertQuantity">
+                            </div>
+
+                            <div class="stock-input-wrap">
+                                <div id="stock-input-label">Alert Date</div>
+                                <input class="stock-modal-input-box" type="text" ng-model="stockItem.alertDate" required>
+                            </div>
+
+
+
+
+                        </div>
+                    </form>
+                    <!-- delete and update buttons -->
+                    <div class="modal-footer">
+                        <button ng-click="updateStockItems(stockItem._id, stockItem)" type="button" class="btn btn-default" id="stock-modal-submit" data-dismiss="modal">Update</button>
+                        <button ng-click="destroyStockItems(stockItem._id)" type="button" class="btn btn-default" id="stock-modal-submit" data-dismiss="modal">Delete</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <!-- STOCK ITEM MODAL FORM  ---------------------------------------------->
