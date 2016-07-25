@@ -5,7 +5,6 @@
     <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
     <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
 
-    <div>Alerts: {{alertLength}}</div>
   </div>
   <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
   <div class="main-navbar-menu-icon" id="dropdown">
@@ -13,10 +12,11 @@
             <div class="hamburger-icon"></div>
             <div class="dropdown-container">
               <div class="dropdown-content">
-                  <a ui-sref="profile">Profile</a>
-                  <a ui-sref="login">Login</a>
-                  <a ui-sref="login">Sign-Up</a>
-                  <a ng-controller="mainCtrl" ng-click="logout()">Logout</a>
+                  <a ng-show='loggedIn' ui-sref="profile">Profile</a>
+                  <a ng-show='!loggedIn' ui-sref="login">Login</a>
+                  <a ng-show='!loggedIn' ui-sref="login">Sign-Up</a>
+                  <a ng-show='loggedIn' ng-click="logout()">Logout</a>
+                  <a>History</a>
 
               </div>
             </div>
@@ -25,8 +25,12 @@
 
 
         </div>
-  <div class="main-navbar-menu">LEARN MORE</div>
-  <div ui-sref="home" class="main-navbar-menu">HOME</div>
+  <div ng-show='loggedIn' class="main-navbar-menu"><a ui-sref='alerts'>Alerts: {{alertLength}}</a></div>
+
+  <div class="main-navbar-menu"><a ui-sref='orders'>Orders</a></div>
+  <div class="main-navbar-menu"><a ui-sref='recipes'>Recipes</a></div>
+  <div class="main-navbar-menu"><a ui-sref='stockItems'>Stock Items</a></div>
+  <div class="main-navbar-menu"><a ui-sref='home'>LEARN MORE</a></div>
+  <div ui-sref="home" class="main-navbar-menu"><a ui-sref='home'>HOME</a></div>
   <!-- ALERTS -->
-  <div class="main-navbar-menu-alert"></div>
 </nav>

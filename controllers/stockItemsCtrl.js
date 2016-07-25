@@ -46,10 +46,10 @@ var schema = new Schema({
 
   module.exports = {
     getStockItem : function(req, res){
-      if(!req.params.id){
-        return res.status(400).send("id required to search the database")
+      if(!req.user){
+        return res.status(400).send("You must be logged in to search the database")
       }
-      StockItem.find({"userId":req.params.id}, function(err, response){
+      StockItem.find({"userId":req.user._id}, function(err, response){
         return err ? res.status(500).json(err) : res.json(response);
       })
     },

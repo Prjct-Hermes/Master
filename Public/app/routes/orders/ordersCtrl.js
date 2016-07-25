@@ -1,4 +1,4 @@
-angular.module('hermes').controller('ordersCtrl', function($scope, mainService, user){
+angular.module('hermes').controller('ordersCtrl', function($scope, mainService, user, stockItems, recipes){
 
 //This segment should be removed when the project has working login
 // user = "578bf14a5b25dcac0b00f9e6";
@@ -14,10 +14,10 @@ angular.module('hermes').controller('ordersCtrl', function($scope, mainService, 
 
 //This section hosts the iif that grabs our data from the server
 //This segment should be uncommented when the above portion is removed
-$scope.getData = function(){
-  $scope.allRecipes = mainService.retrieveAllRecipes();
-  $scope.stockItems = mainService.retrieveStockItems();
-}();
+$scope.stockItems = stockItems;
+$scope.allRecipes = recipes
+
+
 
 $scope.order ={
   userId: "",

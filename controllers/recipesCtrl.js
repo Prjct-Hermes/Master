@@ -40,10 +40,10 @@ var schema = new Schema({
   var Recipes = mongoose.model('recipes', schema);
   module.exports = {
     getRecipes : function(req, res){
-      if(!req.params.id){
+      if(!req.user){
         return res.status(400).send("id required to search the database")
       }
-      Recipes.find({"userId":req.params.id}, function(err, response){
+      Recipes.find({"userId":req.user._id}, function(err, response){
         return err ? res.status(500).json(err) : res.json(response);
       })
     },
