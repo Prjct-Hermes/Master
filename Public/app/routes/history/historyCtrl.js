@@ -13,6 +13,8 @@ $scope.updateQty = function(){
   console.log(("Updated History", $scope.allOrders))
 }
 
+//Get all orders to combine into a single day
+//Create an array that is {day, qty}
 $scope.dates = function(){
   var tempData = [];
   for (var i = 0; i < $scope.allOrders.length; i++){
@@ -81,33 +83,51 @@ $scope.dates = function(){
       tempData.push(obj);
       check = false;
     }
-
-  //mainService.updateOrders($scope.allOrders[i]._id, $scope.allOrders[i])
   }
   console.log("tempData" , tempData)
-  // for (var x =0; x < tempData.length; x++){
-  //   if(!$scope.data){
-  //     $scope.data = [];
-  //     $scope.data.push(tempData[x]);
-  //   }else {
-  //     for (y = 0; y < $scope.data.length; y++){
-  //       if($scope.data[y].date === tempData[x].data){
-  //
-  //       }else{
-  //         check = true;
-  //       }
-  //     }
-  //   }
-  //   if(tempData[x].date === $scope.data[x].date){
-  //     $scope.data[x].quantity = $scope.data[x].quantity + obj.quantity;
-  //   }else{
-  //     $scope.data.push(obj);
-  //   }
-  //   }
-  // }
 }
-//Get all orders to combine into a single day
-//Create an array that is {day, qty}
 
+var svgContainer = d3.select("ui-view")
+    .append("svg")
+    .attr("width", 750)
+    .attr("height", 750);
+
+var maxQuantity = 2;
+var maxY = 1;
+for (var i = 0; i < $scope.allOrders.length; i++){
+  if($scope.allOrders.quantityTotal > maxQuantity){
+    maxQuantity = $scope.allOrders.quantityTotal;
+    maxX = maxQuantity/maxY;
+    console.log("Max QTY: ",maxQuantity)
+  }
+};
+
+
+
+var rectangle = svgContainer.append("rect")
+    .data($scope.allOrders)
+    .attr("x", function(d, i){
+      console.log("x", i*maxX;
+      return i*maxX;
+    })
+    .attr("y", function(d, i){
+      linearScaleY(d.quantityTotal)
+    })
+    .attr("width", xRatio)
+    .attr("height", function(d, i){
+      if (d.quantityTotal < 2){
+        return "20px"
+      }else {
+        return d.quantityTotal*10 + "px";
+      }
+    })
+    .attr("background-color", function(d, i){
+      return d3.rgb(d.quantityTotal*25%255, 150, d.quantityTotal*25%255);
+    })
+    .attr("border", "5px solid blue")
+    .attr('color', "white")
+    .text(function(d, i){
+      return d.quantityTotal
+    });
 
 })
