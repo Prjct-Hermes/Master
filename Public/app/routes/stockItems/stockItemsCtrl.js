@@ -1,24 +1,14 @@
 angular.module('hermes')
-.controller('stockItemsCtrl', function($scope, mainService, user){
+.controller('stockItemsCtrl', function($scope, mainService, user, items){
 
-
-
-$scope.getItems = function(){
-
-  mainService.getDataStockItems(user).then(function(response){
-    $scope.items = response.map(function(item){
-      item.alertDate = new Date(item.alertDate);
-      return item;
-  });
-});
-}
- $scope.getItems();
+$scope.items = items;
 
 
 
 
 
 
+//
  // update ingredient and check alerts
  //get individual item for modal form
  $scope.getSingleItem = function(item){
@@ -28,7 +18,6 @@ $scope.getItems = function(){
  // update ingredient
  $scope.updateStockItems = function(itemId, body){
    mainService.updateStockItems(itemId, body).then(function(response){
-     $scope.getItems();
    })
  }
 
@@ -38,7 +27,6 @@ $scope.getItems = function(){
 
    mainService.createStockItems(newItem).then(function(response){
      $scope.newItem = {};
-
      $scope.getItems();
    })
  }
@@ -51,28 +39,17 @@ $scope.getItems = function(){
         $scope.getItems();
      })
     }
-
-
-
  }
 
+//Get items
+$scope.getItems = function(){
+  mainService.getDataStockItems(user).then(function(response){
+    $scope.items = response.map(function(item){
+      item.alertDate = new Date(item.alertDate);
+      return item;
+    });
+  });
+}
 
 
 });
-
-
-/*
-CRUD
-
-Unit options
-ml
-l
-tsp
-tbsp
-fl-oz
-cup
-pnt
-qt
-gal
-
-*/
