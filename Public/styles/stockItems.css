@@ -154,23 +154,26 @@
   font-size: 50px;
   font-weight: bold;
   color: #34B3A0;
+  text-align: center;
 }
 .stock-modal-body{
   flex-direction: column;
   height: auto;
-  padding: 50px;
+  padding: 20px;
 }
 .stock-input-wrap{
   display: flex;
 }
 #stock-input-label{
-  font-size: 20px;
-  width: 150px;
-  margin-left: 20px;
+  font-size: 26px;
+  width: 175px;
+  margin-left: 19%;
   display: flex;
   align-items: center;
 }
 .stock-modal-input-box{
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 20px;
   height: 30px;
   width: 400px;
@@ -180,7 +183,7 @@
   width: 60px;
 }
 .stock-modal-input-box:focus{
-  outline: orange;
+  outline: #34B3A0;
   border: 2px solid #34B3A0;
   -webkit-transition: all .40s;
 }
