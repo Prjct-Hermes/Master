@@ -1,40 +1,57 @@
+
+<h1 class="recipes-title">Recipes</h1>
+<div class="searchbar-wrap">
+  <input class ="searchbar" type="text" ng-model="searchFilter" placeholder="Search Items...">
+</div>
+
+<headerdir></headerdir>
+
+
 <section class="recipe-main">
   <!-- Create New Recipe -->
-  <div class="recipe-create" ng-model="newRecipe">
-    <h1 class="recipes-title">Recipes</h1>
-    <input class="recipe-input"type="text" placeholder="Name" ng-model="newRecipe.name">
-    <textarea class="recipe-input" placeholder="Description" ng-model="newRecipe.description" cols="30" rows="2"></textarea>
+  <div class="recipeitem-create" ng-model="newRecipe">
+
     <!-- Add Ingredients -->
-    <div class="">
-      <p>Ingredients</p>
-      <ul ng-repeat="ingredient in ingredients">
-        <li>{{ingredient.quantity}} {{ingredient.unitOfMeasure}} {{ingredient.name}}</li>
-      </ul>
+    <div class="add-ingedients-input">
+      <h1 class="create-title">Create a Recipe:</h1>
+      <p id="ingedients-title">Ingredients</p>
+      <div class="ingedients-list">
+        <ul ng-repeat="ingredient in ingredients">
+          <li>{{ingredient.quantity}} {{ingredient.unitOfMeasure}} {{ingredient.name}}</li>
+        </ul>
+      </div>
+
+      Stock Item: <select class="recipeitem-input"
+        ng-options="stockItem.name for stockItem in stockItems track by stockItem._id"
+        ng-model="newIngredient.item">
+      </select>
+      <br>
+      Measurement: <select class="recipeitem-input"
+        ng-model="newIngredient.unitOfMeasure">
+          <option value="ml">ml</option>
+          <option value="l">l</option>
+          <option value="tsp">tsp</option>
+          <option value="tbsp">tbsp</option>
+          <option value="floz">floz</option>
+          <option value="cup">cup</option>
+          <option value="pnt">pnt</option>
+          <option value="qt">qt</option>
+          <option value="gal">gal</option>
+          <option value="qty">qty</option>
+      </select>
+      Qty: <input class="recipeitem-input" ng-model="newIngredient.quantity" placeholder="e.g. 1/2" type="text"/>
       <form ng-submit="addToIngredients(newIngredient)">
-        <input class="recipe-input" ng-model="newIngredient.quantity" id="recipe-quantity-input" placeholder="e.g. 1/3" type="text">
-        <select
-          ng-model="newIngredient.unitOfMeasure">
-            <option value="ml">ml</option>
-            <option value="l">l</option>
-            <option value="tsp">tsp</option>
-            <option value="tbsp">tbsp</option>
-            <option value="floz">floz</option>
-            <option value="cup">cup</option>
-            <option value="pnt">pnt</option>
-            <option value="qt">qt</option>
-            <option value="gal">gal</option>
-            <option value="qty">qty</option>
-        </select>
-        <select
-          ng-options="stockItem.name for stockItem in stockItems track by stockItem._id"
-          ng-model="newIngredient.item">
-        </select>
-        <button type='submit'>Add to ingredients</button>
+
+        <br>
+        <button class="add-ingedients-btn" type='submit'>Add Ingredients</button>
       </form>
     </div>
 
-    <textarea placeholder="Instructions" ng-model="newRecipe.instructions" cols="30" rows="5"></textarea>
-    <input type="number" placeholder="Price" ng-model="newRecipe.price">
+    <input class="recipeitem-input" type="text" placeholder="Name" ng-model="newRecipe.name">
+    <textarea class="recipeitem-input" placeholder="Description" ng-model="newRecipe.description" cols="30" rows="2"></textarea>
+    <textarea class="recipeitem-input" placeholder="Instructions" ng-model="newRecipe.instructions" cols="30" rows="5"></textarea>
+    <input class="recipeitem-input" type="number" placeholder="Price" ng-model="newRecipe.price">
+    <input class="recipeitem-input" type="text" placeholder="Paste image url" ng-model="newRecipe.image">
     <div class="submit-wrap">
       <button class="stockitem-submit" ng-click="saveRecipe(newRecipe)">Save Recipe</button>
     </div>
@@ -42,10 +59,23 @@
   <br>
   <!-- ******************************************************************** -->
   <!-- List Recipes -->
-  <div class="recipe-box" ng-repeat="recipe in recipes | filter: {name:searchFilter}">
-    {{recipe.name}}
-    <button class="recipe-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleRecipe(recipe)">Edit</button>
-  </div>
+  <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
+<div class="recipeitem-wrap">
+<div ng-repeat="recipe in recipes | filter: {name:searchFilter}" class="flip-container"  id="flip-container-size" ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="front"  id="flip-container-size"  ng-style="{'background-image':'url({{recipe.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
+         <!-- front content -->
+    </div>
+    <div class="back"  id="flip-container-size" ng-style="{'background-color': '#525157'}">
+         <!-- back content -->
+         <p>{{recipe.name}}</p>
+         <br>
+         <br>
+         <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleRecipe(recipe)">Edit</button>
+    </div>
+    </div>
+</div>
+</div>
   <!-- MODAL FORM -->
           <div class="modal-container">
               <div class="modal fade" id="myModal" role="dialog">
@@ -56,7 +86,8 @@
                               <h4 class="modal-title">{{singleRecipe.name}}</h4>
                           </div>
                             <div class="recipe-modal-body">
-                                <div class="modal-label">Name</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.name" required>
+                              <div class="modal-label">Name</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.name" required>
+                              <div class="modal-label">Image url</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.image" required>
                                 <div class="modal-label">Description</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.description" required>
                                 <div class="modal-label">Price</div><textarea class="modal-input-box" id="modal-description" type="text" ng-model="singleRecipe.price" cols="10" rows="6" required></textarea>
                                 <div class="modal-label">Instructions</div><input class="modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.instructions">
@@ -110,5 +141,5 @@
                   </div>
               </div>
           </div>
-          <input type="text" ng-model="searchFilter" placeholder="Search Items...">
+
 </section>

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link href='httnps://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/home.css">
@@ -16,16 +15,19 @@
     <link rel="stylesheet" href="./styles/orders.css">
     <title></title>
   </head>
-  <body>
-    <nav id="main-navbar">
-      <div ui-sref="home" id="main-navbar-logo">
+  <body ng-controller="mainCtrl">
+    <!-- <nav id="main-navbar">
+     <div ui-sref="home" id="main-navbar-logo"> -->
         <!-- ==================PLAYING WITH LOGOS=================== -->
 
-        <!-- <img src="./images/hermes-logo.svg" alt="hermeslogo" /> -->
-        <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
-      </div>
+        <!-- <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
+
+        <div>Alerts: {{alertLength}}</div>
+      </div> -->
       <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
       <div class="main-navbar-menu-icon" id="dropdown">
+      <!-- <div class="main-navbar-menu-icon" id="dropdown">
+>>>>>>> master
                   <img src="./images/hamburger.png" alt="" />
                 <div class="hamburger-icon"></div>
                 <div class="dropdown-container">
@@ -43,10 +45,10 @@
 
             </div>
       <div class="main-navbar-menu">LEARN MORE</div>
-      <div ui-sref="home" class="main-navbar-menu">HOME</div>
+      <div ui-sref="home" class="main-navbar-menu">HOME</div> -->
       <!-- ALERTS -->
-      <div class="main-navbar-menu-alert"></div>
-    </nav>
+      <!-- <div class="main-navbar-menu-alert"></div>
+    </nav> -->
 
     <!-- Just for practice and responsive testing comment out below when using other views -->
     <!-- UI_VIEW -->
@@ -105,6 +107,8 @@
   <script src="./app/routes/orders/ordersCtrl.js"></script>
   <script src="./app/routes/recipes/recipesCtrl.js"></script>
   <script src="./app/routes/stockItems/stockItemsCtrl.js"></script>
+  <!-- Directives -->
+  <script src="./app/directives/header/headerdir.js"></script>
   <!-- Services -->
   <script src="./app/services/mainService.js"></script>
   <script src="./scripts/script.js"></script>
