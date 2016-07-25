@@ -153,6 +153,7 @@ $scope.createOrder = function(){
   $scope.alertCheck();
   console.log("Alerts ", $scope.alerts);
   $scope.order ={userId: "",date: "",recipes: [],total: 0};
+  mainService.getDataOrders();
 }
 
 /*
