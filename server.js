@@ -8,10 +8,11 @@ var express = require('express'),
     mongoose = require('mongoose'),
     session = require('express-session'),
     passport = require('./services/passport'),
+    config = require('./config.js');
     app = express();
 
 
-mongoose.connect("mongodb://localhost/hermes",  function (err, res) {
+mongoose.connect("mongodb://" + config.dbUsername + ":" + config.dbPassword + "@ds029705.mlab.com:29705/hermes",  function (err, res) {
       if (err) {
         console.log ('ERROR connecting to Hermes. '  + err);
       } else {
@@ -33,7 +34,7 @@ app.use(express.static('Public'));
 app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/Public'));
 app.use(session({
-  secret: "ifklsjfl;sdjiogjsdfsdoaidf",
+  secret: config.secret,
   saveUninitialized: false,
   resave: false
 }));
@@ -73,7 +74,7 @@ app.get('/api/orders/:id', ordersCtrl.getOrders)
 app.put('/api/orders/:id', ordersCtrl.updateOrders)
 app.delete('/api/orders/:id', ordersCtrl.removeOrders)
 
-var port = process.env.PORT || 3000;
+var port = config.port;
 app.listen(port, function(){
   console.log("Listening on port", port)
 })
