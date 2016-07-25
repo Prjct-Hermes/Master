@@ -3,15 +3,11 @@
 <!--NOTE: search function -->
 
 <div class="searchbar-wrap">
-
-    <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items...">
-
   <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items By...">
   <select ng-model="selectedSearchTerm">
     <option value="name">Name</option>
     <option value="category">Category</option>
   </select>
-
 </div>
 <section class="stockitem-main">
 
@@ -46,25 +42,7 @@
 
 
     <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
-<<<<<<< HEAD
-    <div class="stockitem-wrap">
-        <div ng-repeat="item in items | filter: {name:searchFilter}" class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-                <div class="front" ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
-                    <!-- front content -->
-                </div>
-                <div class="back" ng-style="{'background-color': '#525157'}">
-                    <!-- back content -->
-                    <p>{{item.name}}</p>
-                    <br>
-                    <p>Qty: {{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
-                    <br>
-                    <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleItem(item)">Edit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-=======
+
 <div class="stockitem-wrap">
   <div ng-repeat="item in items | filter: search" class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
@@ -92,7 +70,6 @@
       </div>
   </div>
 </div>
->>>>>>> 3433279c778ff1521deaccdc75fe8fc9d6967040
 
 
 
