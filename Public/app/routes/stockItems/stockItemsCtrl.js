@@ -4,7 +4,12 @@ angular.module('hermes')
 $scope.items = items;
 
 
-
+$scope.$watch('searchFilter', function(){
+  var category = $scope.selectedSearchTerm;
+  var searchInput = $scope.searchFilter;
+  $scope.search = {};
+  $scope.search[category] = searchInput;
+})
 
 
 
