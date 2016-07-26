@@ -1,8 +1,7 @@
 angular.module('hermes')
-.controller('stockItemsCtrl', function($scope, mainService, user, items){
+.controller('stockItemsCtrl', function($scope, $rootScope, mainService, user, items){
 
 $scope.items = items;
-
 
 $scope.$watch('searchFilter', function(){
   var category = $scope.selectedSearchTerm;
@@ -23,7 +22,8 @@ $scope.$watch('searchFilter', function(){
  // update ingredient
  $scope.updateStockItems = function(itemId, body){
    mainService.updateStockItems(itemId, body).then(function(response){
-   })
+     $rootScope.$broadcast('updateAlert');
+   })//
  }
 
  //create ingredient
