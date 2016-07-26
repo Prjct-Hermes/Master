@@ -51,19 +51,15 @@
            <div ng-show="!item.image" id="front-background">
              <p ng-show='!item.image' id="back">{{item.name}}</p>
              <br>
-             <p ng-show='!item.image' id="back">Qty: {{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
-             <br>
-             <br>
-             <br>
-             <br>
-             <br>
+             <p ng-show='!item.image' id="back">{{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
+
            </div>
       </div>
-      <div class="back" ng-style="{'background-color': '#525157'}">
+      <div class="back">
            <!-- back content -->
            <p>{{item.name}}</p>
            <br>
-           <p>Qty: {{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
+           <p>{{item.quantity | number : 2}} {{item.unitOfMeasure}}</p>
            <br>
            <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleItem(item)">Edit</button>
       </div>
@@ -96,8 +92,10 @@
                             </div>
 
                             <div class="stock-input-wrap">
-                                <div id="stock-input-label">Qty</div>
+                                <div id="stock-input-label">Current Qty</div>
                                 <input class="stock-modal-input-box" id="stock-small" type="text" ng-model="stockItem.quantity" required>
+
+
                             </div>
                             <div class="stock-input-wrap">
                                 <div id="stock-input-label">Measurement</div>
