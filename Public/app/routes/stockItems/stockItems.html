@@ -47,7 +47,7 @@
 <div class="stockitem-wrap">
   <div ng-repeat="item in items | filter: search" class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
-      <div class="front"  ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
+      <div class="front" ng-class="{alert: item.quantity <= item.alertQuantity}" ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
            <!-- front content -->
            <div ng-show="!item.image" id="front-background">
              <p ng-show='!item.image' id="back">{{item.name}}</p>
