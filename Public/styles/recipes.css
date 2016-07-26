@@ -143,33 +143,47 @@
 
 /*------------------recipe ITEM MODAL FORM CSS--------------------------*/
 
-.modal-title{
-  font-size: 40px;
-  font-weight: bold;
-}
 .modal-body{
   flex-direction: column;
-  height: 400px;
+  height: auto;
 }
-.modal-input-box{
+.recipe-input-wrap{
+  display: flex;
+}
+.recipe-modal-input-box{
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 20px;
   height: 30px;
-  width: 300px;
+  width: 50%;
   -webkit-transition: all .40s;
 }
-.modal-input-box:focus{
-  outline: orange;
+.recipe-modal-input-box:focus{
+  outline: #34B3A0;
   border: 2px solid #34B3A0;
   -webkit-transition: all .40s;
 }
+
 #modal-description{
+  height: auto;
   resize: none;
 }
-#modal-description:focus{
-  width: 300px;
-  height: 200px;
+.ingedient-add-wrap button{
+  height: 30px;
+  margin: 5px;
+  background: #525157;
+  color: white;
+  border-radius: 5px;
+  -webkit-transition: all .40s;
+  border: 1px solid white;
+}
+.ingedient-add-wrap button:hover{
+  background: white;
+  color: #34B3A0;
+  border: 1px solid #34B3A0;
   -webkit-transition: all .40s;
 }
+
 #modal-submit{
   margin: 0;
   color: white;
@@ -189,12 +203,75 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.modal-label{
+.recipe-modal-label{
+  font-size: 26px;
+  width: 175px;
+  margin-left: 19%;
+  display: flex;
+  align-items: center;
+}
+.modal-split{
+  margin: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid lightgray;
+}
+.ingredient-title{
+  text-align: center;
+  font-size: 40px;
+  color: #34B3A0;
+  margin-bottom: 20px;
+}
+.ingedients-update-wrap input{
+  width: 60px;
+  margin-right: 10px;
+  height: 30px;
+}
+.ingedients-update-wrap button{
+  height: 30px;
   margin: 5px;
+  background: #525157;
+  color: white;
+  border-radius: 5px;
+  -webkit-transition: all .40s;
+  border: 1px solid white;
 }
-#unit-dropdown{
-  width: 50%;
+.ingedients-update-wrap button:hover{
+  background: white;
+  color: #34B3A0;
+  border: 1px solid #34B3A0;
+  -webkit-transition: all .40s;
 }
+.ingedient-label{
+  font-size: 25px;
+  color: #34B3A0;
+  display: flex;
+  width: auto;
+  min-width: 100px;
+}
+.ingedients-update-wrap{
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+.add-ingedient-title{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #34B3A0;
+}
+.ingedient-add-wrap{
+  font-size: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: baseline;
+  align-items: center;
+}
+
 .recipes-title{
   background: #EBEEF0;
   width: 75%;
@@ -257,22 +334,7 @@
   flex-direction: column;
   height: 400px;
 }
-.modal-input-box{
-  font-size: 20px;
-  height: 30px;
-  width: 300px;
-  -webkit-transition: all .40s;
-}
-.modal-input-box:focus{
-  outline: orange;
-  border: 2px solid #34B3A0;
-  -webkit-transition: all .40s;
-}
-#modal-description:focus{
-  width: 300px;
-  height: 200px;
-  -webkit-transition: all .40s;
-}
+
 #modal-submit{
   margin: 0;
   color: white;
