@@ -1,14 +1,14 @@
 .order-title{
- background: #EBEEF0 ;
+ background: #E7E7E7;
  width: 75%;
  font-family: 'Raleway', sans-serif;
  font-size: 100px;
- color: #34B3A0 ;
+ color: #A94C24;
  margin-top:150px;
  margin-left: 25%;
  padding-left: 1%;
 }
-.main-wrap{
+.order-main-wrap{
  height: 100%;
  width: 100%;
  display: flex;
@@ -19,38 +19,77 @@
 
 /************************   RECIPE STYLING     ****************************************************************/
 
-.recipe-wrap{
+.order-recipe-wrap{
  width: 75%;
  height: auto;
  display: flex;
  flex-wrap: wrap;
 }
-.recipe-box{
+.order-recipe-box{
  border-radius: 10px;
  text-align: center;
  color: white;
- background: #525157 ;
- font-size: 20px;
+ background: #525157;
+ font-size: 18px;
  margin: 25px 15px 25px 15px;
  padding: 10px;
- height: 100px;
- width: 200px;
+ height: 220px;
+ width: 300px;
  -webkit-transition: all .40s;
 }
-.recipe-box:hover{
+.order-recipe-box:hover{
  background: gray;
 }
+.order-recipe-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  color: #525157;
+  font-size: 25px;
+  background-color: hsla(500, 0%, 100%, 0.6);
+}
 .recipe-plus{
+  border: none;
+  background-color: hsla(500, 0%, 100%, 0.6);
+  font-size: 40px;
  margin-top: 5px;
  color: green;
  height: 50px;
  width: 50px;
+ -webkit-transition: all .40s;
+}
+.recipe-plus:hover{
+  background: white;
+  -webkit-transition: all .40s;
+}
+.recipe-plus:focus{
+  outline: none;
 }
 .recipe-minus{
+  border: none;
+  background-color: hsla(500, 0%, 100%, 0.6);
+  font-size: 40px;
  margin-top: 5px;
  color: red;
  height: 50px;
  width: 50px;
+ -webkit-transition: all .40s;
+}
+.recipe-minus:hover{
+  background: white;
+  -webkit-transition: all .40s;
+}
+.recipe-minus:focus{
+  outline: none;
+}
+.order-btn-wrap{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5px;
 }
 
 /************************   ORDER STYLING     ****************************************************************/
@@ -60,7 +99,7 @@
  font-size: 18px;
  height: auto;
  width: 25%;
- background: #EBEEF0 ;
+ background: #E7E7E7;
 }
 .button-wrap{
  width: 100%;
@@ -68,17 +107,27 @@
  justify-content: center;
 }
 .order-create{
+  color: white;
  margin-top: 20px;
  width: 150px;
  height: 50px;
- background: lightgray;
-
+ background: #B86D4C;
+ border: 1px solid white;
+ -webkit-transition: all .40s;
+}
+.order-create:hover{
+  border: 1px solid #A94C24;
+  background: white;
+  color: #A94C24;
+  -webkit-transition: all .40s;
+  border-radius: 10px;
 }
 .order-summary-wrap{
  height: auto;
  width: auto;
 }
 .order-summary{
+  color: #A94C24;
  font-size: 40px;
  height: auto;
  width: auto;
@@ -99,8 +148,14 @@
  width: 100px;
 }
 .order-items{
+  margin: 10px;
+  border: 2px solid lightgray;
+  display: flex;
  font-size: 20px;
  height: auto;
  width: auto;
  margin-bottom: 10px;
+}
+#recipe-order-lbl{
+  color: #A94C24;
 }
