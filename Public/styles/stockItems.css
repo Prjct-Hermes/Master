@@ -118,7 +118,6 @@
 }
 .alert{
   border: 3px solid red;
-  /*border-width: 3px;*/
 }
 .stockitem-box:hover{
   background: #34B3A0;

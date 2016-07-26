@@ -55,6 +55,9 @@
   background-color: #46C9B6;
 }
 
+#alertText{
+  color: red;
+}
 
 /*-----------------------ABOUT US-------------------------*/
 .home-about-us{
