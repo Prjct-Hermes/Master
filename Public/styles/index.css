@@ -45,6 +45,12 @@ body {
   -webkit-transition: all .40s;
   text-decoration: none;
 }
+#navbar-label:focus{
+  color: white;
+  background: #34B3A0;
+  -webkit-transition: all .40s;
+  text-decoration: none;
+}
 #main-navbar-logo{
   height: 100%;
   width: 12vw;
@@ -84,6 +90,7 @@ body {
   cursor: pointer;
   float: right;
 }
+
 .main-navbar-menu-icon:hover{
   background-color: #34B3A0;
   color: white;

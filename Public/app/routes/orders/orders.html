@@ -7,7 +7,7 @@ confirm and totals
 <headerdir></headerdir>
 <h1 class="order-title">Orders</h1>
 
-<section class="main-wrap">
+<section class="order-main-wrap">
 
  <!-- ORDER SUMMARY SECTION -------------------------------------------->
    <section class='order-wrap'>
@@ -17,7 +17,7 @@ confirm and totals
                Summary
            </div>
            <div class="order-items" ng-repeat="recipe in order.recipes">
-               {{recipe.name}}<br> qty = {{recipe.quantity}}<br> subtotal = {{recipe.price | currency}}
+               <div id="order-subtotal-item"><p id="recipe-order-lbl">{{recipe.name}}</p> <p>qty = {{recipe.quantity}}</p> <p>subtotal = {{recipe.price | currency}}</p></div>
            </div>
            <div class="total-wrap">
              <div class="total">TOTAL</div>
@@ -37,17 +37,24 @@ confirm and totals
    </section>
 
  <!-- RECIPE SECTION FOR INDIV RECIPE BOXES WITH INCREMENTS -------------------------------------------->
-   <section class="recipe-wrap">
-       <div class="recipe-box" ng-repeat="recipe in allRecipes">
-           <div class="recipe-name">
+
+   <section class="order-recipe-wrap">
+       <div class="order-recipe-box" ng-repeat="recipe in allRecipes" ng-style="{'background-image':'url({{recipe.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
+
+           <div class="order-recipe-name">
                {{recipe.name}}
            </div>
-           <button class="recipe-minus" ng-click="decrementOrder(recipe)">
-               -
-           </button>
-           <button class="recipe-plus" ng-click="incrementOrder(recipe)">
-               +
-           </button>
+           <div class="order-btn-wrap">
+             <button class="recipe-minus" ng-click="decrementOrder(recipe)">
+                 -
+             </button>
+             <button class="recipe-plus" ng-click="incrementOrder(recipe)">
+                 +
+             </button>
+           </div>
+
+
+
 
        </div>
    </section>
