@@ -13,7 +13,7 @@
 
     <form ng-submit="createStockItems(newItem)" class="stockitem-create" ng-model="newItem">
         <h1 class="create-title">Create a Stock Item:</h1>
-        <input class="stockitem-input" type="text" placeholder="Name" ng-model="newItem.name">
+        <input class="stockitem-input" type="text" placeholder="Name" ng-model="newItem.name" required>
         <input class="stockitem-input" type="text" placeholder="Paste image url" ng-model="newItem.image">
         <textarea class="stockitem-input" placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
         <input class="stockitem-input" type="text" placeholder="category e.g. 'fruit' or 'spice'" ng-model="newItem.category" required>

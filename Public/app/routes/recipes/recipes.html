@@ -1,7 +1,10 @@
-
 <h1 class="recipes-title">Recipes</h1>
 <div class="searchbar-wrap">
-  <input class ="searchbar" type="text" ng-model="searchFilter" placeholder="Search Items...">
+  <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items By...">
+  <select ng-model="selectedSearchTerm">
+    <option value="name">Name</option>
+    <option value="category">Category</option>
+  </select>
 </div>
 
 <headerdir></headerdir>
@@ -49,6 +52,7 @@
 
     <input class="recipeitem-input" type="text" placeholder="Name" ng-model="newRecipe.name">
     <textarea class="recipeitem-input" placeholder="Description" ng-model="newRecipe.description" cols="30" rows="2"></textarea>
+    <input class="recipeitem-input" type="text" placeholder="Category e.g. 'breakfast', 'mexican', 'italian'" ng-model="newRecipe.category">
     <textarea class="recipeitem-input" placeholder="Instructions" ng-model="newRecipe.instructions" cols="30" rows="5"></textarea>
     <input class="recipeitem-input" type="number" placeholder="Price" ng-model="newRecipe.price">
     <input class="recipeitem-input" type="text" placeholder="Paste image url" ng-model="newRecipe.image">
@@ -61,7 +65,7 @@
   <!-- List Recipes -->
   <!--- wrapper for the individual boxes, setup to display in grid format --------------------------------------------------->
 <div class="recipeitem-wrap">
-<div ng-repeat="recipe in recipes | filter: {name:searchFilter}" class="flip-container"  id="flip-container-size" ontouchstart="this.classList.toggle('hover');">
+<div ng-repeat="recipe in recipes | filter: search" class="flip-container"  id="flip-container-size" ontouchstart="this.classList.toggle('hover');">
   <div class="flipper">
     <div class="front"  id="flip-container-size"  ng-style="{'background-image':'url({{recipe.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
          <!-- front content -->
@@ -92,11 +96,17 @@
 
 
                               <div class="recipe-input-wrap">
-                                <div class="recipe-modal-label">Image url</div><input class="recipe-modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.image" required>
+                                <div class="recipe-modal-label">Image url</div>
+                                <input class="recipe-modal-input-box" id="modal-small" type="text" ng-model="singleRecipe.image" required>
                               </div>
 
                               <div class="recipe-input-wrap">
                                 <div class="recipe-modal-label">Description</div><textarea class="recipe-modal-input-box" id="modal-description" type="text" ng-model="singleRecipe.description" cols="10" rows="6" required></textarea>
+                              </div>
+
+                              <div class="recipe-input-wrap">
+                                <div class="recipe-modal-label">Category</div>
+                                <input class="recipe-modal-input-box" type="text" ng-model="singleRecipe.category" required>
                               </div>
 
                                 <div class="recipe-input-wrap">
