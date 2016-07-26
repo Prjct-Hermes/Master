@@ -79,5 +79,12 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
     $scope.addIngredient = {};
   }
 
+  $scope.$watch('searchFilter', function(){
+    var category = $scope.selectedSearchTerm;
+    var searchInput = $scope.searchFilter;
+    $scope.search = {};
+    $scope.search[category] = searchInput;
+  })
+
 
 });
