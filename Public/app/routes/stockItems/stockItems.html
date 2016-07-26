@@ -11,11 +11,12 @@
 </div>
 <section class="stockitem-main">
 
-    <div class="stockitem-create" ng-model="newItem">
+    <form ng-submit="createStockItems(newItem)" class="stockitem-create" ng-model="newItem">
         <h1 class="create-title">Create a Stock Item:</h1>
         <input class="stockitem-input" type="text" placeholder="Name" ng-model="newItem.name">
         <input class="stockitem-input" type="text" placeholder="Paste image url" ng-model="newItem.image">
         <textarea class="stockitem-input" placeholder="description" ng-model="newItem.description" cols="10" rows="4"></textarea>
+        <input class="stockitem-input" type="text" placeholder="category e.g. 'fruit' or 'spice'" ng-model="newItem.category" required>
         <input class="stockitem-input" type="number" placeholder="quantity" ng-model="newItem.quantity">
         <!-- <input  class="stockitem-input" type="text" placeholder="unit of measure" ng-model="newItem.unitOfMeasure"> -->
 
@@ -35,9 +36,9 @@
         <input class="stockitem-input" type="number" placeholder="alertQuantity" ng-model="newItem.alertQuantity">
         <input class="stockitem-input" type="Date" placeholder="alertDate" ng-model="newItem.alertDate">
         <div class="submit-wrap">
-            <button class="stockitem-submit" ng-click="createStockItems(newItem)">Submit</button>
+            <button class="stockitem-submit" type="submit">Submit</button>
         </div>
-    </div>
+    </form>
 
 
 
@@ -46,7 +47,7 @@
 <div class="stockitem-wrap">
   <div ng-repeat="item in items | filter: search" class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
-      <div class="front"  ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
+      <div class="front" ng-class="{alert: item.quantity <= item.alertQuantity}" ng-style="{'background-image':'url({{item.image}})', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
            <!-- front content -->
            <div ng-show="!item.image" id="front-background">
              <p ng-show='!item.image' id="back">{{item.name}}</p>
@@ -116,6 +117,11 @@
                             <div class="stock-input-wrap">
                                 <div id="stock-input-label">Description</div>
                                 <textarea class="stock-modal-input-box" id="stock-modal-description" type="text" ng-model="stockItem.description" cols="10" rows="6" required></textarea>
+                            </div>
+
+                            <div class="stock-input-wrap">
+                              <div id="stock-input-label">Category</div>
+                              <input class="stock-modal-input-box" type="text" ng-model="stockItem.category">
                             </div>
 
                             <div class="stock-input-wrap">
