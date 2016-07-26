@@ -52,6 +52,8 @@ body {
 }
 
 #main-navbar-logo-img{
+  height: 100%;
+  width: 10vw;
   background-color: #34B3A0;
   cursor: pointer;
   transition: all .3s ease 0s, margin-left .3s ease 0s, margin-top .3s ease 0s;
@@ -106,7 +108,7 @@ body {
     display: none;
     position: absolute;
     background-color: hsla(360, 0%, 100%, 0.8);
-    min-width: 125px;
+    min-width: 96px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     -webkit-transition: all .40s;
 }
