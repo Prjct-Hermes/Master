@@ -35,6 +35,11 @@ var schema = new Schema({
     type: String,
     required: false,
     index: false,
+  },
+  category: {
+    type: String,
+    required: false,
+    index: false,
   }
   });
   var Recipes = mongoose.model('recipes', schema);
