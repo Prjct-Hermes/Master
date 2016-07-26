@@ -72,10 +72,10 @@
     </div>
     <div class="back"  id="flip-container-size" ng-style="{'background-color': '#525157'}">
          <!-- back content -->
-         <p>{{recipe.name}}</p>
+         <p class="recipe-name">{{recipe.name}}</p>
          <br>
          <br>
-         <button class="stockitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleRecipe(recipe)">Edit</button>
+         <button class="recipeitem-edit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="getSingleRecipe(recipe)">Edit</button>
     </div>
     </div>
 </div>
@@ -162,7 +162,7 @@
                                     <option value="gal">gal</option>
                                     <option value="qty">qty</option>
                                 </select>
-                                Qty<input class="recipe-input" ng-model="addIngredient.quantity" id="recipe-quantity-input" placeholder="e.g. 1/3" type="text">
+                                Qty<input class="recipe-input" ng-model="addIngredient.quantity" id="recipe-quantity-input" placeholder="e.g. 1/2" type="text">
 
                                 <button ng-click="addToExisting(singleRecipe, addIngredient)" type='submit'>Add to ingredients</button>
                               </div>
