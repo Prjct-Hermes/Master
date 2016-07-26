@@ -36,9 +36,11 @@
  height: 220px;
  width: 300px;
  -webkit-transition: all .40s;
+ border: 2px solid white;
 }
 .order-recipe-box:hover{
- background: gray;
+ border: 2px solid #525157;
+ -webkit-transition: all .40s;
 }
 .order-recipe-name{
   display: flex;
@@ -47,7 +49,7 @@
   height: 50px;
   color: #525157;
   font-size: 25px;
-  background-color: hsla(500, 0%, 100%, 0.6);
+  background-color: hsla(500, 0%, 100%, 0.9);
 }
 .recipe-plus{
   border: none;
