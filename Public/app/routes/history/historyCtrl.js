@@ -92,34 +92,37 @@ var svgContainer = d3.select("ui-view")
     .attr("width", 750)
     .attr("height", 750);
 
-var maxQuantity = 2;
-var maxY = 1;
-for (var i = 0; i < $scope.allOrders.length; i++){
-  if($scope.allOrders.quantityTotal > maxQuantity){
-    maxQuantity = $scope.allOrders.quantityTotal;
-    maxX = maxQuantity/maxY;
-    console.log("Max QTY: ",maxQuantity)
-  }
-};
+// var maxQuantity = 2;
+// var maxY = 1;
+// for (var i = 0; i < $scope.allOrders.length; i++){
+//   if($scope.allOrders.quantityTotal > maxQuantity){
+//     maxQuantity = $scope.allOrders.quantityTotal;
+//     maxX = maxQuantity/maxY;
+//     console.log("Max QTY: ",maxQuantity)
+//   }
+// };
 
 
 
 var rectangle = svgContainer.append("rect")
     .data($scope.allOrders)
     .attr("x", function(d, i){
-      console.log("x", i*maxX;
-      return i*maxX;
+      console.log("x", i,d);
+      return i*13.8888888;
     })
     .attr("y", function(d, i){
-      linearScaleY(d.quantityTotal)
+      // linearScaleY(d.quantityTotal)
+      return 750 - (d.quantityTotal * 10)
+
     })
-    .attr("width", xRatio)
+    .attr("width", 13)
     .attr("height", function(d, i){
-      if (d.quantityTotal < 2){
-        return "20px"
-      }else {
-        return d.quantityTotal*10 + "px";
-      }
+      // if (d.quantityTotal < 2){
+      //   return "20px"
+      // }else {
+      //   return d.quantityTotal*10 + "px";
+      // }
+      return d.quantityTotal*10 + "px";
     })
     .attr("background-color", function(d, i){
       return d3.rgb(d.quantityTotal*25%255, 150, d.quantityTotal*25%255);
