@@ -135,6 +135,11 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
           $state.go('login');
           alert('You need to login to access this page');
         });
+      },
+      orders: function(mainService){
+        return mainService.getDataOrders().then(function(ordersData){
+          return ordersData;
+        })
       }
     }
   })

@@ -31,10 +31,10 @@ var schema = new Schema({
   var Orders = mongoose.model('orders', schema);
   module.exports = {
     getOrders : function(req, res){
-      if(!req.params.id){
+      if(!req.user){
         return res.status(400).send("id required to search the database")
       }
-      Orders.find({"userId":req.params.id}, function(err, response){
+      Orders.find({"userId":req.user._id}, function(err, response){
         return err ? res.status(500).json(err) : res.json(response);
       })
     },
