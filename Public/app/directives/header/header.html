@@ -26,7 +26,7 @@
 
 
         </div>
-  <div ng-show='loggedIn' ng-hide='alertLength === 0' class="main-navbar-menu"><a id="alertText" ui-sref='stockItems'>Alerts: {{alertLength}}</a></div>
+  <div ng-if='loggedIn === true && alertLength > 0' class="main-navbar-menu"><a id="alertText" ui-sref='stockItems'>Alerts: {{alertLength}}</a></div>
 
   <a class="main-navbar-menu" id="navbar-label" ui-sref='orders'>Orders</a>
   <a class="main-navbar-menu" id="navbar-label"  ui-sref='recipes'>Recipes</a>
