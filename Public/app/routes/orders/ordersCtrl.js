@@ -68,6 +68,7 @@ $scope.incrementOrder = function(recipe){
     $scope.order.date = new Date();
     $scope.order.recipes = [];
     $scope.order.total = recipe.price;
+    $scope.order.quantityTotal = 1;
     return $scope.order.recipes.push({"name": recipe.name,"id": recipe._id,"quantity": 1, "price": recipe.price});
   };
   if($scope.order.recipes.length < 1){
@@ -78,10 +79,12 @@ $scope.incrementOrder = function(recipe){
       if ($scope.order.recipes[i].id === recipe._id){
         check = false;
         $scope.order.recipes[i].quantity++;
+        $scope.order.quantityTotal++;
         $scope.order.recipes[i].price = parseFloat(recipe.price) * parseFloat($scope.order.recipes[i].quantity);
       }
     }
     if(check){
+      $scope.order.quantityTotal = 1;
       $scope.order.recipes.push({"name": recipe.name,"id": recipe._id,"quantity": 1, "price": recipe.price});
     }
   }
@@ -94,9 +97,13 @@ $scope.decrementOrder = function(recipe){
   for (var i = 0; i < $scope.order.recipes.length; i++){
     if ($scope.order.recipes[i].id === recipe._id){
       $scope.order.recipes[i].quantity--;
+      $scope.order.quantityTotal--;
       $scope.order.recipes[i].price = parseFloat(recipe.price) * parseFloat($scope.order.recipes[i].quantity);
       if ($scope.order.recipes[i].quantity < 1){
         $scope.order.recipes.splice(i, 1)
+      }
+      if ($scope.order.quantityTotal < 1){
+        $scope.order.quantityTotal = 0;
       }
     }
   }
@@ -146,6 +153,7 @@ $scope.createOrder = function(){
   $scope.alertCheck();
   console.log("Alerts ", $scope.alerts);
   $scope.order ={userId: "",date: "",recipes: [],total: 0};
+  mainService.getDataOrders();
 }
 
 /*

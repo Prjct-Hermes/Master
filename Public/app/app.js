@@ -121,6 +121,28 @@ angular.module('hermes', ['ui.router']).config(function($stateProvider, $urlRout
       }
     }
   })
+  .state('history', {
+    url: '/history',
+    templateUrl: './app/routes/history/history.html',
+    controller: 'historyCtrl',
+    resolve: {
+      user: function(mainService, $state) {
+        return mainService.getCurrentUser().then(function(response) {
+          if (response.data){
+            return response.data;
+          }
+        }).catch(function(err) {
+          $state.go('login');
+          alert('You need to login to access this page');
+        });
+      },
+      orders: function(mainService){
+        return mainService.getDataOrders().then(function(ordersData){
+          return ordersData;
+        })
+      }
+    }
+  })
 
   $urlRouterProvider.otherwise('/home');
 
