@@ -1,17 +1,16 @@
-angular.module('hermes').controller('recipesCtrl', function($scope, $window, mainService, user){
+angular.module('hermes').controller('recipesCtrl', function($scope, $window, mainService, user, recipes, stockItems){
   $scope.user = user;
   $scope.ingredients = [];
   $scope.recipes = [];
+  $scope.recipes = recipes;
+  $scope.stockItems = stockItems;
+
 
   $scope.getRecipes = function(){
     mainService.getDataRecipes(user).then(function(response){
           $scope.recipes = response;
     });
   };
-  $scope.getRecipes();
-  mainService.getDataStockItems(user).then(function(response){
-    $scope.stockItems = response;
-  });
 
   $scope.addToIngredients = function(newIngredient){
     var tempIngredient = {};
@@ -78,27 +77,14 @@ angular.module('hermes').controller('recipesCtrl', function($scope, $window, mai
     $scope.updateRecipe(singleRecipe._id, singleRecipe);
 
     $scope.addIngredient = {};
-    console.log("Recipe: ", singleRecipe);
-    console.log("tempIngredient: ", tempIngredient);
   }
+
+  $scope.$watch('searchFilter', function(){
+    var category = $scope.selectedSearchTerm;
+    var searchInput = $scope.searchFilter;
+    $scope.search = {};
+    $scope.search[category] = searchInput;
+  })
 
 
 });
-
-/*
-CRUD
-Ingredients will need to pull id from Stock items
-
-Unit options
-ml
-l
-tsp
-tbsp
-fl-oz
-cup
-pnt
-qt
-gal
-
-*/
-// <input type="text" placeholder="Ingredients" ng-model="newRecipe.ingredients">

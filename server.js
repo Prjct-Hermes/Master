@@ -67,12 +67,12 @@ app.delete('/api/users/:id',  usersCtrl.removeUser)
 
 //stockItems
 app.post('/api/stockItems', stockItemsCtrl.createStockItem)
-app.get('/api/stockItems/:id', stockItemsCtrl.getStockItem)
+app.get('/api/stockItems/', stockItemsCtrl.getStockItem)
 app.put('/api/stockItems/:id', stockItemsCtrl.updateStockItem)
 app.delete('/api/stockItems/:id', stockItemsCtrl.removeStockItem)
 
 app.post('/api/recipes', recipesCtrl.createRecipes)
-app.get('/api/recipes/:id', recipesCtrl.getRecipes)
+app.get('/api/recipes', recipesCtrl.getRecipes)
 app.put('/api/recipes/:id', recipesCtrl.updateRecipes)
 app.delete('/api/recipes/:id', recipesCtrl.removeRecipes)
 

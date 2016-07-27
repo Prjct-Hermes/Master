@@ -16,79 +16,11 @@
     <title></title>
   </head>
   <body ng-controller="mainCtrl">
-    <!-- <nav id="main-navbar">
-     <div ui-sref="home" id="main-navbar-logo"> -->
-        <!-- ==================PLAYING WITH LOGOS=================== -->
 
-        <!-- <img id="main-navbar-logo-img" src="./images/hermes.png" alt="hermeslogo" />
-
-        <div>Alerts: {{alertLength}}</div>
-      </div> -->
-      <!-- <div ui-sref="login" class="main-navbar-menu">SIGN UP</div> -->
-      <!-- <div class="main-navbar-menu-icon" id="dropdown">
-                  <img src="./images/hamburger.png" alt="" />
-                <div class="hamburger-icon"></div>
-                <div class="dropdown-container">
-                  <div class="dropdown-content">
-                      <a ui-sref="profile">Profile</a>
-                      <a ui-sref="login">Login</a>
-                      <a ui-sref="login">Sign-Up</a>
-                      <a ng-controller="mainCtrl" ng-click="logout()">Logout</a>
-
-                  </div>
-                </div>
-
-
-
-
-            </div>
-      <div class="main-navbar-menu">LEARN MORE</div>
-      <div ui-sref="home" class="main-navbar-menu">HOME</div> -->
-      <!-- ALERTS -->
-      <!-- <div class="main-navbar-menu-alert"></div>
-    </nav> -->
-
-    <!-- Just for practice and responsive testing comment out below when using other views -->
-    <!-- UI_VIEW -->
     <ui-view></ui-view>
 
 
 
-    <!-- FOOTER -->
-    <footer>
-      <section class="bottom-of-footer">
-
-        <!-- CONTACT US -->
-        <div class="footer-contact-form">
-          <div class="footer-contact-form-head">CONTACT US <br> <span>Learn in minutes how you can save hundreds.</span></div>
-          <div class="footer-contact-info"></div>
-            <div class="footer-contact-us">
-
-            </div>
-          <!-- <div class="footer-contact-image-left"></div>
-          <div class="footer-contact-form-inputs">
-            <div class="contact-input-fields">
-              <form class="contact-form" novalidate>
-                <input class="contact-field" placeholder="Name" type="text" />
-                <input class="contact-field" placeholder="Email" type="email"/>
-                <input class="contact-field" placeholder="Telephone" type="text"/>
-                <input class="contact-field" placeholder="Subject" type="text"/>
-                <textarea class="contact-field-message" placeholder="Message" type="text"></textarea>
-                <br>
-                <input class="contact-field-send-message" type="submit"value="SEND" />
-              </form>
-            </div> -->
-            <div class="footer-socialmedia">
-              <img src="./images/facebook.png" alt="facebook" />
-              <img src="./images/instagram.svg" alt="instagram" />
-              <img src="./images/twitter-snow.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-    </footer>
 
 
   <!-- Libraries -->
@@ -106,9 +38,10 @@
   <script src="./app/routes/stockItems/stockItemsCtrl.js"></script>
   <!-- Directives -->
   <script src="./app/directives/header/headerdir.js"></script>
+  <script src="./app/directives/footer/footerdir.js"></script>
   <!-- Services -->
   <script src="./app/services/mainService.js"></script>
-  <script src="./scripts/script.js"></script>
+
   <!-- Gulp -->
   <script src="./bundle.js"></script>
 

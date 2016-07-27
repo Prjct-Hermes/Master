@@ -76,11 +76,11 @@ this.updateUser = function(id, body){
 }
 
 //These are your stockItems requests
-this.getDataStockItems =  function(id){
+this.getDataStockItems =  function(){
   var deferred = $q.defer();
   $http({
     method: 'GET',
-    url: "/api/stockItems/" + id
+    url: "/api/stockItems"
   }).then(function(response){
 
     self.allStockItems = response.data;
@@ -122,11 +122,11 @@ this.updateStockItems = function(id, body){
 }
 
 //These are your recipes requests
-this.getDataRecipes =  function(id){
+this.getDataRecipes =  function(){
   var deferred = $q.defer();
   $http({
     method: 'GET',
-    url: "/api/recipes/" + id
+    url: "/api/recipes"
   }).then(function(response){
      self.allRecipes = response.data;
      deferred.resolve(response.data);
