@@ -7,30 +7,27 @@ Password: Required to update profile
 *Change password requires password confirmation
 Delete profile: Needs confirmation
  -->
-<div class="" style="height:24em;width:25em;background-color:lightblue">
 
-</div>
+ <section class="profile-main-wrap">
+    <div class="profile-border">
+      <h1 class="profile-title">Profile</h1>
+      <div class="profile-wrap">
+        <div class="profile-label">Name </div> <input class="profile-input" type="text" ng-model="profile.name" placeholder="{{profile.name}}">
+      </div>
+      <div class="profile-wrap">
+        <div class="profile-label">Email </div><input class="profile-input" type="email" ng-model="profile.email" placeholder="{{profile.email}}">
+      </div>
+      <div class="profile-wrap">
+        <div class="profile-label">Phone </div><input class="profile-input" type="phone" ng-model="profile.phone" placeholder="{{profile.phone}}">
+      </div>
+    <div class="profile-button-wrap">
+      <button class="profile-button" type="button" ng-click="updateProfile()">Update</button>
+      <button class="profile-button" type="button" ng-click="deleteProfile(profile._id)">Delete</button>
+    </div>
 
-<div class="">
-  Name : <input type="text" ng-model="profile.name" placeholder="{{profile.name}}">
-</div>
-<div class="">
-  Email : <input type="email" ng-model="profile.email" placeholder="{{profile.email}}">
-</div>
-<div class="">
-  Phone : <input type="phone" ng-model="profile.phone" placeholder="{{profile.phone}}">
-</div>
-<!-- <div class="" ng-hide="newPassword" >
-  New Password : <input type="password" ng-model="temp.newPassword">
-</div>
-<div class="" ng-hide="newPassword" >
-  Confirm Password : <input type="password" ng-model="temp.confirmPassword" ng-change="passwordCheck()">
-</div>
-<div class="" ng-hide="newPassword" >
-  {{passwordConfirmation}}
-</div>
-<button type="button" ng-click="changePassword()">Change Password</button> -->
-<button type="button" ng-click="updateProfile()">Update</button>
-<button type="button" ng-click="deleteProfile(profile._id)">Delete</button>
-<button type="button" ng-click="test()">test</button>
+    </div>
+
+ </section>
+
+
 <!-- NOTE this page uses the login controller. Can switch to mainCtrl if group insists -->
