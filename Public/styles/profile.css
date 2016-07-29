@@ -1,0 +1,78 @@
+.profile-main-wrap{
+  width: 100%;
+  height: 100vh;
+  background-image: url("http://www.eveboo.com/wp-content/uploads/2013/05/Various-Spices-Wallpaper-HD-Widescreen.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile-border{
+  margin-left: 18%;
+  margin-top: 10%;
+  width: 30%;
+  height: 50vh;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile-title{
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  font-size: 100px;
+  margin-bottom: 5%;
+  color: #9E1F30;
+}
+.profile-wrap{
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+.profile-label{
+  font-size: 50px;
+  color: white;
+  margin-right: 15px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.profile-input{
+  width: 60%;
+  margin-left: 15px;
+  border-radius: 5px;
+  -webkit-transition: all .60s;
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.profile-input:focus{
+  width: 80%;
+  outline: none;
+  background: ;
+  -webkit-transition: all .60s;
+}
+.profile-button-wrap{
+  margin-top: 40px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.profile-button{
+  font-size: 25px;
+  color: white;
+  border: none;
+  background: #CA8C09;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  box-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  -webkit-transition: all .40s;
+}
+.profile-button:hover{
+  -webkit-transition: all .40s;
+  outline: none;
+  background: #E4B309;
+}

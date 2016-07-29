@@ -12,13 +12,13 @@ var express = require('express'),
     app = express();
 
 
-// mongoose.connect("mongodb://" + config.dbUsername + ":" + config.dbPassword + "@ds029705.mlab.com:29705/hermes",  function (err, res) {
-//       if (err) {
-//         console.log ('ERROR connecting to Hermes. '  + err);
-//       } else {
-//         console.log ('Successfully connected to Hermes.');
-//       }
-//     });
+mongoose.connect("mongodb://" + config.dbUsername + ":" + config.dbPassword + "@ds029705.mlab.com:29705/hermes",  function (err, res) {
+      if (err) {
+        console.log ('ERROR connecting to Hermes. '  + err);
+      } else {
+        console.log ('Successfully connected to Hermes.');
+      }
+    });
 mongoose.connect("mongodb://localhost/hermes",  function (err, res) {
       if (err) {
         console.log ('ERROR connecting to Hermes. '  + err);
