@@ -1,7 +1,14 @@
-
 <button type="button" name="button" ng-click="logData()">Temp Data</button>
-<button type="button" name="button" ng-click="logOrders()">Orders Data</button>
+<!-- This div contains the inputs and the button to run the function -->
+<div class="">
+  Starting Date: <input type="date" name="name" value="" ng-model="minDate" placeholder="minDate">
+  Ending Date: <input type="date" name="name" value="" ng-model="maxDate" placeholder="maxDate">
+  <button type="button" name="button" ng-click="setDateRange(); updateData()">Submit Dates</button>
+</div>
+<!-- All the D3 stuff will be contained in this div -->
+<div class="history-data">
 
+</div>
 
 <!-- We'll need to move this into it's own style sheet -->
 <style>
