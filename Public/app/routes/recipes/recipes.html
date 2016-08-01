@@ -1,4 +1,4 @@
-<h1 class="recipes-title">Recipes</h1>
+<h1 class="recipeitem-title">Recipes</h1>
 <div class="searchbar-wrap">
   <input type="text" class="searchbar" ng-model="searchFilter" placeholder="Search Items By...">
   <select ng-model="selectedSearchTerm">
@@ -16,8 +16,9 @@
 
     <!-- Add Ingredients -->
     <div class="add-ingedients-input">
-      <h1 class="create-title">Create a Recipe:</h1>
-      <p id="ingedients-title">Ingredients</p>
+      <h1 class="create-recipe-title">Create a Recipe:</h1>
+      <p id="ingedients-title">Ingredients List</p>
+      <div class="bar"></div>
       <div class="ingedients-list">
         <ul ng-repeat="ingredient in ingredients">
           <li>{{ingredient.quantity}} {{ingredient.unitOfMeasure}} {{ingredient.name}}</li>
