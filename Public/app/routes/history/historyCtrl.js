@@ -88,8 +88,6 @@ var margin = {top: 40, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-//var formatPercent = d3.format(".0%");
-
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
 
@@ -120,7 +118,6 @@ var svg = d3.select(".history-data").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 svg.call(tip);
-
 
 // The following code was contained in the callback function.
 x.domain($scope.tempData.map(function(d) { return d.date; }));
@@ -157,37 +154,50 @@ svg.selectAll(".bar")
     .on('mouseover', tip.show)
     .on('mouseout', tip.hide)
 
-
-
 function type(d) {
   d.quantity = +d.quantity;
   return d;
 }
 
-
  $scope.updateData = function() {
     	// Scale the range of the data again
-      x.domain($scope.tempData.map(function(d) { return d.date; }));
-      y.domain([0, d3.max($scope.tempData, function(d) { return d.quantity; })]);
+    x.domain($scope.tempData.map(function(d) { return d.date; }));
+    y.domain([0, d3.max($scope.tempData, function(d) { return d.quantity; })]);
+
+    svg.select(".x")
+        .call(xAxis)
+        .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", "-.55em")
+          .attr("transform", "rotate(-90)" );
+
+
+    svg.select(".y")
+        .call(yAxis)
 
     // Select the section we want to apply our changes to
-    var bars = d3.select(".history-data").selectAll(".bar").data($scope.tempData, function(d) { return d.date; });
+    var bars = d3.select("g").selectAll(".bar").data($scope.tempData, function(d) { return d.date; });
 
     // Make the changes
     bars.exit()
     .transition()
-      .duration(300)
+      .duration(600)
     .attr("y", y(0))
     .attr("height", height - y(0))
     .style('fill-opacity', 1e-6)
     .remove();
 
     bars.enter().append("rect")
-    .attr("class", "bar")
-    .attr("y", y(0))
-    .attr("height", height - y(0));
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.date); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.quantity); })
+      .attr("height", function(d) { return height - y(d.quantity); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide)
 
-    bars.transition().duration(300).attr("x", function(d) { return x(d.date); }) // (d) is one item from the data array, x is the scale object from above
+    bars.transition().duration(600).attr("x", function(d) { return x(d.date); }) // (d) is one item from the data array, x is the scale object from above
     .attr("width", x.rangeBand()) // constant, so no callback function(d) here
     .attr("y", function(d) { return y(d.quantity); })
     .attr("height", function(d) { return height - y(d.quantity); }); // flip the height, because y's domain is bottom up, but SVG renders top down

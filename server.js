@@ -11,21 +11,32 @@ var express = require('express'),
     config = require('./config.js');
     app = express();
 
-
-// mongoose.connect("mongodb://" + config.dbUsername + ":" + config.dbPassword + "@ds029705.mlab.com:29705/hermes",  function (err, res) {
+// //Heroku Hosting
+// mongoose.connect(MONGO_URI,  function (err, res) {
 //       if (err) {
 //         console.log ('ERROR connecting to Hermes. '  + err);
 //       } else {
 //         console.log ('Successfully connected to Hermes.');
 //       }
 //     });
-mongoose.connect("mongodb://localhost/hermes",  function (err, res) {
+
+//Not hosted but working with mlab
+mongoose.connect("mongodb://" + config.dbUsername + ":" + config.dbPassword + "@ds029705.mlab.com:29705/hermes",  function (err, res) {
       if (err) {
         console.log ('ERROR connecting to Hermes. '  + err);
       } else {
         console.log ('Successfully connected to Hermes.');
       }
     });
+
+//Local Hosting
+// mongoose.connect("mongodb://localhost/hermes",  function (err, res) {
+//       if (err) {
+//         console.log ('ERROR connecting to Hermes. '  + err);
+//       } else {
+//         console.log ('Successfully connected to Hermes.');
+//       }
+//     });
 
 var app = express();
 var db = mongoose.connection;
