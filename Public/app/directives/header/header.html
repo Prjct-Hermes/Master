@@ -16,7 +16,7 @@
                   <a ng-show='!loggedIn' ui-sref="login">Login</a>
                   <a ng-show='!loggedIn' ui-sref="login">Sign-Up</a>
                   <a ng-show='loggedIn' ng-click="logout()">Logout</a>
-                  <a>History</a>
+                  <a ng-show='loggedIn' ui-sref="history">History</a>
 
 
               </div>
