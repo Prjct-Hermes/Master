@@ -78,7 +78,7 @@
   height: 12%;
   /*border: 2px solid black;*/
   font-size:4rem;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
   font-weight: bold;
 }
 .about-us-header-subtext{
@@ -208,8 +208,8 @@
 .testimonial-profile-picture{
   position: absolute;
   margin-top: 2.5vh;
-  /*z-index: 100;*/
-  margin-left: 2.5vw;
+  z-index: 2;
+  margin-left: 1.0vw;
   width: 320px;
   height: 320px;
   border: 40px solid hsla(171, 55%, 45%, 0.8);
@@ -228,6 +228,7 @@
   background-size: cover;
 }
 .testimonial-profile-text{
+  z-index: 1;
   padding-top: 3vh;
   width: 35vw;
   height: 380px;

@@ -93,6 +93,6 @@ app.put('/api/orders/:id', ordersCtrl.updateOrders)
 app.delete('/api/orders/:id', ordersCtrl.removeOrders)
 
 var port = config.port;
-app.listen(port, function(){
-  console.log("Listening on port", port)
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Listening");
 })
