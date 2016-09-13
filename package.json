@@ -4,7 +4,8 @@
   "description": "1. Build compiler (Gulp)\r 2. Flow chart\r 3. Trello\r 4. Mentor Approval",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +18,15 @@
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "express-session": "^1.13.0",
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.0",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5",
     "mongoose": "^4.5.4",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
